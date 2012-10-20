@@ -468,6 +468,7 @@
 				2D757A7D162F6FC300104D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D757A7E162F6FC300104D8A /* Build configuration list for PBXNativeTarget "CatchMeTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +477,7 @@
 				2D757A80162F6FC300104D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

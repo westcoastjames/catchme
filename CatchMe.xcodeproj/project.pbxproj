@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FCE2C0B16335EDD00605D7F /* AudioSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */; };
+		1FCE2C0F163366F100605D7F /* AudioSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0E163366F100605D7F /* AudioSettings.m */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
 		2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
 		2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A42162F6FC200104D8A /* CoreGraphics.framework */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioSettings.xib; sourceTree = "<group>"; };
+		1FCE2C0D163366F100605D7F /* AudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSettings.h; sourceTree = "<group>"; };
+		1FCE2C0E163366F100605D7F /* AudioSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettings.m; sourceTree = "<group>"; };
 		2D757A3A162F6FC200104D8A /* CatchMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D757A3E162F6FC200104D8A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D757A40162F6FC200104D8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,16 +131,18 @@
 			children = (
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
-				2D757A50162F6FC200104D8A /* FirstViewController.h */,
-				2D757A51162F6FC200104D8A /* FirstViewController.m */,
+				1FCE2C0D163366F100605D7F /* AudioSettings.h */,
+				1FCE2C0E163366F100605D7F /* AudioSettings.m */,
+				1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */,
 				2D757A53162F6FC200104D8A /* first.png */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
-				2D757A57162F6FC200104D8A /* SecondViewController.h */,
-				1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */,
-				2D757A58162F6FC200104D8A /* SecondViewController.m */,
+				2D757A50162F6FC200104D8A /* FirstViewController.h */,
+				2D757A51162F6FC200104D8A /* FirstViewController.m */,
+				2D757A5E162F6FC200104D8A /* FirstViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
-				2D757A5E162F6FC200104D8A /* FirstViewController.xib */,
+				2D757A57162F6FC200104D8A /* SecondViewController.h */,
+				2D757A58162F6FC200104D8A /* SecondViewController.m */,
 				2D757A61162F6FC200104D8A /* SecondViewController.xib */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
@@ -291,6 +296,7 @@
 				2D757A4F162F6FC200104D8A /* AppDelegate.m in Sources */,
 				2D757A52162F6FC200104D8A /* FirstViewController.m in Sources */,
 				2D757A59162F6FC200104D8A /* SecondViewController.m in Sources */,
+				1FCE2C0F163366F100605D7F /* AudioSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

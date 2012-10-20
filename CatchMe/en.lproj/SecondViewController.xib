@@ -36,13 +36,13 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUILabel" id="681626083">
+					<object class="IBUILabel" id="493133250">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{-19, 0}, {359, 43}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="27109916"/>
+						<reference key="NSNextKeyView" ref="802322215"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -75,7 +75,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="27109916">
+					<object class="IBUIButton" id="802322215">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 72}, {280, 29}}</string>
@@ -87,7 +87,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">Name                                           &gt;</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="442433294">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="68769996">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -172,8 +172,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 				<string key="NSFrame">{{0, 20}, {320, 411}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="681626083"/>
-				<reference key="IBUIBackgroundColor" ref="442433294"/>
+				<reference key="NSNextKeyView" ref="493133250"/>
+				<reference key="IBUIBackgroundColor" ref="68769996"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -202,8 +202,8 @@ AAgACAAIAAEAAQABAAE</bytes>
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="681626083"/>
-							<reference ref="27109916"/>
+							<reference ref="493133250"/>
+							<reference ref="802322215"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -220,12 +220,12 @@ AAgACAAIAAEAAQABAAE</bytes>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="681626083"/>
+						<reference key="object" ref="493133250"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
-						<reference key="object" ref="27109916"/>
+						<reference key="object" ref="802322215"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

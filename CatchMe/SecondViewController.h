@@ -12,7 +12,3 @@
 
 @end
 
-/*
-@#@##@#@##@#@#@##
- More silly comments to test if gitignore works
-*/

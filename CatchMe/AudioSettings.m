@@ -23,6 +23,7 @@
         stopButton.enabled = TRUE;
         playButton.enabled = FALSE;
         
+        [aRecorder prepareToRecord];
         [aRecorder record];
     }
 }

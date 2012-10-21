@@ -10,4 +10,23 @@
 
 @implementation AudioSettings
 
+@synthesize recordButton, stopButton, playButton, saveButton;
+
+- (IBAction)recordSound {
+    //TODO
+}
+
+- (IBAction)stopSound {
+    //TODO
+}
+
+- (IBAction)playSound {
+    //TODO
+}
+
+- (IBAction)saveSound {
+    //TODO
+}
+
+
 @end

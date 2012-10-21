@@ -8,6 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AudioSettings : NSObject
+#import <UIKit/UIKit.h>
+
+@interface AudioSettings : NSObject {
+    
+    UIWindow *window;
+    
+    UIButton *recordButton;
+    UIButton *stopButton;
+    UIButton *playButton;
+    UIButton *saveButton;
+}
+
+@property (nonatomic) IBOutlet UIButton *recordButton;
+@property (nonatomic) IBOutlet UIButton *stopButton;
+@property (nonatomic) IBOutlet UIButton *playButton;
+@property (nonatomic) IBOutlet UIButton *saveButton;
+
+- (IBAction)recordSound;
+- (IBAction)stopSound;
+- (IBAction)playSound;
+- (IBAction)saveSound;
 
 @end

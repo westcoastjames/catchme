@@ -22,14 +22,17 @@
     UIButton *playButton;
     UIButton *saveButton;
     
-    AVAudioRecorder *recorder;
-    AVAudioPlayer *player;
+    AVAudioRecorder *aRecorder;
+    AVAudioPlayer *aPlayer;
 }
 
 @property (nonatomic) IBOutlet UIButton *recordButton;
 @property (nonatomic) IBOutlet UIButton *stopButton;
 @property (nonatomic) IBOutlet UIButton *playButton;
 @property (nonatomic) IBOutlet UIButton *saveButton;
+
+@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 - (IBAction)recordSound;
 - (IBAction)stopSound;

@@ -10,7 +10,7 @@
 
 #import <CoreMotion/CoreMotion.h>
 
-@interface FirstViewController : UIViewController
+@interface MainMenuViewController : UIViewController
 @property (nonatomic, strong) CMMotionManager *motionManager;
 
 @end

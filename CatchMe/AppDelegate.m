@@ -17,7 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //detecting if the accelerometer is available on the device
-    CMMotionManager *motionManager = [[CMMotionManager alloc]init];
+    
     
     if ([motionManager isAccelerometerAvailable]){
         NSLog(@"Accelerometer is available.");

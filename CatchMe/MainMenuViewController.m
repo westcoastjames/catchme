@@ -1,12 +1,12 @@
 //
-//  FirstViewController.m
+//  MainMenuViewController.m
 //  CatchMe
 //
 //  Created by Jonathon Simister on 10/17/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MainMenuViewController.h"
 
 @interface FirstViewController ()
 
@@ -28,6 +28,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    //retrieve accelerometer data
+    self.motionManager = [[CMMotionManager alloc]init];
+    
+    if ([self.motionManager isAccelerometerAvailable]){
+        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+        [self.motionManager
+         startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+             NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
+         }];
+    }else{
+        NSLog(@"Accelerometer did not work.");
+    }
 }
 
 - (void)viewDidUnload

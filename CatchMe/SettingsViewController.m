@@ -42,8 +42,9 @@
 }
 
 // Test a button updating a label
+/*
 -(IBAction)hello:(id)sender {
     label.text = @"Hello";
 }
-
+*/
 @end

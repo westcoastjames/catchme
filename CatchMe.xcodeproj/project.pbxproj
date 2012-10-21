@@ -22,8 +22,6 @@
 		2D757A56162F6FC200104D8A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A55162F6FC200104D8A /* first@2x.png */; };
 		2D757A5B162F6FC200104D8A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5A162F6FC200104D8A /* second.png */; };
 		2D757A5D162F6FC200104D8A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5C162F6FC200104D8A /* second@2x.png */; };
-		2D757A60162F6FC200104D8A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */; };
-		2D757A63162F6FC200104D8A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A61162F6FC200104D8A /* SettingsViewController.xib */; };
 		2D757A6B162F6FC300104D8A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A6A162F6FC300104D8A /* SenTestingKit.framework */; };
 		2D757A6C162F6FC300104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
 		2D757A6D162F6FC300104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
@@ -65,8 +63,6 @@
 		2D757A55162F6FC200104D8A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		2D757A5A162F6FC200104D8A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		2D757A5C162F6FC200104D8A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		2D757A5F162F6FC200104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenuViewController.xib; sourceTree = "<group>"; };
-		2D757A62162F6FC200104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		2D757A69162F6FC300104D8A /* CatchMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatchMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D757A6A162F6FC300104D8A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2D757A72162F6FC300104D8A /* CatchMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CatchMeTests-Info.plist"; sourceTree = "<group>"; };
@@ -148,12 +144,10 @@
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
-				2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
-				2D757A61162F6FC200104D8A /* SettingsViewController.xib */,
 				1A69D069163399B600EF576B /* Storyboard.storyboard */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
@@ -266,8 +260,6 @@
 				2D757A56162F6FC200104D8A /* first@2x.png in Resources */,
 				2D757A5B162F6FC200104D8A /* second.png in Resources */,
 				2D757A5D162F6FC200104D8A /* second@2x.png in Resources */,
-				2D757A60162F6FC200104D8A /* MainMenuViewController.xib in Resources */,
-				2D757A63162F6FC200104D8A /* SettingsViewController.xib in Resources */,
 				1FCE2C0B16335EDD00605D7F /* AudioSettings.xib in Resources */,
 				1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */,
 			);
@@ -337,22 +329,6 @@
 				2D757A48162F6FC200104D8A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D757A5F162F6FC200104D8A /* en */,
-			);
-			name = MainMenuViewController.xib;
-			sourceTree = "<group>";
-		};
-		2D757A61162F6FC200104D8A /* SettingsViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2D757A62162F6FC200104D8A /* en */,
-			);
-			name = SettingsViewController.xib;
 			sourceTree = "<group>";
 		};
 		2D757A73162F6FC300104D8A /* InfoPlist.strings */ = {

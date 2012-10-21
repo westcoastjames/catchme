@@ -16,22 +16,45 @@
 
 @synthesize recordButton, stopButton, playButton, saveButton;
 
+// Starts recording audio message
 - (IBAction)recordSound {
-    //TODO
+    if (!aRecorder.recording) {
+        recordButton.enabled = FALSE;
+        stopButton.enabled = TRUE;
+        playButton.enabled = FALSE;
+        
+        [aRecorder record];
+    }
 }
 
+// Stops recording audio message || stops playing audio message
 - (IBAction)stopSound {
-    //TODO
+    stopButton.enabled = FALSE;
+    playButton.enabled = TRUE;
+    recordButton.enabled = TRUE;
+    
+    if (aRecorder.recording) {
+        [aRecorder stop];
+    } else if (aPlayer.playing) {
+        [aRecorder stop];
+    }
 }
 
+// Starts playing audio message
 - (IBAction)playSound {
-    //TODO
+    if (!_audioRecorder.recording) {
+        playButton.enabled = FALSE;
+        stopButton.enabled = TRUE;
+        recordButton.enabled = FALSE;
+        
+        [_audioPlayer play];
+    }
 }
 
+// Saves the audio message
 - (IBAction)saveSound {
     //TODO
 }
 
-// This needs to be finished.
 
 @end

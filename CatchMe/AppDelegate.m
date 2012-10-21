@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 
 #import "MainMenuViewController.h"
-
 #import "SettingsViewController.h"
+#import "ContactsViewController.h"
 
 @implementation AppDelegate
 
@@ -36,8 +36,9 @@
     
     UIViewController *viewController1 = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
     UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+    UIViewController *viewControllerContacts = [[ContactsViewController alloc] initWithNibName:@"ContactsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewControllerSettings];
+    self.tabBarController.viewControllers = @[viewController1, viewControllerSettings, viewControllerContacts];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     

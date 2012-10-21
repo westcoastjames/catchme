@@ -33,6 +33,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
     UIViewController *viewController1 = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
     UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
@@ -47,6 +48,7 @@
         NSLog(@"Accelerometer: %@", [data description]);
     }];
     
+    //Jonathons implementation of the background notification
     NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
     
     UILocalNotification *notif = [[UILocalNotification alloc] init];

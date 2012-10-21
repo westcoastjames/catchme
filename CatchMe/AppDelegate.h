@@ -10,13 +10,12 @@
 
 #import <CoreMotion/CoreMotion.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> /*{
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     
-    I don't think we need these
     @public
     CMMotionManager* motionManager;
     NSOperationQueue* motionQueue;
-}*/
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

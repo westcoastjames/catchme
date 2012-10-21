@@ -33,7 +33,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+    UIViewController *viewController1 = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
     UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewController1, viewControllerSettings];

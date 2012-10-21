@@ -8,11 +8,11 @@
 
 #import "MainMenuViewController.h"
 
-@interface FirstViewController ()
+@interface MainMenuViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation MainMenuViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

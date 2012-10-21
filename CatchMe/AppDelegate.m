@@ -24,6 +24,14 @@
     self.tabBarController.viewControllers = @[viewController1, viewControllerSettings];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    motionManager.accelerometerUpdateInterval = (double)1/50; //50Hz
+    motionQueue = [[NSOperationQueue alloc] init];
+    
+    [motionManager startAccelerometerUpdatesToQueue: motionQueue withHandler: ^( CMAccelerometerData* data, NSError* error) {
+        NSLog(@"Accelerometer: %@", [data description]);
+    }];
+    
     return YES;
 }
 

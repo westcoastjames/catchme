@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MainMenuViewController.h
 //  CatchMe
 //
 //  Created by Jonathon Simister-Jennings on 10/17/12.

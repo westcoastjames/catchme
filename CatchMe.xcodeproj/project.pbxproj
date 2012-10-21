@@ -16,12 +16,12 @@
 		2D757A49162F6FC200104D8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A47162F6FC200104D8A /* InfoPlist.strings */; };
 		2D757A4B162F6FC200104D8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A4A162F6FC200104D8A /* main.m */; };
 		2D757A4F162F6FC200104D8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A4E162F6FC200104D8A /* AppDelegate.m */; };
-		2D757A52162F6FC200104D8A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A51162F6FC200104D8A /* FirstViewController.m */; };
+		2D757A52162F6FC200104D8A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A51162F6FC200104D8A /* MainMenuViewController.m */; };
 		2D757A54162F6FC200104D8A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A53162F6FC200104D8A /* first.png */; };
 		2D757A56162F6FC200104D8A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A55162F6FC200104D8A /* first@2x.png */; };
 		2D757A5B162F6FC200104D8A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5A162F6FC200104D8A /* second.png */; };
 		2D757A5D162F6FC200104D8A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5C162F6FC200104D8A /* second@2x.png */; };
-		2D757A60162F6FC200104D8A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5E162F6FC200104D8A /* FirstViewController.xib */; };
+		2D757A60162F6FC200104D8A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */; };
 		2D757A63162F6FC200104D8A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A61162F6FC200104D8A /* SettingsViewController.xib */; };
 		2D757A6B162F6FC300104D8A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A6A162F6FC300104D8A /* SenTestingKit.framework */; };
 		2D757A6C162F6FC300104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
@@ -57,13 +57,13 @@
 		2D757A4C162F6FC200104D8A /* CatchMe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CatchMe-Prefix.pch"; sourceTree = "<group>"; };
 		2D757A4D162F6FC200104D8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2D757A4E162F6FC200104D8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2D757A50162F6FC200104D8A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		2D757A51162F6FC200104D8A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		2D757A50162F6FC200104D8A /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		2D757A51162F6FC200104D8A /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		2D757A53162F6FC200104D8A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		2D757A55162F6FC200104D8A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		2D757A5A162F6FC200104D8A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		2D757A5C162F6FC200104D8A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		2D757A5F162F6FC200104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
+		2D757A5F162F6FC200104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenuViewController.xib; sourceTree = "<group>"; };
 		2D757A62162F6FC200104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		2D757A69162F6FC300104D8A /* CatchMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatchMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D757A6A162F6FC300104D8A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -137,8 +137,6 @@
 		2D757A44162F6FC200104D8A /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
-				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
-				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettings.h */,
@@ -146,11 +144,13 @@
 				1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */,
 				2D757A53162F6FC200104D8A /* first.png */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
-				2D757A50162F6FC200104D8A /* FirstViewController.h */,
-				2D757A51162F6FC200104D8A /* FirstViewController.m */,
-				2D757A5E162F6FC200104D8A /* FirstViewController.xib */,
+				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
+				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
+				2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
+				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
+				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
 				2D757A61162F6FC200104D8A /* SettingsViewController.xib */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
@@ -263,7 +263,7 @@
 				2D757A56162F6FC200104D8A /* first@2x.png in Resources */,
 				2D757A5B162F6FC200104D8A /* second.png in Resources */,
 				2D757A5D162F6FC200104D8A /* second@2x.png in Resources */,
-				2D757A60162F6FC200104D8A /* FirstViewController.xib in Resources */,
+				2D757A60162F6FC200104D8A /* MainMenuViewController.xib in Resources */,
 				2D757A63162F6FC200104D8A /* SettingsViewController.xib in Resources */,
 				1FCE2C0B16335EDD00605D7F /* AudioSettings.xib in Resources */,
 			);
@@ -302,7 +302,7 @@
 			files = (
 				2D757A4B162F6FC200104D8A /* main.m in Sources */,
 				2D757A4F162F6FC200104D8A /* AppDelegate.m in Sources */,
-				2D757A52162F6FC200104D8A /* FirstViewController.m in Sources */,
+				2D757A52162F6FC200104D8A /* MainMenuViewController.m in Sources */,
 				1FCE2C0F163366F100605D7F /* AudioSettings.m in Sources */,
 				2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */,
 			);
@@ -335,12 +335,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2D757A5E162F6FC200104D8A /* FirstViewController.xib */ = {
+		2D757A5E162F6FC200104D8A /* MainMenuViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2D757A5F162F6FC200104D8A /* en */,
 			);
-			name = FirstViewController.xib;
+			name = MainMenuViewController.xib;
 			sourceTree = "<group>";
 		};
 		2D757A61162F6FC200104D8A /* SettingsViewController.xib */ = {

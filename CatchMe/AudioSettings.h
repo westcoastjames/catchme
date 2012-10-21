@@ -10,6 +10,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import <AVFoundation/AVAudioPlayer.h>
+#import <AVFoundation/AVAudioRecorder.h>
+
 @interface AudioSettings : NSObject {
     
     UIWindow *window;

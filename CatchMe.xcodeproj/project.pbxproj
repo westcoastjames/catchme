@@ -29,7 +29,6 @@
 		2D757A75162F6FC300104D8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A73162F6FC300104D8A /* InfoPlist.strings */; };
 		2D757A78162F6FC300104D8A /* CatchMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A77162F6FC300104D8A /* CatchMeTests.m */; };
 		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
-		322775B91633770E0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775B81633770E0021833A /* CoreMotion.framework */; };
 		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +73,6 @@
 		2D757A77162F6FC300104D8A /* CatchMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchMeTests.m; sourceTree = "<group>"; };
 		2DFD4B3416337E9700396892 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2DFD4B3616337EA100396892 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		322775B81633770E0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		322775BB1633771B0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -84,7 +82,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */,
-				322775B91633770E0021833A /* CoreMotion.framework in Frameworks */,
 				2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */,
 				2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */,
 				2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */,
@@ -108,8 +105,6 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
-				1F80160316338AE000D89B08 /* AVFoundation.framework */,
-				322775B81633770E0021833A /* CoreMotion.framework */,
 				2D757A44162F6FC200104D8A /* CatchMe */,
 				2D757A70162F6FC300104D8A /* CatchMeTests */,
 				2D757A3D162F6FC200104D8A /* Frameworks */,
@@ -129,6 +124,7 @@
 		2D757A3D162F6FC200104D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F80160316338AE000D89B08 /* AVFoundation.framework */,
 				322775BB1633771B0021833A /* CoreMotion.framework */,
 				2D757A3E162F6FC200104D8A /* UIKit.framework */,
 				2D757A40162F6FC200104D8A /* Foundation.framework */,

@@ -14,6 +14,7 @@
     
     @public
     CMMotionManager* motionManager;
+    NSOperationQueue* motionQueue;
 }
 
 @property (strong, nonatomic) UIWindow *window;

@@ -10,7 +10,7 @@
 
 #import "FirstViewController.h"
 
-//#import "SettingsViewController.h"
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 
@@ -19,9 +19,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    /*UIViewController *viewController2 = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];*/
+    UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1];
+    self.tabBarController.viewControllers = @[viewController1, viewControllerSettings];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

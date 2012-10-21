@@ -8,11 +8,11 @@
 
 #import "SettingsViewController.h"
 
-@interface SecondViewController ()
+@interface SettingsViewController()
 
 @end
 
-@implementation SecondViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController{
+@interface SettingsViewController : UIViewController{
 
     NSString *userName;
     
 }
 
 - (IBAction)showNameSettings:(id)sender;
+
+@end
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
 		1FCE2C0B16335EDD00605D7F /* AudioSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */; };
 		1FCE2C0F163366F100605D7F /* AudioSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0E163366F100605D7F /* AudioSettings.m */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioSettings.xib; sourceTree = "<group>"; };
 		1FCE2C0D163366F100605D7F /* AudioSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSettings.h; sourceTree = "<group>"; };
 		1FCE2C0E163366F100605D7F /* AudioSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettings.m; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */,
 				322775B91633770E0021833A /* CoreMotion.framework in Frameworks */,
 				2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */,
 				2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */,
@@ -105,6 +108,7 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				1F80160316338AE000D89B08 /* AVFoundation.framework */,
 				322775B81633770E0021833A /* CoreMotion.framework */,
 				2D757A44162F6FC200104D8A /* CatchMe */,
 				2D757A70162F6FC300104D8A /* CatchMeTests */,
@@ -151,8 +155,6 @@
 				2D757A5E162F6FC200104D8A /* FirstViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
-				2D757A57162F6FC200104D8A /* SecondViewController.h */,
-				2D757A58162F6FC200104D8A /* SecondViewController.m */,
 				2D757A61162F6FC200104D8A /* SettingsViewController.xib */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);

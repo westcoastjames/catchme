@@ -7,6 +7,10 @@
 //
 
 #import "AudioSettings.h"
+#import "AVAudioRecorder.h"
+#import "AVAudioPlayer.h"
+
+// Audio recording and playbac can be done through the use of the AVAudioRecorder and AVAudioPlayer API
 
 @implementation AudioSettings
 

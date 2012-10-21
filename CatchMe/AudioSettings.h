@@ -18,6 +18,9 @@
     UIButton *stopButton;
     UIButton *playButton;
     UIButton *saveButton;
+    
+    AVAudioRecorder *recorder;
+    AVAudioPlayer *player;
 }
 
 @property (nonatomic) IBOutlet UIButton *recordButton;

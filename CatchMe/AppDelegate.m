@@ -16,6 +16,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //detecting if the accelerometer is available on the device
+    CMMotionManager *motionManager = [[CMMotionManager alloc]init];
+    
+    if ([motionManager isAccelerometerAvailable]){
+        NSLog(@"Accelerometer is available.");
+    }   else{
+        NSLog(@"Accelerometer is unavailable.");
+    }
+    
+    if ([motionManager isAccelerometerActive]){
+        NSLog(@"Accelerometer is active.");
+    }   else{
+        NSLog(@"Accelerometer is not active.");
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];

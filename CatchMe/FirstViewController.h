@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import <CoreMotion/CoreMotion.h>
+
 @interface FirstViewController : UIViewController
 
 @end

@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  CatchMe
 //
-//  Created by Jonathon Simister-Jennings on 10/17/12.
+//  Created by Jonathon Simister on 10/17/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 #import "FirstViewController.h"
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 
@@ -19,9 +19,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[viewController1, viewControllerSettings];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

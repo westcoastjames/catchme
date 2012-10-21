@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
-@interface SecondViewController ()
+@interface SettingsViewController()
 
 @end
 
-@implementation SecondViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

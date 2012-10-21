@@ -18,7 +18,6 @@
 		2D757A52162F6FC200104D8A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A51162F6FC200104D8A /* FirstViewController.m */; };
 		2D757A54162F6FC200104D8A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A53162F6FC200104D8A /* first.png */; };
 		2D757A56162F6FC200104D8A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A55162F6FC200104D8A /* first@2x.png */; };
-		2D757A59162F6FC200104D8A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A58162F6FC200104D8A /* SecondViewController.m */; };
 		2D757A5B162F6FC200104D8A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5A162F6FC200104D8A /* second.png */; };
 		2D757A5D162F6FC200104D8A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5C162F6FC200104D8A /* second@2x.png */; };
 		2D757A60162F6FC200104D8A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A5E162F6FC200104D8A /* FirstViewController.xib */; };
@@ -28,6 +27,9 @@
 		2D757A6D162F6FC300104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
 		2D757A75162F6FC300104D8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A73162F6FC300104D8A /* InfoPlist.strings */; };
 		2D757A78162F6FC300104D8A /* CatchMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A77162F6FC300104D8A /* CatchMeTests.m */; };
+		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
+		322775B91633770E0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775B81633770E0021833A /* CoreMotion.framework */; };
+		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		2D757A74162F6FC300104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D757A76162F6FC300104D8A /* CatchMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchMeTests.h; sourceTree = "<group>"; };
 		2D757A77162F6FC300104D8A /* CatchMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchMeTests.m; sourceTree = "<group>"; };
+		2DFD4B3416337E9700396892 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2DFD4B3616337EA100396892 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		322775B81633770E0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		322775BB1633771B0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +83,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				322775B91633770E0021833A /* CoreMotion.framework in Frameworks */,
 				2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */,
 				2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */,
 				2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */,
+				322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,7 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				322775B81633770E0021833A /* CoreMotion.framework */,
 				2D757A44162F6FC200104D8A /* CatchMe */,
 				2D757A70162F6FC300104D8A /* CatchMeTests */,
 				2D757A3D162F6FC200104D8A /* Frameworks */,
@@ -118,6 +127,7 @@
 		2D757A3D162F6FC200104D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				322775BB1633771B0021833A /* CoreMotion.framework */,
 				2D757A3E162F6FC200104D8A /* UIKit.framework */,
 				2D757A40162F6FC200104D8A /* Foundation.framework */,
 				2D757A42162F6FC200104D8A /* CoreGraphics.framework */,
@@ -129,6 +139,8 @@
 		2D757A44162F6FC200104D8A /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
+				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettings.h */,
@@ -295,8 +307,8 @@
 				2D757A4B162F6FC200104D8A /* main.m in Sources */,
 				2D757A4F162F6FC200104D8A /* AppDelegate.m in Sources */,
 				2D757A52162F6FC200104D8A /* FirstViewController.m in Sources */,
-				2D757A59162F6FC200104D8A /* SecondViewController.m in Sources */,
 				1FCE2C0F163366F100605D7F /* AudioSettings.m in Sources */,
+				2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

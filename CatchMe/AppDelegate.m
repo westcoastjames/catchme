@@ -32,8 +32,19 @@
         NSLog(@"Accelerometer: %@", [data description]);
     }];
     
+    NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
+    
+    UILocalNotification *notif = [[UILocalNotification alloc] init];
+    notif.fireDate = date;
+    notif.timeZone = [NSTimeZone defaultTimeZone];
+    notif.alertBody = @"Notification message";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+    
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -61,6 +72,12 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    NSLog(@"didReceiveLocalNotification: %@", notification.alertBody);
+}
+
 
 /*
 // Optional UITabBarControllerDelegate method.

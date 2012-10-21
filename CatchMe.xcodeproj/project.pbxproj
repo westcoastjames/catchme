@@ -151,7 +151,9 @@
 				2D757A5E162F6FC200104D8A /* FirstViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
-				2D757A61162F6FC200104D8A /* SecondViewController.xib */,
+				2D757A57162F6FC200104D8A /* SecondViewController.h */,
+				2D757A58162F6FC200104D8A /* SecondViewController.m */,
+				2D757A61162F6FC200104D8A /* SettingsViewController.xib */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
 			path = CatchMe;

@@ -11,5 +11,6 @@
 #import <CoreMotion/CoreMotion.h>
 
 @interface FirstViewController : UIViewController
+@property (nonatomic, strong) CMMotionManager *motionManager;
 
 @end

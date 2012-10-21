@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
 @interface SecondViewController ()
 

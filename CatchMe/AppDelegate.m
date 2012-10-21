@@ -10,7 +10,7 @@
 
 #import "FirstViewController.h"
 
-#import "SecondViewController.h"
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 

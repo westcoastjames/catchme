@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  SettingsViewController.h
 //  CatchMe
 //
 //  Created by Jonathon Simister-Jennings on 10/17/12.
@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController{
+
+    NSString *userName;
+    
+}
+
+- (IBAction)showNameSettings:(id)sender;
 
 @end
 

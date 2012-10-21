@@ -16,6 +16,8 @@
 
 @synthesize recordButton, stopButton, playButton, saveButton;
 
+// Recorder needs to be initialized in a method
+
 // Starts recording audio message
 - (IBAction)recordSound:(id) sender {
     if (!aRecorder.recording) {

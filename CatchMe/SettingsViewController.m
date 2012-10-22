@@ -13,6 +13,7 @@
 @end
 
 @implementation SettingsViewController
+@synthesize swOn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,14 +27,33 @@
 							
 - (void)viewDidLoad
 {
+    NSString* ison;
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    db = [[DBConnection alloc] init];
+
+    ison = [db getSetting:@"on"];
+    
+    if([ison isEqualToString:@"yes"]) {
+        [swOn setOn:true];
+    } else {
+        [swOn setOn:false];
+    }
+    
 }
 
 - (void)viewDidUnload
 {
+    if (swOn.on) {
+        [db setSetting:@"on" value:@"yes"];
+    } else {
+        [db setSetting:@"on" value:@"no"];
+    }
+    
+    [db closeDB];
+    
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

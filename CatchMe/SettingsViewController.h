@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBConnection.h"
 
 @interface SettingsViewController : UIViewController{
-
-
-    
+    UISwitch* swOn;
+    DBConnection* db;
 }
 
-
+@property (nonatomic, strong) UISwitch* swOn;
 
 @end
-
-
-

@@ -40,6 +40,19 @@
     if([ison isEqualToString:@"yes"]) {
         [swOn setOn:true];
         NSLog(@"on loaded");
+        //retrieve accelerometer data
+        motionManager = [[CMMotionManager alloc]init];
+        
+        //if ([motionManager isAccelerometerAvailable]){
+            NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+            [motionManager
+             startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                 NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
+             }];
+        /*}else{
+            NSLog(@"Accelerometer did not work.");
+        }*/
+        
     } else {
         [swOn setOn:false];
         NSLog(@"off loaded");

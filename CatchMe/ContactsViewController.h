@@ -11,6 +11,7 @@
 
 @interface ContactsViewController : UIViewController {
     DBConnection* db;
+    UITapGestureRecognizer* tapRecognizer;
 }
 
 @property (nonatomic, strong) UITextField *txtNumber;

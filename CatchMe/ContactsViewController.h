@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DBConnection.h"
 
-@interface ContactsViewController : UIViewController
+@interface ContactsViewController : UIViewController {
+    DBConnection* db;
+}
+
+@property (nonatomic, strong) UITextField *txtNumber;
 
 @end

@@ -13,6 +13,7 @@
 @end
 
 @implementation ContactsViewController
+@synthesize txtNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,10 +21,7 @@
     if (self) {
         self.title = NSLocalizedString(@"Contacts", @"Contacts");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
-        
-        
     }
-    
     
     return self;
 }
@@ -31,13 +29,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    //db = [DBConnection init];
+    
+    //txtNumber.text = [db getSetting: @"number"];
+    
 }
 
 - (void)viewDidUnload
 {
+    [db setSetting:@"number" value:txtNumber.text];
+    
+    [db closeDB];
+    
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

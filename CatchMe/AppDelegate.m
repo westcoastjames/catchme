@@ -42,6 +42,8 @@
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
+    
+    
     motionManager.accelerometerUpdateInterval = (double)1/50; //50Hz
     motionQueue = [[NSOperationQueue alloc] init];
     

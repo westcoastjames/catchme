@@ -30,9 +30,9 @@
 {
     [super viewDidLoad];
 	
-    //db = [DBConnection init];
+    db = [[DBConnection alloc] init];
     
-    //txtNumber.text = [db getSetting: @"number"];
+    txtNumber.text = [db getSetting: @"number"];
     
 }
 

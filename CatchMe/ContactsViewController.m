@@ -32,8 +32,6 @@
 	
     db = [[DBConnection alloc] init];
     
-    txtNumber.text = [db getSetting: @"number"];
-    
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
     [nc addObserver:self selector:@selector(keyboardWillShow:) name:
@@ -46,6 +44,22 @@
                             action:@selector(didTapAnywhere:)];
 
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    txtNumber.text = [db getSetting: @"number"];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [db setSetting:@"number" value:txtNumber.text];
+    
+    NSLog(@"set setting");
+    
+    NSString* s;
+    
+    s = [db getSetting:@"number"];
+    
+    NSLog(s);
 }
 
 -(void) keyboardWillShow:(NSNotification *) note {
@@ -64,9 +78,7 @@
 
 
 - (void)viewDidUnload
-{
-    [db setSetting:@"number" value:txtNumber.text];
-    
+{    
     [db closeDB];
     
     [super viewDidUnload];

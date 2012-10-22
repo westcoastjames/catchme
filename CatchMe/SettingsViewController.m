@@ -27,30 +27,35 @@
 							
 - (void)viewDidLoad
 {
-    NSString* ison;
-    
     [super viewDidLoad];
 
     db = [[DBConnection alloc] init];
+}
 
+-(void)viewWillAppear:(BOOL)animated {
+    NSString* ison;
+    
     ison = [db getSetting:@"on"];
     
     if([ison isEqualToString:@"yes"]) {
         [swOn setOn:true];
+        NSLog(@"on loaded");
     } else {
         [swOn setOn:false];
+        NSLog(@"off loaded");
     }
-    
 }
 
-- (void)viewDidUnload
-{
+-(void)viewDidDisappear:(BOOL)animated {
     if (swOn.on) {
         [db setSetting:@"on" value:@"yes"];
     } else {
         [db setSetting:@"on" value:@"no"];
     }
-    
+}
+
+- (void)viewDidUnload
+{    
     [db closeDB];
     
     [super viewDidUnload];

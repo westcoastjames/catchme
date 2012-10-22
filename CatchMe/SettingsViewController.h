@@ -14,6 +14,6 @@
     DBConnection* db;
 }
 
-@property (nonatomic, strong) UISwitch* swOn;
+@property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
 @end

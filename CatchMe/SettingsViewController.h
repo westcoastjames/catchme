@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "DBConnection.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface SettingsViewController : UIViewController{
     UISwitch* swOn;
     DBConnection* db;
+    CMMotionManager* motionManager;
 }
 
 @property (nonatomic, strong) UISwitch* swOn;
+@property (nonatomic, strong) CMMotionManager* motionManager;
 
 @end

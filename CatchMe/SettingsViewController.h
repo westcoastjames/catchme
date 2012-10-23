@@ -16,7 +16,6 @@
     CMMotionManager* motionManager;
 }
 
-@property (nonatomic, strong) UISwitch* swOn;
-@property (nonatomic, strong) CMMotionManager* motionManager;
+@property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
 @end

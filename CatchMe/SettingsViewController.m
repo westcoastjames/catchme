@@ -27,20 +27,41 @@
 							
 - (void)viewDidLoad
 {
-    NSString* ison;
-    
     [super viewDidLoad];
 
     db = [[DBConnection alloc] init];
+}
 
+-(void)viewWillAppear:(BOOL)animated {
+    NSString* ison;
+    
     ison = [db getSetting:@"on"];
     
     if([ison isEqualToString:@"on"]) {
         [swOn setOn:true];
+<<<<<<< HEAD
     
+=======
+        NSLog(@"on loaded");
+        //retrieve accelerometer data
+        motionManager = [[CMMotionManager alloc]init];
+        
+        //if ([motionManager isAccelerometerAvailable]){
+            NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+            [motionManager
+             startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                 NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
+             }];
+        /*}else{
+            NSLog(@"Accelerometer did not work.");
+        }*/
+        
+>>>>>>> 2e7c91a3eb4330a260cca918b1da6762e693d219
     } else {
         [swOn setOn:false];
+        NSLog(@"off loaded");
     }
+<<<<<<< HEAD
     // retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
 
@@ -52,19 +73,23 @@
          }];
     }else{
         NSLog(@"Accelerometer did not work.");
+=======
+>>>>>>> 2e7c91a3eb4330a260cca918b1da6762e693d219
 }
 }
 
 
 
-- (void)viewDidUnload
-{
+-(void)viewDidDisappear:(BOOL)animated {
     if (swOn.on) {
         [db setSetting:@"on" value:@"yes"];
     } else {
         [db setSetting:@"on" value:@"no"];
     }
-    
+}
+
+- (void)viewDidUnload
+{    
     [db closeDB];
     
     [super viewDidUnload];

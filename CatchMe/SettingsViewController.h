@@ -18,4 +18,6 @@
 
 @property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
+@property (nonatomic, strong) IBAction UIButon* button;
+
 @end

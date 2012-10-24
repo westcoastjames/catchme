@@ -39,9 +39,7 @@
     
     if([ison isEqualToString:@"on"]) {
         [swOn setOn:true];
-<<<<<<< HEAD
-    
-=======
+
         NSLog(@"on loaded");
         //retrieve accelerometer data
         motionManager = [[CMMotionManager alloc]init];
@@ -55,13 +53,10 @@
         /*}else{
             NSLog(@"Accelerometer did not work.");
         }*/
-        
->>>>>>> 2e7c91a3eb4330a260cca918b1da6762e693d219
     } else {
         [swOn setOn:false];
         NSLog(@"off loaded");
     }
-<<<<<<< HEAD
     // retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
 
@@ -73,8 +68,6 @@
          }];
     }else{
         NSLog(@"Accelerometer did not work.");
-=======
->>>>>>> 2e7c91a3eb4330a260cca918b1da6762e693d219
 }
 }
 

@@ -13,7 +13,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AVFoundation/AVAudioRecorder.h>
 
-@interface AudioSettings : NSObject {
+@interface AudioSettings : UIViewController {
     
     UIWindow *window;
     
@@ -38,5 +38,6 @@
 - (IBAction)stopSound;
 - (IBAction)playSound;
 - (IBAction)saveSound;
+- (IBAction)goMainMenu;
 
 @end

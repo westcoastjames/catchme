@@ -154,27 +154,27 @@
 		2D757A44162F6FC200104D8A /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
-				2D8E43541634A5B300D008B2 /* ContactsViewController.xib */,
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettings.h */,
 				1FCE2C0E163366F100605D7F /* AudioSettings.m */,
 				1FCE2C0A16335EDD00605D7F /* AudioSettings.xib */,
+				2D8E43571634A61A00D008B2 /* ContactsViewController.h */,
+				2D8E43581634A61A00D008B2 /* ContactsViewController.m */,
+				2D8E43541634A5B300D008B2 /* ContactsViewController.xib */,
+				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
+				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D757A53162F6FC200104D8A /* first.png */,
-				EAB0603A1634981300CFD930 /* MainMenuViewController.xib */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
+				EAB0603A1634981300CFD930 /* MainMenuViewController.xib */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
 				EAB060371634980100CFD930 /* SettingsViewController.xib */,
 				1A69D069163399B600EF576B /* Storyboard.storyboard */,
-				2D8E43571634A61A00D008B2 /* ContactsViewController.h */,
-				2D8E43581634A61A00D008B2 /* ContactsViewController.m */,
-				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
-				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
 			path = CatchMe;

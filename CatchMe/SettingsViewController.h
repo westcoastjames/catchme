@@ -10,14 +10,17 @@
 #import "DBConnection.h"
 #import <CoreMotion/CoreMotion.h>
 
-@interface SettingsViewController : UIViewController{
+@interface SettingsViewController : UIViewController {
     UISwitch* swOn;
     DBConnection* db;
     CMMotionManager* motionManager;
+    UIButton* button;
 }
+
+- (IBAction)goAudioSettings;
 
 @property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
-@property (nonatomic, strong) IBAction UIButon* button;
+//@property (nonatomic, strong) IBAction UIButton* button;
 
 @end

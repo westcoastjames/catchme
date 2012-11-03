@@ -12,7 +12,7 @@
 
 // Audio recording and playback can be done through the use of the AVAudioRecorder and AVAudioPlayer API
 
-@implementation AudioSettings;
+@implementation AudioSettings
 
 @synthesize recordButton, stopButton, playButton, saveButton;
 
@@ -66,5 +66,9 @@
     //TODO
 }
 
+
+-(IBAction)goMainMenu {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 @end

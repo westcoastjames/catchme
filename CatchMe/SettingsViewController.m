@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "AudioSettings.h"
 
 @interface SettingsViewController()
 
@@ -93,4 +94,12 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+// Action to switch to the Audio Settings View
+- (IBAction)goAudioSettings {
+    AudioSettings *audioSettingsView = [[AudioSettings alloc] initWithNibName:@"AudioSettings" bundle:nil];
+    audioSettingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:audioSettingsView animated:YES];
+}
+
 @end
+

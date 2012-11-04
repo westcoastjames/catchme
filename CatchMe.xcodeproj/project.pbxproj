@@ -33,6 +33,8 @@
 		2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E43581634A61A00D008B2 /* ContactsViewController.m */; };
 		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
 		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
+		32779DE31646051100CDEAB3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE21646051100CDEAB3 /* icon@2x.png */; };
+		32779DE61646051700CDEAB3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE51646051700CDEAB3 /* icon.png */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
@@ -85,6 +87,8 @@
 		2DFD4B3416337E9700396892 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2DFD4B3616337EA100396892 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		322775BB1633771B0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		32779DE21646051100CDEAB3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		32779DE51646051700CDEAB3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				32779DE51646051700CDEAB3 /* icon.png */,
+				32779DE21646051100CDEAB3 /* icon@2x.png */,
 				E110067C1635051D00FF6158 /* Default-568h@2x.png */,
 				2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */,
 				2D757A44162F6FC200104D8A /* CatchMe */,
@@ -308,6 +314,8 @@
 				EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */,
 				2D8E43551634A5B300D008B2 /* ContactsViewController.xib in Resources */,
 				E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */,
+				32779DE31646051100CDEAB3 /* icon@2x.png in Resources */,
+				32779DE61646051700CDEAB3 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

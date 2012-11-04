@@ -14,9 +14,43 @@
 
 @implementation AudioSettingsViewController
 
-@synthesize recordButton, stopButton, playButton, saveButton;
+@synthesize recordButton, stopButton, playButton, saveButton, defaultButton;
 
-// Recorder needs to be initialized in a method
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Initialize audio recorder
+   // NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
+    NSError *recordError = nil;
+    
+    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
+                                      [NSNumber numberWithInt:16], AVEncoderBitRateKey, [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
+                                      [NSNumber numberWithFloat:44100.0], AVSampleRateKey, nil];
+    
+   // aRecorder = [[AVAudioRecorder alloc] initWithURL:URLtoHoldFile settings:recorderSettings error:&recordError];
+    
+    if (recordError) {
+        NSLog(@"error: %@", [recordError localizedDescription]);
+    } else {
+        [aRecorder prepareToRecord];
+    }
+    
+    
+    // Initialize audio player to default sound file
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
 
 // Starts recording audio message
 - (IBAction)recordSound:(id) sender {
@@ -25,8 +59,6 @@
         recordButton.enabled = FALSE;
         stopButton.enabled = TRUE;
         
-        
-        [aRecorder prepareToRecord];
         [aRecorder record];
     }
 }
@@ -43,6 +75,7 @@
     else if (aPlayer.playing)
         [aRecorder stop];
     
+    //Testing
     NSLog(@"The stop button was pressed");
 }
 
@@ -61,6 +94,10 @@
         else
             [aPlayer play];
     }
+}
+
+- (IBAction)defaultSound {
+    //TODO
 }
 
 // Saves the audio message

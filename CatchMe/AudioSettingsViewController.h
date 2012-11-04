@@ -21,6 +21,7 @@
     UIButton *stopButton;
     UIButton *playButton;
     UIButton *saveButton;
+    UIButton *defaultButton;
     
     AVAudioRecorder *aRecorder;
     AVAudioPlayer *aPlayer;
@@ -30,6 +31,7 @@
 @property (nonatomic) IBOutlet UIButton *stopButton;
 @property (nonatomic) IBOutlet UIButton *playButton;
 @property (nonatomic) IBOutlet UIButton *saveButton;
+@property (nonatomic) IBOutlet UIButton *defaultButton;
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
@@ -38,6 +40,7 @@
 - (IBAction)stopSound;
 - (IBAction)playSound;
 - (IBAction)saveSound;
+- (IBAction)defaultSound;
 - (IBAction)goMainMenu;
 
 @end

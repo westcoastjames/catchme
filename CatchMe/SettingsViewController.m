@@ -71,8 +71,15 @@
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-             NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
-             NSLog(@"Vector Sum = %.f", sqrt(accelerometerData.acceleration.x * accelerometerData.acceleration.x + accelerometerData.acceleration.y * accelerometerData.acceleration.y + accelerometerData.acceleration.z * accelerometerData.acceleration.z));
+             
+             double x_accel = accelerometerData.acceleration.x;
+             double y_accel = accelerometerData.acceleration.y;
+             double z_accel = accelerometerData.acceleration.z;
+             
+             NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+             
+             double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
+             NSLog(@"Vector Sum = %.06f", vector_sum);
          }];
     }else{
         NSLog(@"Accelerometer did not work.");

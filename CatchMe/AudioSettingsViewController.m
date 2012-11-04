@@ -42,6 +42,8 @@
         [aRecorder stop];
     else if (aPlayer.playing)
         [aRecorder stop];
+    
+    NSLog(@"The stop button was pressed");
 }
 
 // Starts playing audio message
@@ -67,7 +69,7 @@
 }
 
 
--(IBAction)goMainMenu {
+- (IBAction)goMainMenu {
     [self dismissModalViewControllerAnimated:YES];
 }
 

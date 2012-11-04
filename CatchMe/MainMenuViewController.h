@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreMotion/CoreMotion.h>
 
 
-
-@interface MainMenuViewController : UIViewController
-
+@interface MainMenuViewController : UIViewController {
+    CMMotionManager* motionManager;
+}
 
 @end

@@ -23,11 +23,22 @@
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    motionManager = [[CMMotionManager alloc] init];
+    motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
+    
+    [motionManager startDeviceMotionUpdates];
+     NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
+    
+
+}
 							
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     
     
 }

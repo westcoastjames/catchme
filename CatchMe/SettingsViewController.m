@@ -76,12 +76,13 @@
              
              NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
              
-             double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-             NSLog(@"Vector Sum = %.06f", vector_sum);
+             //double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
+             //NSLog(@"Vector Sum = %.06f", vector_sum);
          }];
-    }else{
+    }
+    else{
         NSLog(@"Accelerometer did not work.");
-}
+    }
 }
 
 

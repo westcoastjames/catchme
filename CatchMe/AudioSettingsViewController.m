@@ -107,7 +107,8 @@
 
 
 - (IBAction)goMainMenu {
-    [self dismissModalViewControllerAnimated:YES];
+    //[self dismissModalViewControllerAnimated:YES];
+    [self resignFirstResponder];
 }
 
 @end

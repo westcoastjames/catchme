@@ -1,5 +1,5 @@
 //
-//  AudioSettings.h
+//  AudioSettingsViewController.h
 //  CatchMe
 //
 //  Created by Nicholas Hoekstra on 10/20/12.
@@ -13,7 +13,7 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <AVFoundation/AVAudioRecorder.h>
 
-@interface AudioSettings : UIViewController {
+@interface AudioSettingsViewController : UIViewController {
     
     UIWindow *window;
     

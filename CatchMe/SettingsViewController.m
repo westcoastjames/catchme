@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "AudioSettings.h"
+#import "AudioSettingsViewController.h"
 
 @interface SettingsViewController()
 
@@ -15,6 +15,9 @@
 
 @implementation SettingsViewController
 @synthesize swOn;
+@synthesize settingItems;
+
+#pragma mark - Accelerometer Methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +34,12 @@
     [super viewDidLoad];
 
     db = [[DBConnection alloc] init];
+    
+    // Setup NSArray for Settings Table
+    settingItems = [[NSArray alloc] initWithObjects:@"Name", @"Age", @"Medical Conditions", @"Audio Settings", @"Text Message Settings", @"Emergency Contacts", nil];
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     NSString* ison;
     
     ison = [db getSetting:@"on"];
@@ -74,7 +80,7 @@
 
 
 
--(void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     if (swOn.on) {
         [db setSetting:@"on" value:@"yes"];
     } else {
@@ -96,9 +102,33 @@
 
 // Action to switch to the Audio Settings View
 - (IBAction)goAudioSettings {
-    AudioSettings *audioSettingsView = [[AudioSettings alloc] initWithNibName:@"AudioSettings" bundle:nil];
+    AudioSettingsViewController *audioSettingsView = [[AudioSettingsViewController alloc] initWithNibName:@"AudioSettings" bundle:nil];
     audioSettingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:audioSettingsView animated:YES];
+}
+
+#pragma mark - TableView Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return settingItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Reuses an empty cell to save memory
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    //If no empty cells, create a new one
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    
+    // Add button arrow
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    // Add cell text
+    cell.textLabel.text = [settingItems objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 @end

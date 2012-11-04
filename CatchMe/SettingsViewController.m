@@ -15,7 +15,7 @@
 
 @implementation SettingsViewController
 @synthesize swOn;
-@synthesize settingItems;
+//@synthesize settingItems;
 
 #pragma mark - Accelerometer Methods
 
@@ -36,7 +36,7 @@
     db = [[DBConnection alloc] init];
     
     // Setup NSArray for Settings Table
-    settingItems = [[NSArray alloc] initWithObjects:@"Name", @"Age", @"Medical Conditions", @"Audio Settings", @"Text Message Settings", @"Emergency Contacts", nil];
+    //settingItems = [[NSArray alloc] initWithObjects:@"Name", @"Age", @"Medical Conditions", @"Audio Settings", @"Text Message Settings", @"Emergency Contacts", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -99,6 +99,7 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+/*
 
 // Action to switch to the Audio Settings View
 - (IBAction)goAudioSettings {
@@ -130,6 +131,7 @@
     
     return cell;
 }
+*/
 
 @end
 

@@ -30,18 +30,20 @@
         NSLog(@"Accelerometer is not active.");
     }
     
+     /* Commenting out to use the Storyboard interface builder
+      
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
-    //UIViewController *viewController1 = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
+  
+    //UIViewController *viewController1 = [[UIPageViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
     UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     UIViewController *viewControllerContacts = [[ContactsViewController alloc] initWithNibName:@"ContactsViewController" bundle:nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[viewControllerSettings, viewControllerContacts];
     self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
-    
-    
+    [self.window makeKeyAndVisible]; 
+      
+      */
     
     motionManager.accelerometerUpdateInterval = (double)1/50; //50Hz
     motionQueue = [[NSOperationQueue alloc] init];

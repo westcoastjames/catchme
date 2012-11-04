@@ -120,6 +120,7 @@
 		1F1E2E571645C07800DE81BA /* GUI Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A69D069163399B600EF576B /* Storyboard.storyboard */,
 				1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */,
 				2D8E43541634A5B300D008B2 /* ContactsViewController.xib */,
 				EAB0603A1634981300CFD930 /* MainMenuViewController.xib */,
@@ -135,7 +136,6 @@
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
-				1A69D069163399B600EF576B /* Storyboard.storyboard */,
 			);
 			name = "Other Files";
 			sourceTree = "<group>";

@@ -10,11 +10,12 @@
 #import "DBConnection.h"
 #import <CoreMotion/CoreMotion.h>
 
-@interface SettingsViewController : UIViewController /*<UITableViewDataSource, UITableViewDelegate>*/ {
+// UITableViewController used to fix bug associated this class with the Storyboard
+@interface SettingsViewController : UITableViewController /*<UITableViewDataSource, UITableViewDelegate>*/ {
     UISwitch* swOn;
     DBConnection* db;
     CMMotionManager* motionManager;
-    UIButton* button;
+   // UIButton* button;
     
     //NSArray * settingItems; // Used for the settings menu interface
 }

@@ -88,4 +88,9 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+- (IBAction)goMainMenu {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 @end

@@ -16,4 +16,6 @@
 
 @property (nonatomic, strong) UITextField *txtNumber;
 
+- (IBAction)goMainMenu;
+
 @end

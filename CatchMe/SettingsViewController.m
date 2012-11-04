@@ -17,8 +17,6 @@
 @synthesize swOn;
 //@synthesize settingItems;
 
-#pragma mark - Accelerometer Methods
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -108,6 +106,9 @@
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+// This code was from the xib version
+
 /*
 
 // Action to switch to the Audio Settings View

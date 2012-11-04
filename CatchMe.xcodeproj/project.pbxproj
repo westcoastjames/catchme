@@ -71,10 +71,10 @@
 		2D757A4E162F6FC200104D8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D757A50162F6FC200104D8A /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		2D757A51162F6FC200104D8A /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		2D757A53162F6FC200104D8A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		2D757A55162F6FC200104D8A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		2D757A5A162F6FC200104D8A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		2D757A5C162F6FC200104D8A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		2D757A53162F6FC200104D8A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = CatchMe/first.png; sourceTree = "<group>"; };
+		2D757A55162F6FC200104D8A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "CatchMe/first@2x.png"; sourceTree = "<group>"; };
+		2D757A5A162F6FC200104D8A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = CatchMe/second.png; sourceTree = "<group>"; };
+		2D757A5C162F6FC200104D8A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "CatchMe/second@2x.png"; sourceTree = "<group>"; };
 		2D757A69162F6FC300104D8A /* CatchMeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatchMeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D757A6A162F6FC300104D8A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2D757A72162F6FC300104D8A /* CatchMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CatchMeTests-Info.plist"; sourceTree = "<group>"; };
@@ -133,20 +133,13 @@
 			name = "GUI Files";
 			sourceTree = "<group>";
 		};
-		1F1E2E581645C0AC00DE81BA /* Other Files */ = {
+		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
 				2D757A53162F6FC200104D8A /* first.png */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
-			);
-			name = "Other Files";
-			sourceTree = "<group>";
-		};
-		2D757A2F162F6FC200104D8A = {
-			isa = PBXGroup;
-			children = (
 				32779DE51646051700CDEAB3 /* icon.png */,
 				32779DE21646051100CDEAB3 /* icon@2x.png */,
 				E110067C1635051D00FF6158 /* Default-568h@2x.png */,
@@ -196,7 +189,6 @@
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
 				1F1E2E571645C07800DE81BA /* GUI Files */,
-				1F1E2E581645C0AC00DE81BA /* Other Files */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
 			path = CatchMe;

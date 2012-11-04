@@ -21,9 +21,7 @@
 
 @property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
-<<<<<<< HEAD
-=======
 //@property (nonatomic, strong) IBAction UIButton* button;
->>>>>>> 4dfe5938f4d5a01029bf1fa1381fd1b65e6b2d40
+
 
 @end

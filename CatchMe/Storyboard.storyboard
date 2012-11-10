@@ -407,7 +407,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ci3-QW-49O">
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="goMainMenu" destination="hvv-My-3HZ" id="1Ag-Ts-OxF"/>
+                                                <action selector="goMainMenu" destination="gnr-17-nXI" id="naf-7U-fxR"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="V6i-Ry-fgD">

@@ -7,25 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DBConnection.h"
-#import <CoreMotion/CoreMotion.h>
 
-// UITableViewController used to fix bug associated this class with the Storyboard
-@interface SettingsViewController : UITableViewController /*<UITableViewDataSource, UITableViewDelegate>*/ {
-    UISwitch* swOn;
-    DBConnection* db;
-    CMMotionManager* motionManager;
-   // UIButton* button;
-    
-    //NSArray * settingItems; // Used for the settings menu interface
+
+@interface SettingsViewController : UITableViewController {
+
 }
 
-//- (IBAction)goAudioSettings;
 
 @property (nonatomic, strong) IBOutlet UISwitch* swOn;
-//@property (nonatomic, strong) NSArray * settingItems;
-
-//@property (nonatomic, strong) IBAction UIButton* button;
 
 
 @end

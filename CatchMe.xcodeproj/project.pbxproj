@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A69D069163399B600EF576B /* Storyboard.storyboard */; };
 		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
+		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
 		1FCE2C0B16335EDD00605D7F /* AudioSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */; };
 		1FCE2C0F163366F100605D7F /* AudioSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */; };
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		1A69D069163399B600EF576B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1FB9AE3C164EE0FB0084D2E6 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioSettingsViewController.xib; sourceTree = "<group>"; };
 		1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSettingsViewController.h; sourceTree = "<group>"; };
 		1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettingsViewController.m; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
+				1FB9AE3C164EE0FB0084D2E6 /* PersonalInfoViewController.h */,
+				1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
 				1F1E2E571645C07800DE81BA /* GUI Files */,
@@ -349,6 +354,7 @@
 				2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */,
 				2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */,
 				2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */,
+				1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

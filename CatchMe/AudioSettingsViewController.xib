@@ -46,11 +46,12 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="727060808"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIBarStyle">1</int>
-						<array class="NSMutableArray" key="IBUIItems">
+						<array key="IBUIItems">
 							<object class="IBUINavigationItem" id="838778331">
 								<reference key="IBUINavigationBar" ref="218826125"/>
 								<string key="IBUITitle">Audio Message Settings</string>
@@ -73,6 +74,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 316}, {134, 51}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="440762366"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -108,6 +110,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{162, 316}, {138, 52}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="221301872"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -130,6 +133,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 384}, {134, 51}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="433530102"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -152,6 +156,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{162, 384}, {138, 51}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -173,6 +178,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 238}, {285, 90}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="118970371"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -205,6 +211,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{206, 81}, {94, 27}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="225194043"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -218,6 +225,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{26, 68}, {206, 53}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="630597100"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -247,6 +255,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{18, 229}, {284, 23}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="694893100"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -260,6 +269,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 200}, {149, 21}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="300621781"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -281,6 +291,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{26, 135}, {150, 44}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="943417518"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -302,6 +313,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{221, 142}, {79, 37}}</string>
 						<reference key="NSSuperview" ref="412055555"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="405654383"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -322,6 +334,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -383,9 +396,9 @@
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">goMainMenu</string>
 						<reference key="source" ref="314841396"/>
-						<reference key="destination" ref="590933970"/>
+						<reference key="destination" ref="841351856"/>
 					</object>
-					<int key="connectionID">46</int>
+					<int key="connectionID">49</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -534,9 +547,98 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">48</int>
+			<int key="maxID">49</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">AudioSettingsViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="defaultSound">id</string>
+						<string key="goMainMenu">id</string>
+						<string key="playSound">id</string>
+						<string key="playSound:">id</string>
+						<string key="recordSound">id</string>
+						<string key="recordSound:">id</string>
+						<string key="saveSound">id</string>
+						<string key="stopSound">id</string>
+						<string key="stopSound:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="defaultSound">
+							<string key="name">defaultSound</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="goMainMenu">
+							<string key="name">goMainMenu</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playSound">
+							<string key="name">playSound</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playSound:">
+							<string key="name">playSound:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="recordSound">
+							<string key="name">recordSound</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="recordSound:">
+							<string key="name">recordSound:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="saveSound">
+							<string key="name">saveSound</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="stopSound">
+							<string key="name">stopSound</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="stopSound:">
+							<string key="name">stopSound:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="defaultButton">UIButton</string>
+						<string key="playButton">UIButton</string>
+						<string key="recordButton">UIButton</string>
+						<string key="saveButton">UIButton</string>
+						<string key="stopButton">UIButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="defaultButton">
+							<string key="name">defaultButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="playButton">
+							<string key="name">playButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="recordButton">
+							<string key="name">recordButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="saveButton">
+							<string key="name">saveButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="stopButton">
+							<string key="name">stopButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AudioSettingsViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">

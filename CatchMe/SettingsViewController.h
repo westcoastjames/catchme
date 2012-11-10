@@ -13,7 +13,7 @@
 
 }
 
-
+- (IBAction)activateAccelerometer;
 @property (nonatomic, strong) IBOutlet UISwitch* swOn;
 
 

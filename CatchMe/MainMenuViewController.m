@@ -24,7 +24,7 @@
     return self;
 }
 
-- (void)activateAccelerometer {
+- (IBAction)activateAccelerometer {
     
     NSString* ison;
     

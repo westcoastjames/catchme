@@ -13,11 +13,9 @@
 @end
 
 @implementation SettingsViewController
-@synthesize swOn;
-//@synthesize settingItems;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Second", @"Second");
@@ -25,32 +23,21 @@
     }
     return self;
 }
-							
-- (void)viewDidLoad
-{
+
+// Actions to take place when the window opens
+- (void)viewDidLoad {
     [super viewDidLoad];
-
-    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-
-}
-
-
-- (void)viewDidUnload
-{    
-    
+// Actions to take place when the window closes
+- (void)viewDidUnload {    
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+// Makes sure interface is correctly oriented
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-
-
 
 @end
 

@@ -14,8 +14,8 @@
 
 @implementation MedicalConditionsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -23,25 +23,33 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+// Actions to take place when the window opens
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Get the stored data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *medicalInfo = [defaults objectForKey:@"medicalInfo"];
     
+    if ([medicalInfo isEqualToString:@""]) {
+        medicalInfo = @"The user has not specified any medical instructions.";
+    }
+    
+    // Display the medical conditions
     medicalConditions.text = medicalInfo;
 }
 
-- (void)viewDidUnload
-{
+// Actions to take place when the window closes
+- (void)viewDidUnload {
+    medicalConditions = nil;
     medicalConditions = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+// Makes sure interface is correctly oriented
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

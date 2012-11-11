@@ -12,9 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
-
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
-    
     IBOutlet UISwitch* systemStatusSwitch;
     DBConnection* db;
     CMMotionManager* motionManager;

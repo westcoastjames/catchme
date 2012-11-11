@@ -15,9 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //detecting if the accelerometer is available on the device
-    
-    
+    // Detecting if the accelerometer is available on the device
+
     // This piece of code is always unavailable and not active.
     // But when I put it in SettingsViewController it does detect the accelerometer.
     /*
@@ -72,8 +71,6 @@
     return YES;
      
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

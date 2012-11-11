@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface SettingsViewController : UITableViewController {
-    
-}
-
-- (IBAction)activateAccelerometer;
-@property (nonatomic, strong) IBOutlet UISwitch* swOn;
-
+@interface SettingsViewController : UITableViewController
 
 @end

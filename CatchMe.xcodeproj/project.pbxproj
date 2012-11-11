@@ -38,6 +38,8 @@
 		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
 		32779DE31646051100CDEAB3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE21646051100CDEAB3 /* icon@2x.png */; };
 		32779DE61646051700CDEAB3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE51646051700CDEAB3 /* icon.png */; };
+		32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D842E4164F0AA400874021 /* CoreLocation.framework */; };
+		32D842FC164F1C8800874021 /* CoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D842FB164F1C8800874021 /* CoreLocationViewController.m */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
@@ -98,6 +100,9 @@
 		322775BB1633771B0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		32779DE21646051100CDEAB3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		32779DE51646051700CDEAB3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		32D842E4164F0AA400874021 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		32D842FA164F1C8800874021 /* CoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationViewController.h; sourceTree = "<group>"; };
+		32D842FB164F1C8800874021 /* CoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationViewController.m; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 				2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */,
 				2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */,
 				322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */,
+				32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +178,7 @@
 		2D757A3D162F6FC200104D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32D842E4164F0AA400874021 /* CoreLocation.framework */,
 				1F80160316338AE000D89B08 /* AVFoundation.framework */,
 				322775BB1633771B0021833A /* CoreMotion.framework */,
 				2D757A3E162F6FC200104D8A /* UIKit.framework */,

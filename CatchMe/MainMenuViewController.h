@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBConnection.h"
 #import <CoreMotion/CoreMotion.h>
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface MainMenuViewController : UIViewController {
+    
+    UISwitch* swOn;
+    DBConnection* db;
     CMMotionManager* motionManager;
+    CLLocationManager *locationManager;
+    
 }
 
 @end

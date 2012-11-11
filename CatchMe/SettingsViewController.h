@@ -10,7 +10,7 @@
 
 
 @interface SettingsViewController : UITableViewController {
-
+    
 }
 
 - (IBAction)activateAccelerometer;

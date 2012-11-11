@@ -25,36 +25,10 @@
 }
 
 - (IBAction)activateAccelerometer {
-    
-    NSString* ison;
-    
-    ison = [db getSetting:@"on"];
-    
-    if([ison isEqualToString:@"on"]) {
-        [swOn setOn:true];
-        
-        NSLog(@"on loaded");
-        //retrieve accelerometer data
-        motionManager = [[CMMotionManager alloc]init];
-        
-        //if ([motionManager isAccelerometerAvailable]){
-        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-        [motionManager
-         startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-             NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
-         }];
-        /*}else{
-         NSLog(@"Accelerometer did not work.");
-         }*/
-    } else {
-        [swOn setOn:false];
-        NSLog(@"off loaded");
-    }
-    /*
     // retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     
-    if ([motionManager isAccelerometerAvailable]){
+    if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
@@ -72,7 +46,8 @@
     else{
         NSLog(@"Accelerometer did not work.");
     }
-    */
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -82,11 +57,37 @@
     [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
     
-
+    /*
+    NSString* ison;
+    
+    ison = [db getSetting:@"on"];
+    
+    if([ison isEqualToString:@"on"]) {
+        [systemStatusSwitch setOn:true];
+        
+        NSLog(@"on loaded");
+        //retrieve accelerometer data
+        motionManager = [[CMMotionManager alloc]init];
+        
+        //if ([motionManager isAccelerometerAvailable]){
+        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+        [motionManager
+         startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+             NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
+         }];
+        }else{
+         NSLog(@"Accelerometer did not work.");
+         }
+    } else {
+        [systemStatusSwitch setOn:false];
+        NSLog(@"off loaded");
+    }
+    
+    */
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    if (swOn.on) {
+    if (systemStatusSwitch.on) {
         [db setSetting:@"on" value:@"yes"];
     } else {
         [db setSetting:@"on" value:@"no"];
@@ -97,13 +98,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever the user moves it updates
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters; //accuracy
-    [locationManager startUpdatingLocation];
     
     
+
 }
 
 - (void)viewDidUnload
@@ -132,5 +129,6 @@
     seconds = decimal *3600 - minutes *60;
     NSLog(@"%d° %d' %1.4f\"",degrees, minutes, seconds);
 }
+     
 
 @end

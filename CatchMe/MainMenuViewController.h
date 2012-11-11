@@ -18,5 +18,5 @@
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
 }
-
+- (IBAction)activateAccelerometer;
 @end

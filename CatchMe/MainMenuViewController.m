@@ -24,8 +24,8 @@
     return self;
 }
 
-// Activates/Deactivates the accelerometer recordings
 - (IBAction)activateAccelerometer {
+    
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     
@@ -49,24 +49,15 @@
     }
 }
 
-// Accelerometer settings
 - (void)viewWillAppear:(BOOL)animated {
     /* Commented Pitch, Roll, Yaw out until we actually need it for the falling algorithm.
-    motionManager = [[CMMotionManager alloc] init];
-    motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
-    
-    [motionManager startDeviceMotionUpdates];
+     motionManager = [[CMMotionManager alloc] init];
+     motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
+     
+     [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
-    
-    // Old Code
-    /*
-    NSString* ison;
-    
-    ison = [db getSetting:@"on"];
-    
-
+     */
 }
-
 
 - (void)viewDidDisappear:(BOOL)animated {
     if (systemStatusSwitch.on) {
@@ -76,22 +67,25 @@
     }
 }
 
-// Actions to take place when the window opens
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // GPS location manager
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone; //updates whenever you move
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
+    [locationManager startUpdatingLocation];
 }
 
-// Actions to take place when the window closes
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    // Release any retained subviews of the main view.    
     [db closeDB];
 }
 
-// Makes sure the interface is oriented correctly
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
@@ -109,6 +103,5 @@
     seconds = decimal *3600 - minutes *60;
     NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
 }
-     
 
 @end

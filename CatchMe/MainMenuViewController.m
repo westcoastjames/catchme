@@ -76,6 +76,22 @@
     locationManager.distanceFilter = kCLDistanceFilterNone; //updates whenever you move
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
     [locationManager startUpdatingLocation];
+    
+    // Code for Audio playback
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
+    
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+    
+    if (audioPlayer == nil){
+        NSLog([error description]);
+    }
+    else {
+        [audioPlayer play];
+    }
+
+
 }
 
 - (void)viewDidUnload

@@ -38,11 +38,15 @@
              double y_accel = accelerometerData.acceleration.y;
              double z_accel = accelerometerData.acceleration.z;
              
-             NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+             //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+            /*
+             NSString *x_str = (@"%0.6f", x_accel);
+             NSString *y_str = (@"%0.6f", x_accel);
+             NSString *z_str = (@"%0.6f", x_accel);
              
-             //NSString *x_str = @"%0.6f", x_accel;
-             //[x_coord setText:x_str];
-             
+             NSLog(@"X = , Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel)
+             [x_coord setText:x_str];
+             */
              
              
              

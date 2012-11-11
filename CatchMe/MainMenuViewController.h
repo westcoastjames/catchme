@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MainMenuViewController : UIViewController {
+@interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
     IBOutlet UISwitch* systemStatusSwitch;
     DBConnection* db;

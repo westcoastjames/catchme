@@ -32,9 +32,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *medicalInfo = [defaults objectForKey:@"medicalInfo"];
     
-    if ([medicalInfo isEqualToString:@""]) {
+    if ([medicalInfo isEqualToString:@""] || medicalInfo == nil) {
         medicalInfo = @"The user has not specified any medical instructions.";
-    }
+    } 
     
     // Display the medical conditions
     medicalConditions.text = medicalInfo;

@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 // Known Bugs/Issues:
-// Birthdate needs to be checked such that only certain dates are accepted correctly
 // The address and care card fields have clear buttons that do not clear the text
 
 #import "PersonalInfoViewController.h"
@@ -30,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    invalidCardNum.hidden = TRUE;
+    invalidDate.hidden = TRUE;
     
     // Gets stored data from standardUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -84,6 +86,8 @@
     addressTextField = nil;
     careCardTextField = nil;
     // Release any retained subviews of the main view.
+    invalidDate = nil;
+    invalidCardNum = nil;
     [super viewDidUnload];
 }
 
@@ -94,6 +98,9 @@
 
 // Saves all the text field information into an NSUserDefaults object to be permanently stored
 - (IBAction)saveInfo {
+    invalidCardNum.hidden = TRUE;
+    invalidDate.hidden = TRUE;
+    
     // Hides the keyboard when the user is done entering info
     [firstNameTextField resignFirstResponder];
     [lastNameTextField resignFirstResponder];
@@ -111,6 +118,21 @@
     NSInteger year = [[yearTextField text] integerValue];
     NSString *address  = [addressTextField text];
     NSString *careCard = [careCardTextField text];
+    
+    // Checks to make sure correct date and care card formats are entered. This does not check to make sure the date
+    // and care card are legitimate inputs though
+    Boolean error = FALSE;
+    if ([careCard length] != 10) {
+        invalidCardNum.hidden = FALSE;
+        error = TRUE;
+    }
+    if ((month > 12 || month < 1 || day > 31 || day < 1 || year < 1000 || year > 9999) && (month != 0 || day != 0 || year != 0)) {
+        invalidDate.hidden = FALSE;
+        error = TRUE;
+    }
+    if (error == TRUE) {
+        return;
+    }
     
     // Store the data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

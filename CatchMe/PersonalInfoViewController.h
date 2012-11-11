@@ -16,7 +16,8 @@
     IBOutlet UITextField *yearTextField;
     IBOutlet UITextField *addressTextField;
     IBOutlet UITextField *careCardTextField;
-    
+    IBOutlet UILabel *invalidDate;
+    IBOutlet UILabel *invalidCardNum;
     UITapGestureRecognizer *tap;
 }
 

@@ -349,6 +349,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Invalid date." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Gth-qB-tEr">
+                                        <rect key="frame" x="227" y="157" width="66" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Invalid card number." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="lUm-AJ-ycY">
+                                        <rect key="frame" x="179" y="266" width="110" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="2Ko-2B-Ssm">
@@ -378,6 +392,8 @@
                         <outlet property="careCardTextField" destination="ScX-zG-nTa" id="tKO-ZT-bxx"/>
                         <outlet property="dayTextField" destination="goh-tq-3jQ" id="weM-TE-DN6"/>
                         <outlet property="firstNameTextField" destination="cOf-0Q-wH5" id="bNm-eW-JOS"/>
+                        <outlet property="invalidCardNum" destination="lUm-AJ-ycY" id="1X8-4t-iA2"/>
+                        <outlet property="invalidDate" destination="Gth-qB-tEr" id="5A4-UE-7vx"/>
                         <outlet property="lastNameTextField" destination="gzr-iE-0mc" id="hCE-48-yDR"/>
                         <outlet property="monthTextField" destination="URo-wy-eAt" id="hRT-Ut-l2B"/>
                         <outlet property="yearTextField" destination="fTs-jv-wGD" id="2J4-fM-d9b"/>
@@ -611,7 +627,7 @@
                                     <action selector="goBackToMenu" destination="atY-v2-oeT" eventType="touchUpInside" id="rbf-qg-o7G"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="&lt;temp text to be replaced>" id="iQg-Lc-tud">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" id="iQg-Lc-tud">
                                 <rect key="frame" x="20" y="65" width="280" height="322"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.89411771297454834" green="0.92941182851791382" blue="1" alpha="1" colorSpace="deviceRGB"/>
@@ -659,12 +675,9 @@
                 <relationship kind="action" name="cancelChanges"/>
                 <relationship kind="action" name="defaultSound"/>
                 <relationship kind="action" name="playSound"/>
-                <relationship kind="action" name="playSound:"/>
                 <relationship kind="action" name="recordSound"/>
-                <relationship kind="action" name="recordSound:"/>
                 <relationship kind="action" name="saveSound"/>
                 <relationship kind="action" name="stopSound"/>
-                <relationship kind="action" name="stopSound:"/>
                 <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
@@ -690,7 +703,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalConditionsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="goBackToMenu"/>
-                <relationship kind="outlet" name="medicalConditions" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="medicalConditions" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="MedicalInfoViewController" superclassName="UIViewController">
@@ -710,6 +723,8 @@
                 <relationship kind="outlet" name="careCardTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="dayTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="invalidCardNum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="invalidDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="monthTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="yearTextField" candidateClass="UITextField"/>
@@ -717,10 +732,6 @@
         </class>
         <class className="SettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="activateAccelerometer"/>
-                <relationship kind="outlet" name="swOn" candidateClass="UISwitch"/>
-            </relationships>
         </class>
         <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>

@@ -23,5 +23,7 @@
     AVAudioPlayer *audioPlayer;
     
 }
+
 - (IBAction)activateAccelerometer;
+
 @end

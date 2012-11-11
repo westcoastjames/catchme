@@ -44,6 +44,7 @@
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
 		EACAFAEC164F5F0F0041F3CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */; };
+		EACAFAF6164F62350041F3CA /* bell-ringing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EACAFAF5164F62350041F3CA /* bell-ringing.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EACAFAF5164F62350041F3CA /* bell-ringing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bell-ringing.mp3"; path = "/Volumes/jvelasco/CMPT 275/bell-ringing.mp3"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,8 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				32779DE21646051100CDEAB3 /* icon@2x.png */,
+				E110067C1635051D00FF6158 /* Default-568h@2x.png */,
 				32E96556164F5C1F005921FF /* image.png */,
 				32E96554164F5C1C005921FF /* image copy.png */,
 				2D757A53162F6FC200104D8A /* first.png */,
@@ -163,8 +167,7 @@
 				2D757A5A162F6FC200104D8A /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,
 				32779DE51646051700CDEAB3 /* icon.png */,
-				32779DE21646051100CDEAB3 /* icon@2x.png */,
-				E110067C1635051D00FF6158 /* Default-568h@2x.png */,
+				EACAFAF5164F62350041F3CA /* bell-ringing.mp3 */,
 				2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */,
 				2D757A44162F6FC200104D8A /* CatchMe */,
 				2D757A70162F6FC300104D8A /* CatchMeTests */,
@@ -208,8 +211,8 @@
 				2D8E43581634A61A00D008B2 /* ContactsViewController.m */,
 				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
-				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
+				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */,
 				1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */,
 				1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */,
@@ -340,6 +343,7 @@
 				E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */,
 				32E96555164F5C1C005921FF /* image copy.png in Resources */,
 				32E96557164F5C1F005921FF /* image.png in Resources */,
+				EACAFAF6164F62350041F3CA /* bell-ringing.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

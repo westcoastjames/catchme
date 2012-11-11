@@ -51,6 +51,7 @@
 
 // Accelerometer settings
 - (void)viewWillAppear:(BOOL)animated {
+    /* Commented Pitch, Roll, Yaw out until we actually need it for the falling algorithm.
     motionManager = [[CMMotionManager alloc] init];
     motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
     
@@ -63,28 +64,7 @@
     
     ison = [db getSetting:@"on"];
     
-    if([ison isEqualToString:@"on"]) {
-        [systemStatusSwitch setOn:true];
-        
-        NSLog(@"on loaded");
-        //retrieve accelerometer data
-        motionManager = [[CMMotionManager alloc]init];
-        
-        //if ([motionManager isAccelerometerAvailable]){
-        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-        [motionManager
-         startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-             NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
-         }];
-        }else{
-         NSLog(@"Accelerometer did not work.");
-         }
-    } else {
-        [systemStatusSwitch setOn:false];
-        NSLog(@"off loaded");
-    }
-    
-    */
+
 }
 
 
@@ -115,18 +95,19 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+//GPS delegate method called when new location is available
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     int degrees = newLocation.coordinate.latitude;
     double decimal = fabs(newLocation.coordinate.latitude - degrees);
     int minutes = decimal * 60;
     double seconds = decimal *3600 - minutes *60;
-    NSLog(@"%d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSLog(@"Latitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
     
     degrees = newLocation.coordinate.longitude;
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal *60;
     seconds = decimal *3600 - minutes *60;
-    NSLog(@"%d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
 }
      
 

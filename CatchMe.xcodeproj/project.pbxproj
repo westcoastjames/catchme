@@ -37,9 +37,9 @@
 		2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E43581634A61A00D008B2 /* ContactsViewController.m */; };
 		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
 		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
-		32779DE31646051100CDEAB3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE21646051100CDEAB3 /* icon@2x.png */; };
-		32779DE61646051700CDEAB3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE51646051700CDEAB3 /* icon.png */; };
 		32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D842E4164F0AA400874021 /* CoreLocation.framework */; };
+		32E96555164F5C1C005921FF /* image copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96554164F5C1C005921FF /* image copy.png */; };
+		32E96557164F5C1F005921FF /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96556164F5C1F005921FF /* image.png */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
@@ -103,6 +103,8 @@
 		32779DE21646051100CDEAB3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		32779DE51646051700CDEAB3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		32D842E4164F0AA400874021 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		32E96554164F5C1C005921FF /* image copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image copy.png"; sourceTree = "<group>"; };
+		32E96556164F5C1F005921FF /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -151,6 +153,8 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				32E96556164F5C1F005921FF /* image.png */,
+				32E96554164F5C1C005921FF /* image copy.png */,
 				2D757A53162F6FC200104D8A /* first.png */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				2D757A5A162F6FC200104D8A /* second.png */,
@@ -330,8 +334,8 @@
 				EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */,
 				2D8E43551634A5B300D008B2 /* ContactsViewController.xib in Resources */,
 				E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */,
-				32779DE31646051100CDEAB3 /* icon@2x.png in Resources */,
-				32779DE61646051700CDEAB3 /* icon.png in Resources */,
+				32E96555164F5C1C005921FF /* image copy.png in Resources */,
+				32E96557164F5C1F005921FF /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,6 @@
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
-		EACAFAEC164F5F0F0041F3CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +127,6 @@
 				2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */,
 				322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */,
 				32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */,
-				EACAFAEC164F5F0F0041F3CA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +314,7 @@
 		2D757A31162F6FC200104D8A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Same Level Software";
 			};
 			buildConfigurationList = 2D757A34162F6FC200104D8A /* Build configuration list for PBXProject "CatchMe" */;

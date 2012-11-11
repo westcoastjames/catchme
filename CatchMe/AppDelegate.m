@@ -57,7 +57,7 @@
         NSLog(@"Accelerometer: %@", [data description]);
     }];
     
-    
+   
     //Jonathons implementation of the background notification
     NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
     
@@ -69,7 +69,7 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
     
     return YES;
-     
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

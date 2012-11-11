@@ -44,6 +44,9 @@
              //NSLog(@"Vector Sum = %.06f", vector_sum);
          }];
     }
+    else if(![systemStatusSwitch isOn]){
+        NSLog(@"Accelerometer is off.");
+    }
     else{
         NSLog(@"Accelerometer did not work.");
     }

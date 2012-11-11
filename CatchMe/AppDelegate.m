@@ -18,6 +18,9 @@
     //detecting if the accelerometer is available on the device
     
     
+    // This piece of code is always unavailable and not active.
+    // But when I put it in SettingsViewController it does detect the accelerometer.
+    /*
     if ([motionManager isAccelerometerAvailable]){
         NSLog(@"Accelerometer is available.");
     }   else{
@@ -29,6 +32,8 @@
     }   else{
         NSLog(@"Accelerometer is not active.");
     }
+    */
+    
     
      /* Commenting out to use the Storyboard interface builder
       
@@ -45,12 +50,14 @@
       
       */
     
+    
     motionManager.accelerometerUpdateInterval = (double)1/50; //50Hz
     motionQueue = [[NSOperationQueue alloc] init];
     
     [motionManager startAccelerometerUpdatesToQueue: motionQueue withHandler: ^( CMAccelerometerData* data, NSError* error) {
         NSLog(@"Accelerometer: %@", [data description]);
     }];
+    
     
     //Jonathons implementation of the background notification
     NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
@@ -63,6 +70,7 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
     
     return YES;
+     
 }
 
 

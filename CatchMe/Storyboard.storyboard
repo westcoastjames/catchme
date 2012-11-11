@@ -433,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="1039" y="251"/>
         </scene>
-        <!--Main View Controller - Main-->
+        <!--Main Menu View Controller - Main-->
         <scene sceneID="23g-cZ-Lmq">
             <objects>
-                <viewController id="0Dv-6K-AzM" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController id="0Dv-6K-AzM" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rvm-8p-xWr">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -451,6 +451,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yHr-Bb-yWy">
                                 <rect key="frame" x="121" y="140" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="activateAccelerometer" destination="0Dv-6K-AzM" eventType="valueChanged" id="Ko9-zB-SLr"/>
+                                </connections>
                             </switch>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="wuC-9U-8SJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -483,6 +486,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="F7v-4K-BKe"/>
                     <navigationItem key="navigationItem" id="DHC-v4-I8O"/>
+                    <connections>
+                        <outlet property="systemStatusSwitch" destination="yHr-Bb-yWy" id="EjS-bo-RpA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maO-4C-Twl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,50 +514,6 @@
             <point key="canvasLocation" x="-368" y="-43"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AudioSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudioSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="defaultSound"/>
-                <relationship kind="action" name="goMainMenu"/>
-                <relationship kind="action" name="playSound"/>
-                <relationship kind="action" name="recordSound"/>
-                <relationship kind="action" name="saveSound"/>
-                <relationship kind="action" name="stopSound"/>
-                <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ContactsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goMainMenu"/>
-            </relationships>
-        </class>
-        <class className="PersonalInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="saveInfo"/>
-                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dayTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="monthTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="yearTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="activateAccelerometer"/>
-                <relationship kind="outlet" name="swOn" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

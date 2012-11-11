@@ -40,6 +40,13 @@
              
              NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
              
+             //NSString *x_str = @"%0.6f", x_accel;
+             //[x_coord setText:x_str];
+             
+             
+             
+             
+             
              //double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"Vector Sum = %.06f", vector_sum);
          }];
@@ -80,19 +87,17 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
     [locationManager startUpdatingLocation];
     
-    // Code for Audio playback
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
+    // Code for Audio playback plays sound when app is launched
+    // Move this code to somewhere appropriate when testing is done
+    /*NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
+    */
     
-    NSError *error;
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
-    
-    if (audioPlayer == nil){
-        NSLog([error description]);
-    }
-    else {
-        [audioPlayer play];
-    }
+    [audioPlayer play];
 
 
 }
@@ -121,6 +126,10 @@
     minutes = decimal *60;
     seconds = decimal *3600 - minutes *60;
     NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
+    
+    // Testing purposes
+    //[longitude setText:("%@",)];
+    
 }
 
 @end

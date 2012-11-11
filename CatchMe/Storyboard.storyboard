@@ -451,6 +451,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yHr-Bb-yWy">
                                 <rect key="frame" x="121" y="140" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="activateAccelerometer" destination="maO-4C-Twl" eventType="valueChanged" id="WWc-6p-PKJ"/>
+                                </connections>
                             </switch>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="wuC-9U-8SJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

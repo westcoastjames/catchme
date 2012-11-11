@@ -31,73 +31,19 @@
 {
     [super viewDidLoad];
 
-    db = [[DBConnection alloc] init];
     
-    // Setup NSArray for Settings Table
-    //settingItems = [[NSArray alloc] initWithObjects:@"Name", @"Age", @"Medical Conditions", @"Audio Settings", @"Text Message Settings", @"Emergency Contacts", nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSString* ison;
-    
-    ison = [db getSetting:@"on"];
-    
-    if([ison isEqualToString:@"on"]) {
-        [swOn setOn:true];
 
-        NSLog(@"on loaded");
-        //retrieve accelerometer data
-        motionManager = [[CMMotionManager alloc]init];
-        
-        //if ([motionManager isAccelerometerAvailable]){
-            NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-            [motionManager
-             startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-                 NSLog(@"X = %.04f, Y = %.04f, Z = %.04f", accelerometerData.acceleration.x, accelerometerData.acceleration.y, accelerometerData.acceleration.z);
-             }];
-        /*}else{
-            NSLog(@"Accelerometer did not work.");
-        }*/
-    } else {
-        [swOn setOn:false];
-        NSLog(@"off loaded");
-    }
-    // retrieve accelerometer data
-    motionManager = [[CMMotionManager alloc]init];
-
-    if ([motionManager isAccelerometerAvailable]){
-        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-        [motionManager
-         startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-             
-             double x_accel = accelerometerData.acceleration.x;
-             double y_accel = accelerometerData.acceleration.y;
-             double z_accel = accelerometerData.acceleration.z;
-             
-             NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
-             
-             //double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-             //NSLog(@"Vector Sum = %.06f", vector_sum);
-         }];
-    }
-    else{
-        NSLog(@"Accelerometer did not work.");
-    }
 }
 
 
 
-- (void)viewDidDisappear:(BOOL)animated {
-    if (swOn.on) {
-        [db setSetting:@"on" value:@"yes"];
-    } else {
-        [db setSetting:@"on" value:@"no"];
-    }
-}
+
 
 - (void)viewDidUnload
 {    
-    [db closeDB];
     
     [super viewDidUnload];
 }
@@ -107,41 +53,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-// This code was from the xib version
 
-/*
-
-// Action to switch to the Audio Settings View
-- (IBAction)goAudioSettings {
-    AudioSettingsViewController *audioSettingsView = [[AudioSettingsViewController alloc] initWithNibName:@"AudioSettings" bundle:nil];
-    audioSettingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentModalViewController:audioSettingsView animated:YES];
-}
-
-#pragma mark - TableView Methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return settingItems.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Reuses an empty cell to save memory
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
-    //If no empty cells, create a new one
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-    }
-    
-    // Add button arrow
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    // Add cell text
-    cell.textLabel.text = [settingItems objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-*/
 
 @end
 

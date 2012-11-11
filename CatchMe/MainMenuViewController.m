@@ -50,6 +50,7 @@
         [swOn setOn:false];
         NSLog(@"off loaded");
     }
+    /*
     // retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     
@@ -71,6 +72,7 @@
     else{
         NSLog(@"Accelerometer did not work.");
     }
+    */
 }
 
 - (void)viewWillAppear:(BOOL)animated {

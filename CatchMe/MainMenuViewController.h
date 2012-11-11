@@ -12,7 +12,10 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
+@interface MainMenuViewController : UIViewController {
+    
+    UISwitch* swOn;
+    DBConnection* db;
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
     

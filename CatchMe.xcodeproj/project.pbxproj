@@ -142,12 +142,20 @@
 			isa = PBXGroup;
 			children = (
 				1A69D069163399B600EF576B /* Storyboard.storyboard */,
+				1F8FAE75164F69EE00377B22 /* old files not in use */,
+			);
+			name = "GUI Files";
+			sourceTree = "<group>";
+		};
+		1F8FAE75164F69EE00377B22 /* old files not in use */ = {
+			isa = PBXGroup;
+			children = (
 				1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */,
 				2D8E43541634A5B300D008B2 /* ContactsViewController.xib */,
 				EAB0603A1634981300CFD930 /* MainMenuViewController.xib */,
 				EAB060371634980100CFD930 /* SettingsViewController.xib */,
 			);
-			name = "GUI Files";
+			name = "old files not in use";
 			sourceTree = "<group>";
 		};
 		2D757A2F162F6FC200104D8A = {

@@ -43,6 +43,7 @@
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
+		EACAFAEC164F5F0F0041F3CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +115,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */,
 				1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */,
+				2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */,
 				2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */,
 				2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */,
 				2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */,
 				322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */,
 				32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */,
+				EACAFAEC164F5F0F0041F3CA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +181,7 @@
 		2D757A3D162F6FC200104D8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */,
 				32D842E4164F0AA400874021 /* CoreLocation.framework */,
 				1F80160316338AE000D89B08 /* AVFoundation.framework */,
 				322775BB1633771B0021833A /* CoreMotion.framework */,

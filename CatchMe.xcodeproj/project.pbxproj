@@ -67,8 +67,8 @@
 		1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettingsViewController.m; sourceTree = "<group>"; };
 		1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalInfoViewController.h; sourceTree = "<group>"; };
 		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoViewController.m; sourceTree = "<group>"; };
-		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.h"; sourceTree = "<group>"; };
-		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.m"; sourceTree = "<group>"; };
+		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		2D27A3301634DBEC0098F6C9 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -210,10 +210,10 @@
 				1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
-				1F1E2E571645C07800DE81BA /* GUI Files */,
-				2D757A45162F6FC200104D8A /* Supporting Files */,
 				1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */,
 				1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */,
+				1F1E2E571645C07800DE81BA /* GUI Files */,
+				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
 			path = CatchMe;
 			sourceTree = "<group>";

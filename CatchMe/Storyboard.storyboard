@@ -833,7 +833,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first.png" width="30" height="30"/>
+        <image name="first.png" width="60" height="60"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

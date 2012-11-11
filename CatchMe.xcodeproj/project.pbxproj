@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A69D069163399B600EF576B /* Storyboard.storyboard */; };
+		1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */; };
 		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
 		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
 		1FCE2C0B16335EDD00605D7F /* AudioSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */; };
@@ -39,7 +40,6 @@
 		32779DE31646051100CDEAB3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE21646051100CDEAB3 /* icon@2x.png */; };
 		32779DE61646051700CDEAB3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32779DE51646051700CDEAB3 /* icon.png */; };
 		32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D842E4164F0AA400874021 /* CoreLocation.framework */; };
-		32D842FC164F1C8800874021 /* CoreLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D842FB164F1C8800874021 /* CoreLocationViewController.m */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
@@ -57,14 +57,16 @@
 
 /* Begin PBXFileReference section */
 		1A69D069163399B600EF576B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalConditionsViewController.h; sourceTree = "<group>"; };
+		1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalConditionsViewController.m; sourceTree = "<group>"; };
 		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1FB9AE3C164EE0FB0084D2E6 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
 		1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioSettingsViewController.xib; sourceTree = "<group>"; };
 		1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSettingsViewController.h; sourceTree = "<group>"; };
 		1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettingsViewController.m; sourceTree = "<group>"; };
-		1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MedicalInfoViewController.h; path = ../MedicalInfoViewController.h; sourceTree = "<group>"; };
-		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MedicalInfoViewController.m; path = ../MedicalInfoViewController.m; sourceTree = "<group>"; };
+		1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalInfoViewController.h; sourceTree = "<group>"; };
+		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoViewController.m; sourceTree = "<group>"; };
 		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.h"; sourceTree = "<group>"; };
 		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.m"; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
@@ -101,8 +103,6 @@
 		32779DE21646051100CDEAB3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		32779DE51646051700CDEAB3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		32D842E4164F0AA400874021 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		32D842FA164F1C8800874021 /* CoreLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationViewController.h; sourceTree = "<group>"; };
-		32D842FB164F1C8800874021 /* CoreLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationViewController.m; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -205,6 +205,8 @@
 				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
+				1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */,
+				1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
 				1FB9AE3C164EE0FB0084D2E6 /* PersonalInfoViewController.h */,
 				1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */,
@@ -374,6 +376,7 @@
 				1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */,
 				1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */,
 				1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,10 @@
 
 
 @interface MainMenuViewController : UIViewController {
-    
     UISwitch* swOn;
     DBConnection* db;
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
-    
 }
 
 @end

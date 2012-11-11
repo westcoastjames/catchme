@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A69D069163399B600EF576B /* Storyboard.storyboard */; };
+		1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */; };
+		1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA81650519900099AEC /* MessageSettingsViewController.m */; };
 		1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */; };
 		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
 		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
@@ -58,6 +60,10 @@
 
 /* Begin PBXFileReference section */
 		1A69D069163399B600EF576B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1F61BDA41650515A00099AEC /* AlertSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettingsViewController.h; sourceTree = "<group>"; };
+		1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettingsViewController.m; sourceTree = "<group>"; };
+		1F61BDA71650519900099AEC /* MessageSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSettingsViewController.h; sourceTree = "<group>"; };
+		1F61BDA81650519900099AEC /* MessageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingsViewController.m; sourceTree = "<group>"; };
 		1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalConditionsViewController.h; sourceTree = "<group>"; };
 		1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalConditionsViewController.m; sourceTree = "<group>"; };
 		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -216,11 +222,15 @@
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */,
+				1F61BDA71650519900099AEC /* MessageSettingsViewController.h */,
+				1F61BDA81650519900099AEC /* MessageSettingsViewController.m */,
 				1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */,
 				1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */,
 				1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */,
 				1FB9AE3C164EE0FB0084D2E6 /* PersonalInfoViewController.h */,
 				1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */,
+				1F61BDA41650515A00099AEC /* AlertSettingsViewController.h */,
+				1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
 				1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */,
@@ -390,6 +400,8 @@
 				1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */,
 				1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */,
+				1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */,
+				1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

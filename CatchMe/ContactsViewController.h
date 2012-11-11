@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "DBConnection.h"
+#import <UIKit/UIKit.h>
 
 @interface ContactsViewController : UIViewController {
-    DBConnection* db;
-    UITapGestureRecognizer* tapRecognizer;
+    DBConnection *db;
+    IBOutlet UITextField *txtNumber;
+    UITapGestureRecognizer *tap;
 }
 
-@property (nonatomic, strong) UITextField *txtNumber;
+@property (nonatomic, strong) IBOutlet UITextField *txtNumber;
+
+@property UITapGestureRecognizer *tap;
 
 - (IBAction)goMainMenu;
+- (void)dismissKeyboard;
 
 @end

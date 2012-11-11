@@ -15,6 +15,7 @@
     IBOutlet UITextField *dayTextField;
     IBOutlet UITextField *yearTextField;
     IBOutlet UITextField *addressTextField;
+    IBOutlet UITextField *careCardTextField;
     
     UITapGestureRecognizer *tap;
 }

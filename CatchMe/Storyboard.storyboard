@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YfV-Fa-RoV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YfV-Fa-RoV">
     <dependencies>
-        <deployment version="1296" defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <deployment version="1296" defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Settings View Controller - Settings-->
         <scene sceneID="MxX-lM-8tb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2T-pK-Wnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="2NF-G3-eGS" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fMN-b1-tGW">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
@@ -136,13 +135,13 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2T-pK-Wnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="552" y="237"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="JgZ-sZ-g4a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-ni-0Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pEu-Do-eZW" customClass="ContactsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YuD-qZ-YUt">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -180,13 +179,13 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-ni-0Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="820"/>
         </scene>
         <!--Personal Info View Controller-->
         <scene sceneID="P8h-pr-WAg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gFi-Ot-c8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="C5g-rV-vv7" customClass="PersonalInfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nZW-tu-Ku9">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -301,13 +300,13 @@
                         <outlet property="yearTextField" destination="fTs-jv-wGD" id="2J4-fM-d9b"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gFi-Ot-c8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="-321"/>
         </scene>
         <!--Audio Settings View Controller-->
         <scene sceneID="qif-Mo-sdh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvv-My-3HZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gnr-17-nXI" customClass="AudioSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SPD-Ro-VX0">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -430,6 +429,7 @@
                         <outlet property="stopButton" destination="kl2-rg-2ew" id="gEK-EZ-PGA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvv-My-3HZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="251"/>
         </scene>
@@ -451,9 +451,6 @@
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yHr-Bb-yWy">
                                 <rect key="frame" x="121" y="140" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="activateAccelerometer" destination="maO-4C-Twl" eventType="valueChanged" id="WWc-6p-PKJ"/>
-                                </connections>
                             </switch>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="wuC-9U-8SJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -485,6 +482,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="F7v-4K-BKe"/>
+                    <navigationItem key="navigationItem" id="DHC-v4-I8O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maO-4C-Twl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,12 +515,9 @@
                 <relationship kind="action" name="defaultSound"/>
                 <relationship kind="action" name="goMainMenu"/>
                 <relationship kind="action" name="playSound"/>
-                <relationship kind="action" name="playSound:"/>
                 <relationship kind="action" name="recordSound"/>
-                <relationship kind="action" name="recordSound:"/>
                 <relationship kind="action" name="saveSound"/>
                 <relationship kind="action" name="stopSound"/>
-                <relationship kind="action" name="stopSound:"/>
                 <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
@@ -552,6 +547,7 @@
         <class className="SettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="activateAccelerometer"/>
                 <relationship kind="outlet" name="swOn" candidateClass="UISwitch"/>
             </relationships>
         </class>

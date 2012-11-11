@@ -12,6 +12,8 @@
 		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
 		1FCE2C0B16335EDD00605D7F /* AudioSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */; };
 		1FCE2C0F163366F100605D7F /* AudioSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */; };
+		1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */; };
+		1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */; };
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
 		2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
@@ -59,6 +61,10 @@
 		1FCE2C0A16335EDD00605D7F /* AudioSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioSettingsViewController.xib; sourceTree = "<group>"; };
 		1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSettingsViewController.h; sourceTree = "<group>"; };
 		1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSettingsViewController.m; sourceTree = "<group>"; };
+		1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MedicalInfoViewController.h; path = ../MedicalInfoViewController.h; sourceTree = "<group>"; };
+		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MedicalInfoViewController.m; path = ../MedicalInfoViewController.m; sourceTree = "<group>"; };
+		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.h"; sourceTree = "<group>"; };
+		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = "../../../../Users/nhoekstr/Downloads/TPKeyboardAvoiding-master/TPKeyboardAvoidingScrollView.m"; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		2D27A3301634DBEC0098F6C9 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -179,12 +185,16 @@
 		2D757A44162F6FC200104D8A /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				1FF8F4FF164F0B6600C76124 /* MedicalInfoViewController.h */,
+				1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */,
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */,
 				1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */,
 				2D8E43571634A61A00D008B2 /* ContactsViewController.h */,
 				2D8E43581634A61A00D008B2 /* ContactsViewController.m */,
+				1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */,
+				1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */,
 				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
@@ -355,6 +365,8 @@
 				2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */,
 				2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */,
 				1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */,
+				1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */,
+				1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

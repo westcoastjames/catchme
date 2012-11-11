@@ -5,6 +5,9 @@
 //  Created by Jonathon Simister on 10/21/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
+// Known bugs: Keyboard will not minimize on when tapping outside of textField
+//             @property (nonatomic, strong) IBOutlet UITextField *txtNumber;
+//             in the header may be part of the cause of this
 
 #import "ContactsViewController.h"
 
@@ -13,7 +16,7 @@
 @end
 
 @implementation ContactsViewController
-@synthesize txtNumber;
+//@synthesize txtNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +34,7 @@
     [super viewDidLoad];
 	
     db = [[DBConnection alloc] init];
-    
+    /*
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
     [nc addObserver:self selector:@selector(keyboardWillShow:) name:
@@ -40,10 +43,13 @@
     [nc addObserver:self selector:@selector(keyboardWillHide:) name:
      UIKeyboardWillHideNotification object:nil];
     
-    tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                            action:@selector(didTapAnywhere:)];
-
+  tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapAnywhere:)]; */
     
+    // Loads the keyboard dismissal on tap outside textField
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    [tap setCancelsTouchesInView:NO]; // Allows other tap gestures to continue functioning while this one is in effect
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -55,13 +61,20 @@
     
     NSLog(@"set setting");
     
-    NSString* s;
+    NSString *s;
     
     s = [db getSetting:@"number"];
     
     NSLog(s);
 }
 
+// Hides the keyboard when the users taps outside a text field
+- (void)dismissKeyboard {
+    [txtNumber resignFirstResponder];
+}
+
+// Code has been replaced
+/*
 -(void) keyboardWillShow:(NSNotification *) note {
     [self.view addGestureRecognizer:tapRecognizer];
 }
@@ -75,17 +88,16 @@
     [txtNumber resignFirstResponder];
 }
 
+*/
 
-
-- (void)viewDidUnload
-{    
+- (void)viewDidUnload {    
     [db closeDB];
     
+    txtNumber = nil;
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 

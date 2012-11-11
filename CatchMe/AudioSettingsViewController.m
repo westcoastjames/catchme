@@ -106,9 +106,8 @@
 }
 
 
-- (IBAction)goMainMenu {
+- (IBAction)cancelChanges {
     [self dismissModalViewControllerAnimated:YES];
-    //[self resignFirstResponder];
 }
 
 @end

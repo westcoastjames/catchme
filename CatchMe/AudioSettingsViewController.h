@@ -41,6 +41,6 @@
 - (IBAction)playSound;
 - (IBAction)saveSound;
 - (IBAction)defaultSound;
-- (IBAction)goMainMenu;
+- (IBAction)cancelChanges;
 
 @end

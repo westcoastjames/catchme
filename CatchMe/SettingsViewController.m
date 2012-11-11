@@ -7,7 +7,6 @@
 //
 
 #import "SettingsViewController.h"
-#import "AudioSettingsViewController.h"
 
 @interface SettingsViewController()
 

@@ -24,7 +24,6 @@
 
 - (IBAction)cancelChanges;
 - (IBAction)saveInfo;
-
 - (void)dismissKeyboard;
 
 @end

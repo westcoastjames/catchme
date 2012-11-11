@@ -16,6 +16,7 @@
 
 @synthesize recordButton, stopButton, playButton, saveButton, defaultButton;
 
+// Actions to occur when the window opens
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,14 +42,15 @@
     // Initialize audio player to default sound file
 }
 
+// Actions to take place when the window closes
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+// Checks to see if the interface is correctly oriented
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 

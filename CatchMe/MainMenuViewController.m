@@ -14,8 +14,8 @@
 
 @implementation MainMenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"First", @"First");
@@ -26,7 +26,7 @@
 
 - (IBAction)activateAccelerometer {
     
-    // retrieve accelerometer data
+    // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
@@ -47,22 +47,16 @@
     else{
         NSLog(@"Accelerometer did not work.");
     }
-     
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     /* Commented Pitch, Roll, Yaw out until we actually need it for the falling algorithm.
-    motionManager = [[CMMotionManager alloc] init];
-    motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
-    
-    [motionManager startDeviceMotionUpdates];
+     motionManager = [[CMMotionManager alloc] init];
+     motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
+     
+     [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
-    
-    */ 
-    
-
+     */
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -72,32 +66,42 @@
         [db setSetting:@"on" value:@"no"];
     }
 }
-							
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //GPS location manager
+    // GPS location manager
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; //updates whenever you move
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
     [locationManager startUpdatingLocation];
     
+    // Code for Audio playback
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
     
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = -1;
+    
+    if (audioPlayer == nil){
+        NSLog([error description]);
+    }
+    else {
+        [audioPlayer play];
+    }
+
 
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    
+    // Release any retained subviews of the main view.    
     [db closeDB];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
@@ -115,6 +119,5 @@
     seconds = decimal *3600 - minutes *60;
     NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
 }
-     
 
 @end

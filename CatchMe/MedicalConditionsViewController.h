@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MedicalConditionsViewController : UIViewController {
-    IBOutlet UILabel *medicalConditions;
+    IBOutlet UITextView *medicalConditions;
 }
 
 - (IBAction)goBackToMenu;

@@ -38,7 +38,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone; // whenever the user moves it updates
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters; //accuracy
+    [locationManager startUpdatingLocation];
     
     
 }
@@ -52,6 +56,20 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    int degrees = newLocation.coordinate.latitude;
+    double decimal = fabs(newLocation.coordinate.latitude - degrees);
+    int minutes = decimal * 60;
+    double seconds = decimal *3600 - minutes *60;
+    NSLog(@"%d° %d' %1.4f\"",degrees, minutes, seconds);
+    
+    degrees = newLocation.coordinate.longitude;
+    decimal = fabs(newLocation.coordinate.longitude - degrees);
+    minutes = decimal *60;
+    seconds = decimal *3600 - minutes *60;
+    NSLog(@"%d° %d' %1.4f\"",degrees, minutes, seconds);
 }
 
 @end

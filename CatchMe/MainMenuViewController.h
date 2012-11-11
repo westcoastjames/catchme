@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface MainMenuViewController : UIViewController {
+@interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     CMMotionManager* motionManager;
+    CLLocationManager *locationManager;
+    
 }
 
 @end

@@ -102,8 +102,8 @@
 		32D842E4164F0AA400874021 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		32E96554164F5C1C005921FF /* image copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image copy.png"; sourceTree = "<group>"; };
 		32E96556164F5C1F005921FF /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		32E96563164F6745005921FF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		32E96569164F6DCD005921FF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		32E96563164F6745005921FF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = CatchMe/second.png; sourceTree = "<group>"; };
+		32E96569164F6DCD005921FF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = CatchMe/first.png; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };

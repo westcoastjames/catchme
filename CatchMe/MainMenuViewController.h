@@ -11,13 +11,13 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 
-
 @interface MainMenuViewController : UIViewController {
-    
-    IBOutlet UISwitch* systemStatusSwitch;
-    DBConnection* db;
-    CMMotionManager* motionManager;
+    IBOutlet UISwitch *systemStatusSwitch;
+    DBConnection *db;
+    CMMotionManager *motionManager;
     CLLocationManager *locationManager;
 }
+
 - (IBAction)activateAccelerometer;
+
 @end

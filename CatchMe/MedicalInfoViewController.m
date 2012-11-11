@@ -14,8 +14,8 @@
 
 @implementation MedicalInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -23,6 +23,7 @@
     return self;
 }
 
+// Actions to take place when the window opens
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,10 +33,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *medicalInfo = [defaults objectForKey:@"medicalInfo"];
     
-    if (medicalInfo == nil) {
+    if ([medicalInfo isEqualToString:@""]) {
         medicalInfo = @"Type any necessary medical instructions in here.";
     }
 
+    // Sets the text field to whatever the saved medical info is
     medicalTextView.text = medicalInfo;
     
     // Loads the keyboard dismissal on tap outside textField
@@ -45,8 +47,8 @@
     [tap setCancelsTouchesInView:NO]; // Allows other tap gestures to continue functioning while this one is in effect
 }
 
-- (void)viewDidUnload
-{
+// Actions to take place when the window closes
+- (void)viewDidUnload {
     medicalTextView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -57,10 +59,12 @@
     [medicalTextView resignFirstResponder];
 }
 
+// Cancels any changes and goes back to the settings menu
 - (IBAction)cancelChanges {
     [self dismissModalViewControllerAnimated:YES];
 }
 
+// Saves any changes and goes back to the settings menu
 - (IBAction)saveChanges {
     // Close the keyboard
     [medicalTextView resignFirstResponder];
@@ -79,8 +83,8 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+// Makes sure interface is correctly oriented
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

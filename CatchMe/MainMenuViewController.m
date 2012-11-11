@@ -14,8 +14,8 @@
 
 @implementation MainMenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"First", @"First");
@@ -24,8 +24,9 @@
     return self;
 }
 
+// Activates/Deactivates the accelerometer recordings
 - (IBAction)activateAccelerometer {
-    // retrieve accelerometer data
+    // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
@@ -46,10 +47,9 @@
     else{
         NSLog(@"Accelerometer did not work.");
     }
-    
-    
 }
 
+// Accelerometer settings
 - (void)viewWillAppear:(BOOL)animated {
     motionManager = [[CMMotionManager alloc] init];
     motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
@@ -57,6 +57,7 @@
     [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
     
+    // Old Code
     /*
     NSString* ison;
     
@@ -86,6 +87,7 @@
     */
 }
 
+
 - (void)viewDidDisappear:(BOOL)animated {
     if (systemStatusSwitch.on) {
         [db setSetting:@"on" value:@"yes"];
@@ -93,24 +95,21 @@
         [db setSetting:@"on" value:@"no"];
     }
 }
-							
-- (void)viewDidLoad
-{
+
+// Actions to take place when the window opens
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    
-
 }
 
-- (void)viewDidUnload
-{
+// Actions to take place when the window closes
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    
     [db closeDB];
 }
 
+// Makes sure the interface is oriented correctly
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);

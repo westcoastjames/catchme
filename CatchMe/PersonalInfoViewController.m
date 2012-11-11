@@ -5,8 +5,9 @@
 //  Created by Nicholas Hoekstra on 11/10/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
-// Known issues:
+// Known Bugs/Issues:
 // Birthdate needs to be checked such that only certain dates are accepted correctly
+// The address and care card fields have clear buttons that do not clear the text
 
 #import "PersonalInfoViewController.h"
 
@@ -16,8 +17,8 @@
 
 @implementation PersonalInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+// Constructor
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -25,8 +26,8 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+// Actions to take place when the window opens
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -73,6 +74,7 @@
     [tap setCancelsTouchesInView:NO]; // Allows other tap gestures to continue functioning while this one is in effect
 }
 
+// Actions to take place when the window closes
 - (void)viewDidUnload {
     firstNameTextField = nil;
     lastNameTextField = nil;
@@ -137,6 +139,7 @@
     [careCardTextField resignFirstResponder];
 }
 
+// Makes sure interface is correctly oriented
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }

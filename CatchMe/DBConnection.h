@@ -11,11 +11,12 @@
 
 @interface DBConnection : NSObject {
     NSString*   databasePath;
-    
     sqlite3*    settingsDB;
 }
-- (id) init;
-- (void) closeDB;
-- (void) setSetting: (NSString*) name value : (NSString *) value;
-- (NSString*) getSetting: (NSString*) name;
+
+- (id)init;
+- (void)closeDB;
+- (void)setSetting: (NSString*) name value : (NSString *) value;
+- (NSString*)getSetting: (NSString*) name;
+
 @end

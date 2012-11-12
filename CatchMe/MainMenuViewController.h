@@ -31,7 +31,6 @@
     double z_accel;
     //NSString *long_str;
     //NSString *lat_str;
-    
 }
 
 - (IBAction)activateAccelerometer;

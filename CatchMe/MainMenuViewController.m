@@ -35,36 +35,49 @@
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
              
+             // ALGORITHM USED TO DETECT A BASIC FALLING MOTION
+             
+             // Get the x, y, z values
              x_accel = accelerometerData.acceleration.x;
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
              
              //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
              
+             // Compute vector sum of data
+             double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
              
              /*
-             x_coord.text = x_str;
-             y_coord.text = y_str;
-             z_coord.text = y_str;
-             */
+              x_coord.text = x_str;
+              y_coord.text = y_str;
+              z_coord.text = y_str;
+              */
              NSString *x_str = [NSString stringWithFormat:@"%0.6f", x_accel];
              NSString *y_str = [NSString stringWithFormat:@"%0.6f", y_accel];
              NSString *z_str = [NSString stringWithFormat:@"%0.6f", z_accel];
              [x_coord setText: x_str];
              [y_coord setText: y_str];
              [z_coord setText: z_str];
-             //double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-             //NSLog(@"Vector Sum = %.06f", vector_sum);
+             
          }];
         
     }
     else if(![systemStatusSwitch isOn]){
         NSLog(@"Accelerometer is off.");
     }
-    else{
+    else {
         NSLog(@"Accelerometer did not work.");
     }
+    
+    // Create alert notification
+    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    // To show the alert
+    [alert show];
+    
+    // To hide the alert (use timer!)
+    //[alert dismissWithClickedButtonIndex:0 animated:TRUE];
     
 }
 
@@ -109,10 +122,6 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer play];
-    
-    
-
-
 }
 
 - (void)viewDidUnload
@@ -145,8 +154,6 @@
     // Testing purposes
     [longitude setText:long_str];
     [latitude setText:lat_str];
-    
-    
 }
 
 @end

@@ -176,11 +176,11 @@
 		2D757A2F162F6FC200104D8A = {
 			isa = PBXGroup;
 			children = (
+				1A67CF6B16505F920031B6E2 /* Sounds */,
 				E110067C1635051D00FF6158 /* Default-568h@2x.png */,
 				32E96556164F5C1F005921FF /* image.png */,
 				32E96554164F5C1C005921FF /* image copy.png */,
 				32E96569164F6DCD005921FF /* first.png */,
-				1A67CF6B16505F920031B6E2 /* Sounds */,
 				2D757A55162F6FC200104D8A /* first@2x.png */,
 				32E96563164F6745005921FF /* second.png */,
 				2D757A5C162F6FC200104D8A /* second@2x.png */,

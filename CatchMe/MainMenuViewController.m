@@ -58,6 +58,8 @@
              float freeFallThreshold = 0.3; // The user is falling
              float landedThreshold = 2.0; // The user hits the ground
              
+             UIAlertView *alert;
+             
              NSLog(@"Point1 Reached~~~~~~~~~");
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
@@ -65,11 +67,21 @@
                  startsecs = tv.tv_sec;
              }
              else if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
+                 alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
+                                                   message:@"Press ok to dismiss this alert."
+                                                  delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
                  
-                 // Alert is causing our app to crash
-                //[alert show];
-                [audioPlayer play];
+                 
                  NSLog(@"**** FALL DETECTED ****");
+                 
+                 // Run the alert in the main thread to prevent app from crashing
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     [alert show];
+                 });
+                 
+                 [audioPlayer play];
                  
              }
              
@@ -117,7 +129,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
     [locationManager startUpdatingLocation];
     
-    // Code for Audio playback plays sound when app is launched
+    // Code for Audio playback plays sound when fall is detected
     AVAudioSession * audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
     [audioSession setActive:YES error: nil];
@@ -129,7 +141,6 @@
     [audioPlayer setVolume:1.0];
     
     // Create alert notification
-    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
 }
 

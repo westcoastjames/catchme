@@ -30,8 +30,6 @@
     IBOutlet UILabel *longitude;
     IBOutlet UILabel *latitude;
     
-    UIAlertView *alert;
-    
     double x_accel;
     double y_accel;
     double z_accel;

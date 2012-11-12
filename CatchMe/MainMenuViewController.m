@@ -62,6 +62,7 @@
                      if (vector_sum > landedThreshold) {
                          // To show the alert
                          [alert show];
+                         [audioPlayer play];
                      }
                  }
                  while (count < 10) {
@@ -141,7 +142,6 @@
     NSURL *url = [NSURL fileURLWithPath:musicPath];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
-    [audioPlayer play];
 }
 
 - (void)viewDidUnload

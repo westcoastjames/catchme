@@ -322,7 +322,7 @@
                                 <rect key="frame" x="210" y="191" width="79" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time delay before alerts are sent out:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IuS-Up-jbE">
                                 <rect key="frame" x="57" y="180" width="155" height="54"/>
@@ -898,12 +898,9 @@
                 <relationship kind="action" name="changeVolume"/>
                 <relationship kind="action" name="defaultSound"/>
                 <relationship kind="action" name="playSound"/>
-                <relationship kind="action" name="playSound:"/>
                 <relationship kind="action" name="recordSound"/>
-                <relationship kind="action" name="recordSound:"/>
                 <relationship kind="action" name="saveSound"/>
                 <relationship kind="action" name="stopSound"/>
-                <relationship kind="action" name="stopSound:"/>
                 <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>

@@ -25,6 +25,8 @@
     return self;
 }
 
+// Contains the actions that pertain to the accelerometer
+// Activated through the switch on the main menu
 - (IBAction)activateAccelerometer {
     
 
@@ -64,7 +66,7 @@
              NSLog(@"Point1 Reached~~~~~~~~~");
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
-                 NSLog(@"Point2 Reached~~~~~~~~~~~~~~~~~~~~~");
+                 NSLog(@"Point2 Reached~~~~~~~~~~~~");
                  startsecs = tv.tv_sec;
              }
              else if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
@@ -157,7 +159,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-//GPS delegate method called when new location is available
+// GPS delegate method called when new location is available
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     int degrees = newLocation.coordinate.latitude;
     double decimal = fabs(newLocation.coordinate.latitude - degrees);

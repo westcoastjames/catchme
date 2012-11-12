@@ -23,28 +23,51 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Initialize audio recorder
-   // NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
+    
+    // Specify recorder file path
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"mp3"];
+
+    NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
+    
     NSError *recordError = nil;
     
-    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
-                                      [NSNumber numberWithInt:16], AVEncoderBitRateKey, [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
-                                      [NSNumber numberWithFloat:44100.0], AVSampleRateKey, nil];
+    // Recorder settings
+    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey, [NSNumber numberWithInt:16], AVEncoderBitRateKey, [NSNumber numberWithInt: 2], AVNumberOfChannelsKey, [NSNumber numberWithFloat:44100.0], AVSampleRateKey, nil];
     
-   // aRecorder = [[AVAudioRecorder alloc] initWithURL:URLtoHoldFile settings:recorderSettings error:&recordError];
+    // Create recorder
+    aRecorder = [[AVAudioRecorder alloc] initWithURL:URLtoHoldFile settings:recorderSettings error:&recordError];
     
     if (recordError) {
-        NSLog(@"error: %@", [recordError localizedDescription]);
+        NSLog(@"There was an error creating the recorder: %@", [recordError localizedDescription]);
     } else {
         [aRecorder prepareToRecord];
     }
     
+    NSError *audioError; // will hold any error information that occurs during audio initialization
+    aPlayer = [aPlayer initWithContentsOfURL:aRecorder.url error:&audioError]; // sets up audio player
+    
+    if (audioError) {
+        NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
+    }
+    
+    [aPlayer setVolume:volumeSlider.value];
     
     // Initialize audio player to default sound file
+    /*AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
+    [audioSession setActive:YES error: nil];
+    
+    NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    audioPlayer.numberOfLoops = -1;
+    [audioPlayer setVolume:1.0];*/
 }
 
 // Actions to take place when the window closes
 - (void)viewDidUnload
 {
+    volumeSlider = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -55,7 +78,8 @@
 }
 
 // Starts recording audio message
-- (IBAction)recordSound:(id) sender {
+- (IBAction)recordSound {
+    
     if (!aRecorder.recording) {
         playButton.enabled = FALSE;
         recordButton.enabled = FALSE;
@@ -63,48 +87,57 @@
         
         [aRecorder record];
     }
+     
 }
 
 // Stops recording audio message || stops playing audio message
-- (IBAction)stopSound:(id) sender {
+- (IBAction)stopSound {
     
     playButton.enabled = TRUE;
     recordButton.enabled = TRUE;
     stopButton.enabled = FALSE;
     
-    if (aRecorder.recording)
+    if (aRecorder.recording) {
         [aRecorder stop];
-    else if (aPlayer.playing)
+    }
+    else if (aPlayer.playing) {
         [aRecorder stop];
-    
-    //Testing
-    NSLog(@"The stop button was pressed");
+    }
 }
 
 // Starts playing audio message
-- (IBAction)playSound:(id) sender {
-    if (!_audioRecorder.recording) {
-        recordButton.enabled = FALSE;
+- (IBAction)playSound {
+    
+    if (!aRecorder.recording) {
+        //recordButton.enabled = FALSE;
         stopButton.enabled = TRUE;
         
         NSError *audioError; // will hold any error information that occurs during audio initialization
         
         aPlayer = [aPlayer initWithContentsOfURL:aRecorder.url error:&audioError]; // sets up audio player
         
-        if (audioError)
-            NSLog(@"An Error Occured: %@", [audioError localizedDescription]);
-        else
+        if (audioError) {
+            NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
+        }
+        else {
             [aPlayer play];
+        }
     }
 }
 
 - (IBAction)defaultSound {
-    //TODO
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"mp3"];
+    NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
 }
 
 // Saves the audio message
 - (IBAction)saveSound {
     //TODO
+}
+
+// Changes playback volume in Audio Settings
+- (IBAction)changeVolume {
+    [aPlayer setVolume:volumeSlider.value];
 }
 
 

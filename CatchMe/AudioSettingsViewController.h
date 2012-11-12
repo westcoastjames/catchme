@@ -22,16 +22,18 @@
     UIButton *playButton;
     UIButton *saveButton;
     UIButton *defaultButton;
-    
+
+    IBOutlet UISlider *volumeSlider;
     AVAudioRecorder *aRecorder;
     AVAudioPlayer *aPlayer;
 }
 
-@property (nonatomic) IBOutlet UIButton *recordButton;
-@property (nonatomic) IBOutlet UIButton *stopButton;
-@property (nonatomic) IBOutlet UIButton *playButton;
-@property (nonatomic) IBOutlet UIButton *saveButton;
-@property (nonatomic) IBOutlet UIButton *defaultButton;
+@property (strong, nonatomic) IBOutlet UIButton *recordButton;
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UIButton *defaultButton;
+@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
@@ -42,5 +44,6 @@
 - (IBAction)saveSound;
 - (IBAction)defaultSound;
 - (IBAction)cancelChanges;
+- (IBAction)changeVolume;
 
 @end

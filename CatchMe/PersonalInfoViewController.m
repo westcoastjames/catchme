@@ -123,8 +123,10 @@
     // and care card are legitimate inputs though
     Boolean error = FALSE;
     if ([careCard length] != 10) {
-        invalidCardNum.hidden = FALSE;
-        error = TRUE;
+        if ([careCard length] != 0) {
+            invalidCardNum.hidden = FALSE;
+            error = TRUE;
+        }
     }
     if ((month > 12 || month < 1 || day > 31 || day < 1 || year < 1000 || year > 9999) && (month != 0 || day != 0 || year != 0)) {
         invalidDate.hidden = FALSE;

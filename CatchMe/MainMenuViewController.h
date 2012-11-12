@@ -36,7 +36,7 @@
     //NSString *lat_str;
     
     NSTimer *timer;
-    int *count;
+    int count;
 }
 
 - (IBAction)activateAccelerometer;

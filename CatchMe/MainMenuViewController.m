@@ -31,7 +31,7 @@
     
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
-    motionManager.accelerometerUpdateInterval = (double)1/30;// 30 Hz
+    motionManager.accelerometerUpdateInterval = (double)1/10;// 10 Hz
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
@@ -51,19 +51,22 @@
              double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
              
+             NSLog(@"Vector Sum: %0.6f", vector_sum);
+             
              // Thresholds for different types of motions in comparison to the vector sum
              float freeFallThreshold = 0.5; // The user is falling
              float landedThreshold = 1.5; // The user hits the ground
              
-             NSLog(@"Point1 Reached");
+             NSLog(@"Point1 Reached~~~~~~~~~");
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
-                  NSLog(@"Point2 Reached");
+                  NSLog(@"Point2 Reached~~~~~~~~~~~~");
                  timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
                  while (count <= 2) {
-                      NSLog(@"Point3 Reached");
+                     NSLog(@"Point3 Reached - %i", count);
+                     vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
                      if (vector_sum > landedThreshold) {
-                          NSLog(@"Point4 Reached");
+                          NSLog(@"Point4 Reached+++++++++++++");
                          // To show the alert
                          [alert show];
                          [audioPlayer play];

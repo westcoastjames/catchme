@@ -143,7 +143,6 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer setVolume:1.0];
-    [audioPlayer play];
 }
 
 - (void)viewDidUnload

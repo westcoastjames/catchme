@@ -48,6 +48,17 @@
              double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
              
+             // Thresholds for different types of motions in comparison to the vector sum
+             float freeFallThreshold = 0.2; // The user is falling
+             float landedThreshold = 2.0; // The user hits the ground
+             
+             // Basic free fall test
+             if(vector_sum < freeFallThreshold) {
+                 
+             }
+             
+             // TEST LABELS ON MAIN WINDOW
+             
              /*
               x_coord.text = x_str;
               y_coord.text = y_str;

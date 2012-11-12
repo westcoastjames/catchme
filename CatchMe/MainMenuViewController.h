@@ -20,6 +20,8 @@
     
     AVAudioPlayer *audioPlayer;
     
+    
+    UIAlertView *alert;
 }
 
 - (IBAction)activateAccelerometer;

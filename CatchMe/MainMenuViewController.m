@@ -26,6 +26,9 @@
 
 - (IBAction)activateAccelerometer {
     
+    // Create alert notification
+    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
     motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz
@@ -55,6 +58,18 @@
              
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
+                 timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+                 while (count <= 2) {
+                     if (vector_sum > landedThreshold) {
+                         // To show the alert
+                         [alert show];
+                     }
+                 }
+                 while (count < 10) {
+                     // Wait
+                 }
+                 // To hide the alert (use timer!)
+                 [alert dismissWithClickedButtonIndex:0 animated:TRUE];
                  
              }
              
@@ -81,16 +96,10 @@
     else {
         NSLog(@"Accelerometer did not work.");
     }
-    
-    // Create alert notification
-    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
-    // To show the alert
-    [alert show];
-    
-    // To hide the alert (use timer!)
-    //[alert dismissWithClickedButtonIndex:0 animated:TRUE];
-    
+}
+
+- (void)countUp {
+    count += 1;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

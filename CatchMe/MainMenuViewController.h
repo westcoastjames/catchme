@@ -20,8 +20,21 @@
     
     AVAudioPlayer *audioPlayer;
     
+    // For testing purposes
+    IBOutlet UILabel *x_coord;
+    IBOutlet UILabel *y_coord;
+    IBOutlet UILabel *z_coord;
+    IBOutlet UILabel *longitude;
+    IBOutlet UILabel *latitude;
     
     UIAlertView *alert;
+    
+    double x_accel;
+    double y_accel;
+    double z_accel;
+    
+    //NSString *long_str;
+    //NSString *lat_str;
 }
 
 - (IBAction)activateAccelerometer;

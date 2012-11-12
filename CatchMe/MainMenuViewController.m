@@ -28,32 +28,40 @@
     
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
+    motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
              
-             double x_accel = accelerometerData.acceleration.x;
-             double y_accel = accelerometerData.acceleration.y;
-             double z_accel = accelerometerData.acceleration.z;
+             x_accel = accelerometerData.acceleration.x;
+             y_accel = accelerometerData.acceleration.y;
+             z_accel = accelerometerData.acceleration.z;
              
              //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
-            /*
-             NSString *x_str = (@"%0.6f", x_accel);
-             NSString *y_str = (@"%0.6f", x_accel);
-             NSString *z_str = (@"%0.6f", x_accel);
+            
              
-             NSLog(@"X = , Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel)
-             [x_coord setText:x_str];
+             
+             //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
+            
+             
+             
+             /*
+             x_coord.text = x_str;
+             y_coord.text = y_str;
+             z_coord.text = y_str;
              */
-             
-             
-             
-             
+             NSString *x_str = [NSString stringWithFormat:@"%0.6f", x_accel];
+             NSString *y_str = [NSString stringWithFormat:@"%0.6f", y_accel];
+             NSString *z_str = [NSString stringWithFormat:@"%0.6f", z_accel];
+             [x_coord setText: x_str];
+             [y_coord setText: y_str];
+             [z_coord setText: z_str];
              //double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"Vector Sum = %.06f", vector_sum);
          }];
+        
     }
     else if(![systemStatusSwitch isOn]){
         NSLog(@"Accelerometer is off.");
@@ -61,6 +69,7 @@
     else{
         NSLog(@"Accelerometer did not work.");
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,6 +80,7 @@
      [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
      */
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -102,6 +112,8 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer play];
+    
+    
 
 
 }
@@ -123,16 +135,20 @@
     double decimal = fabs(newLocation.coordinate.latitude - degrees);
     int minutes = decimal * 60;
     double seconds = decimal *3600 - minutes *60;
-    NSLog(@"Latitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSString *lat_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
+    NSLog(@"Latitude: %@\"",lat_str);
     
     degrees = newLocation.coordinate.longitude;
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal *60;
     seconds = decimal *3600 - minutes *60;
-    NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSString *long_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
+    NSLog(@"Longitude: %@\"",long_str);
     
     // Testing purposes
-    //[longitude setText:("%@",)];
+    [longitude setText:long_str];
+    [latitude setText:lat_str];
+    
     
 }
 

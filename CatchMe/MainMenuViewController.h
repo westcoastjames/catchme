@@ -13,11 +13,11 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
+    
     IBOutlet UISwitch* systemStatusSwitch;
     DBConnection* db;
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
-    
     AVAudioPlayer *audioPlayer;
     
     // For testing purposes
@@ -32,7 +32,6 @@
     double x_accel;
     double y_accel;
     double z_accel;
-    
     //NSString *long_str;
     //NSString *lat_str;
     

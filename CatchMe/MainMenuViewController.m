@@ -45,8 +45,7 @@
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
              
-             // For testing purposes
-             NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+             //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
              
              // Compute vector sum of data
              double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
@@ -124,6 +123,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     // GPS location manager
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -133,12 +133,12 @@
     
     // Code for Audio playback plays sound when app is launched
     // Move this code to somewhere appropriate when testing is done
-    /*NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
-    */
+    AVAudioSession * audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
+    [audioSession setActive:YES error: nil];
     
     NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:musicPath];
-    
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer play];

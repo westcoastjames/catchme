@@ -13,6 +13,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Timer.h"
 
+#include "sys/time.h"
+
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
     IBOutlet UISwitch* systemStatusSwitch;
@@ -33,16 +35,12 @@
     double x_accel;
     double y_accel;
     double z_accel;
-    //NSString *long_str;
-    //NSString *lat_str;
     
-    //NSTimer *timer;
-    //int count;
+    long startsecs;
     
     
 }
 
 - (IBAction)activateAccelerometer;
-- (void)countUp;
 
 @end

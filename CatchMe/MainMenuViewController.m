@@ -26,17 +26,18 @@
 
 - (IBAction)activateAccelerometer {
     
-    // Create alert notification
-    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
+
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
-    motionManager.accelerometerUpdateInterval = (double)1/10;// 10 Hz
+    motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz  Frequency affects the sensitivity of the fall detection
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+             
+             struct timeval tv;
+             gettimeofday(&tv,nil);
              
              // ALGORITHM USED TO DETECT A BASIC FALLING MOTION
              
@@ -45,7 +46,7 @@
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
              
-             NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+             //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
              
              // Compute vector sum of data
              double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
@@ -54,43 +55,25 @@
              NSLog(@"Vector Sum: %0.6f", vector_sum);
              
              // Thresholds for different types of motions in comparison to the vector sum
-             float freeFallThreshold = 0.5; // The user is falling
-             float landedThreshold = 1.5; // The user hits the ground
+             float freeFallThreshold = 0.3; // The user is falling
+             float landedThreshold = 2.0; // The user hits the ground
              
              NSLog(@"Point1 Reached~~~~~~~~~");
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
-                  NSLog(@"Point2 Reached~~~~~~~~~~~~");
-                 //timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+                 NSLog(@"Point2 Reached~~~~~~~~~~~~~~~~~~~~~");
+                 startsecs = tv.tv_sec;
+             }
+             else if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
                  
-                 Timer *timer = [[Timer alloc] init];
-                 [timer startTimer];
-                 
-                 while ([timer timeElapsedInMilliseconds] <= 2000) {
-                     NSLog(@"Point3 Reached - %d", [timer timeElapsedInMilliseconds]);
-                     vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-                     if (vector_sum > landedThreshold) {
-                          NSLog(@"Point4 Reached+++++++++++++");
-                         // To show the alert
-                         [alert show];
-                         [audioPlayer play];
-                     }
-                 }
-                 while ([timer timeElapsedInMilliseconds] < 1000) {
-                     // Wait
-                 }
-                 // To hide the alert (use timer!)
-                 [alert dismissWithClickedButtonIndex:0 animated:TRUE];
+                 // Alert is causing our app to crash
+                //[alert show];
+                [audioPlayer play];
+                 NSLog(@"**** FALL DETECTED ****");
                  
              }
              
              // TEST LABELS ON MAIN WINDOW
-             
-             /*
-              x_coord.text = x_str;
-              y_coord.text = y_str;
-              z_coord.text = y_str;
-              */
              NSString *x_str = [NSString stringWithFormat:@"%0.6f", x_accel];
              NSString *y_str = [NSString stringWithFormat:@"%0.6f", y_accel];
              NSString *z_str = [NSString stringWithFormat:@"%0.6f", z_accel];
@@ -101,28 +84,17 @@
          }];
         
     }
+    // Switch accelerometer detection off
     else if(![systemStatusSwitch isOn]){
-        NSLog(@"Accelerometer detetction is off.");
+        NSLog(@"Accelerometer detection is off.");
+        [audioPlayer stop];
     }
     else {
         NSLog(@"Accelerometer did not work.");
     }
 }
 
-/*
-- (void)countUp {
-    count += 1;
-}
- */
-
 - (void)viewWillAppear:(BOOL)animated {
-    /* Commented Pitch, Roll, Yaw out until we actually need it for the falling algorithm.
-     motionManager = [[CMMotionManager alloc] init];
-     motionManager.deviceMotionUpdateInterval = 0.05; // 20 Hz
-     
-     [motionManager startDeviceMotionUpdates];
-     NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
-     */
     
 }
 
@@ -146,7 +118,6 @@
     [locationManager startUpdatingLocation];
     
     // Code for Audio playback plays sound when app is launched
-    // Move this code to somewhere appropriate when testing is done
     AVAudioSession * audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
     [audioSession setActive:YES error: nil];
@@ -156,6 +127,10 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer setVolume:1.0];
+    
+    // Create alert notification
+    alert = [[UIAlertView alloc] initWithTitle:@"A Fall Was Detected!" message:@"Press ok to dismiss this alert." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
 }
 
 - (void)viewDidUnload

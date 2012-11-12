@@ -49,15 +49,16 @@
       
       */
     
-    
-    motionManager.accelerometerUpdateInterval = (double)1/50; //50Hz
+    /*
+    motionManager.accelerometerUpdateInterval = (double)0.5; //20Hz
     motionQueue = [[NSOperationQueue alloc] init];
     
     [motionManager startAccelerometerUpdatesToQueue: motionQueue withHandler: ^( CMAccelerometerData* data, NSError* error) {
         NSLog(@"Accelerometer: %@", [data description]);
     }];
+     */
     
-    
+   
     //Jonathons implementation of the background notification
     NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
     
@@ -69,7 +70,7 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
     
     return YES;
-     
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

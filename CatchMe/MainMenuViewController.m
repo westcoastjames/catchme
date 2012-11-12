@@ -28,6 +28,7 @@
     
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
+    motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
@@ -57,6 +58,10 @@
                  
              }
          }];
+        
+    }
+    else if(![systemStatusSwitch isOn]){
+        NSLog(@"Accelerometer is off.");
     }
     else {
         NSLog(@"Accelerometer did not work.");
@@ -82,6 +87,7 @@
      [motionManager startDeviceMotionUpdates];
      NSLog(@"Pitch = %.02f, Roll = %.02f, Yaw = %.02f", motionManager.deviceMotion.attitude.pitch, motionManager.deviceMotion.attitude.roll, motionManager.deviceMotion.attitude.yaw);
      */
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -102,19 +108,19 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
     [locationManager startUpdatingLocation];
     
-    // Code for Audio playback
-    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
+    // Code for Audio playback plays sound when app is launched
+    // Move this code to somewhere appropriate when testing is done
+    /*NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bell-ringing.mp3", [[NSBundle mainBundle] resourcePath]]];
+    */
     
-    NSError *error;
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
+    [audioPlayer play];
     
-    if (audioPlayer == nil){
-        NSLog([error description]);
-    }
-    else {
-        [audioPlayer play];
-    }
+    
 
 
 }
@@ -136,13 +142,21 @@
     double decimal = fabs(newLocation.coordinate.latitude - degrees);
     int minutes = decimal * 60;
     double seconds = decimal *3600 - minutes *60;
-    NSLog(@"Latitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSString *lat_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
+    NSLog(@"Latitude: %@\"",lat_str);
     
     degrees = newLocation.coordinate.longitude;
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal *60;
     seconds = decimal *3600 - minutes *60;
-    NSLog(@"Longitude: %d° %d' %1.4f\"",degrees, minutes, seconds);
+    NSString *long_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
+    NSLog(@"Longitude: %@\"",long_str);
+    
+    // Testing purposes
+    [longitude setText:long_str];
+    [latitude setText:lat_str];
+    
+    
 }
 
 @end

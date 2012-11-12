@@ -34,8 +34,12 @@
     double z_accel;
     //NSString *long_str;
     //NSString *lat_str;
+    
+    NSTimer *timer;
+    int *count;
 }
 
 - (IBAction)activateAccelerometer;
+- (void)countUp;
 
 @end

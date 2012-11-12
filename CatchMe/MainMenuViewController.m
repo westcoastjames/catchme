@@ -61,9 +61,13 @@
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
                   NSLog(@"Point2 Reached~~~~~~~~~~~~");
-                 timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
-                 while (count <= 2) {
-                     NSLog(@"Point3 Reached - %i", count);
+                 //timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+                 
+                 Timer *timer = [[Timer alloc] init];
+                 [timer startTimer];
+                 
+                 while ([timer timeElapsedInMilliseconds] <= 2000) {
+                     NSLog(@"Point3 Reached - %d", [timer timeElapsedInMilliseconds]);
                      vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
                      if (vector_sum > landedThreshold) {
                           NSLog(@"Point4 Reached+++++++++++++");
@@ -72,7 +76,7 @@
                          [audioPlayer play];
                      }
                  }
-                 while (count < 10) {
+                 while ([timer timeElapsedInMilliseconds] < 1000) {
                      // Wait
                  }
                  // To hide the alert (use timer!)
@@ -98,16 +102,18 @@
         
     }
     else if(![systemStatusSwitch isOn]){
-        NSLog(@"Accelerometer is off.");
+        NSLog(@"Accelerometer detetction is off.");
     }
     else {
         NSLog(@"Accelerometer did not work.");
     }
 }
 
+/*
 - (void)countUp {
     count += 1;
 }
+ */
 
 - (void)viewWillAppear:(BOOL)animated {
     /* Commented Pitch, Roll, Yaw out until we actually need it for the falling algorithm.

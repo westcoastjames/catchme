@@ -11,6 +11,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Timer.h"
 
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
@@ -35,8 +36,10 @@
     //NSString *long_str;
     //NSString *lat_str;
     
-    NSTimer *timer;
-    int count;
+    //NSTimer *timer;
+    //int count;
+    
+    
 }
 
 - (IBAction)activateAccelerometer;

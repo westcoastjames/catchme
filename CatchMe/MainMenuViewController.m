@@ -4,7 +4,8 @@
 //
 //  Created by Jonathon Simister on 10/17/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
-//
+//  
+//  BUG: Multiple alert notifications are shown when fall is detected in activateAccelerator method.
 
 #import "MainMenuViewController.h"
 
@@ -77,6 +78,7 @@
                  NSLog(@"**** FALL DETECTED ****");
                  
                  // Run the alert in the main thread to prevent app from crashing
+                 // Multiple alerts are being displayed when fall is detected
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });

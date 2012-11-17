@@ -278,54 +278,44 @@
                                                 <action selector="cancelChanges" destination="Q1q-ma-8mQ" id="4Xf-bY-9qj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8i6-yH-cXB"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8i6-yH-cXB">
+                                            <connections>
+                                                <action selector="saveInfo" destination="Q1q-ma-8mQ" id="dlR-P9-scq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To be implemented in version 3." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Q5F-hp-xqA">
-                                <rect key="frame" x="39" y="266" width="244" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings for alerting the user a fall has been detected (so they can either dismiss or let the audio/message alerts activate)" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nyg-QQ-2Fu">
-                                <rect key="frame" x="49" y="289" width="234" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="IRV-sY-sUo">
-                                <rect key="frame" x="210" y="85" width="79" height="27"/>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="IRV-sY-sUo">
+                                <rect key="frame" x="221" y="75" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="oR5-hS-cEe">
-                                <rect key="frame" x="210" y="142" width="79" height="27"/>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oR5-hS-cEe">
+                                <rect key="frame" x="221" y="134" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Audio Notification: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="H25-Jo-ITK">
-                                <rect key="frame" x="57" y="85" width="145" height="21"/>
+                                <rect key="frame" x="57" y="75" width="145" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Vibration Notification:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="j0S-WN-X1f">
-                                <rect key="frame" x="38" y="145" width="164" height="21"/>
+                                <rect key="frame" x="38" y="137" width="164" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="cZ0-YN-3i3">
-                                <rect key="frame" x="210" y="191" width="79" height="31"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20" minimumFontSize="17" id="cZ0-YN-3i3">
+                                <rect key="frame" x="221" y="196" width="74" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time delay before alerts are sent out:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IuS-Up-jbE">
-                                <rect key="frame" x="57" y="180" width="155" height="54"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time delay before alerts are sent out (seconds):" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IuS-Up-jbE">
+                                <rect key="frame" x="26" y="183" width="192" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -334,6 +324,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="audioNotification" destination="IRV-sY-sUo" id="CTr-dZ-hnc"/>
+                        <outlet property="timeDelayTextField" destination="cZ0-YN-3i3" id="Z8X-De-UlJ"/>
+                        <outlet property="vibrationNotification" destination="oR5-hS-cEe" id="CIC-pD-MHO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eka-Jr-kbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -889,6 +884,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlertSettingsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="dismissKeyboard"/>
+                <relationship kind="action" name="saveInfo"/>
+                <relationship kind="outlet" name="audioNotification" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="timeDelayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="vibrationNotification" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="AudioSettingsViewController" superclassName="UIViewController">

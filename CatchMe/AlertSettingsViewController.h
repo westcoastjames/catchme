@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlertSettingsViewController : UIViewController
+@interface AlertSettingsViewController : UIViewController {
+    IBOutlet UITextField *timeDelayTextField;
+    IBOutlet UISwitch *audioNotification;
+    IBOutlet UISwitch *vibrationNotification;
+    UITapGestureRecognizer *tap;
+}
 
 - (IBAction)cancelChanges;
+- (IBAction)dismissKeyboard;
+- (IBAction)saveInfo;
 
 @end

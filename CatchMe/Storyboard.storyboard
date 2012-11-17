@@ -157,29 +157,8 @@
                                             <segue destination="gnr-17-nXI" kind="modal" modalTransitionStyle="flipHorizontal" id="0HU-ug-ETm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="YR5-yR-bHQ" rowHeight="55" style="IBUITableViewCellStyleDefault" id="KPP-mr-jhk">
-                                        <rect key="frame" x="0.0" y="275" width="320" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="54"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Emergency Contacts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YR5-yR-bHQ">
-                                                    <rect key="frame" x="10" y="0.0" width="260" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="pEu-Do-eZW" kind="modal" modalTransitionStyle="flipHorizontal" id="fuG-6c-fBS"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wqz-w7-60F" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Bj0-co-cGz">
-                                        <rect key="frame" x="0.0" y="330" width="320" height="55"/>
+                                        <rect key="frame" x="0.0" y="275" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="54"/>
@@ -197,6 +176,27 @@
                                         </view>
                                         <connections>
                                             <segue destination="hJI-e7-C76" kind="modal" modalTransitionStyle="flipHorizontal" id="Zcm-dW-sC4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="YR5-yR-bHQ" rowHeight="55" style="IBUITableViewCellStyleDefault" id="KPP-mr-jhk">
+                                        <rect key="frame" x="0.0" y="330" width="320" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Emergency Contacts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YR5-yR-bHQ">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="pEu-Do-eZW" kind="modal" modalTransitionStyle="flipHorizontal" id="fuG-6c-fBS"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -258,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIu-bg-F8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="1368"/>
+            <point key="canvasLocation" x="1262" y="1414"/>
         </scene>
         <!--Alert Settings View Controller-->
         <scene sceneID="F6u-63-oWa">
@@ -398,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-ni-0Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="1407"/>
+            <point key="canvasLocation" x="753" y="1455"/>
         </scene>
         <!--Personal Info View Controller-->
         <scene sceneID="P8h-pr-WAg">

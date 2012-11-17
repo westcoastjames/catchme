@@ -28,6 +28,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    invalidTimeDelay.hidden = TRUE;
+    
     // Loads in the user default settings
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -35,8 +37,13 @@
     bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
     
-    // Convert tiemDelay integer back into a string so it can be displayed in the textbox
+    if (timeDelay == 0) {
+        timeDelay = 10;
+    }
+    
+    // Convert timeDelay integer back into a string so it can be displayed in the textbox
     NSString *timeDelayString = [NSString stringWithFormat:@"%i",timeDelay];
+    
     
     timeDelayTextField.text = timeDelayString;
     
@@ -80,9 +87,16 @@
 - (IBAction)saveInfo {
     [timeDelayTextField resignFirstResponder];
     
+    invalidTimeDelay.hidden = TRUE;
+    
     bool audioNotificationOn = [audioNotification isOn];
     bool vibrationNotificationOn = [vibrationNotification isOn];
     NSInteger timeDelay = [[timeDelayTextField text] integerValue];
+    
+    if (timeDelay == 0) {
+        invalidTimeDelay.hidden = FALSE;
+        return;
+    }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:audioNotificationOn forKey:@"audioNotificationOn"];

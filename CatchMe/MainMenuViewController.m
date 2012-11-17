@@ -8,6 +8,7 @@
 //  BUG: Multiple alert notifications are shown when fall is detected in activateAccelerator method.
 
 #import "MainMenuViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface MainMenuViewController ()
 
@@ -29,6 +30,8 @@
 // Activated through the switch on the main menu
 - (IBAction)activateAccelerometer {
     
+    // Used to access user settings data
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
@@ -79,13 +82,24 @@
                  
                  NSLog(@"**** FALL DETECTED ****");
                  
+                 NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
+                 bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
+                 bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
+                 
                  // Run the alert in the main thread to prevent app from crashing
                  // Multiple alerts are being displayed when fall is detected
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
                  
-                 [audioPlayer play];
+                 if (audioNotificationOn) {
+                     [audioPlayer play];
+                 }
+                 if (vibrationNotificationOn) {
+                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+                 }
+                 
+                 // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
                  
              }
              

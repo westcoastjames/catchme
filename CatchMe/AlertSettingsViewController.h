@@ -12,6 +12,7 @@
     IBOutlet UITextField *timeDelayTextField;
     IBOutlet UISwitch *audioNotification;
     IBOutlet UISwitch *vibrationNotification;
+    IBOutlet UILabel *invalidTimeDelay;
     UITapGestureRecognizer *tap;
 }
 

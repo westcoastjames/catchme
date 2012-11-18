@@ -81,6 +81,8 @@
                      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                  }
                  
+                 [motionManager stopAccelerometerUpdates];
+                 
                  // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
              }
              

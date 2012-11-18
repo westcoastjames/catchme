@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     @public
     CMMotionManager* motionManager;
-    NSOperationQueue* motionQueue;
+    CLLocationManager *locationManager;
 }
 
 @property (strong, nonatomic) UIWindow *window;

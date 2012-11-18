@@ -10,6 +10,7 @@
 #import "AVFoundation/AVAudioRecorder.h"
 #import "AVFoundation/AVAudioPlayer.h"
 #import <CoreAudio/CoreAudioTypes.h>
+#import <AVFoundation/AVFoundation.h>
 
 // Audio recording and playback can be done through the use of the AVAudioRecorder and AVAudioPlayer API
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // Sets buttons to enable/disable
     playButton.enabled = TRUE;
     [playButton setBackgroundColor:[UIColor greenColor]];
     recordButton.enabled = TRUE;
@@ -32,11 +34,19 @@
     defaultButton.enabled = TRUE;
     [defaultButton setBackgroundColor:[UIColor greenColor]];
     
+    // Initialize audio session
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
+    [audioSession setActive:YES error: nil];
+    
     // Initialize audio recorder
     
     // Specify recorder file path
-    NSArray* documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
+    
+   // NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
+   // fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
     NSError *recordError = nil; // will hold any error information that occurs during the recorder initialization
@@ -59,29 +69,23 @@
     
     [aRecorder prepareToRecord];
     
-    // Initialize audio player
-    fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.mp3"];
-    URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
+    // Set the filepath to be the last saved audio clip so that when play is pressed the current saved message plays
+
+    fullFilePath = [[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"];
+    fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    URLtoHoldFile = [NSURL URLWithString:fullFilePath];
     
-    NSError *audioError; // will hold any error information that occurs during audio initialization
-    aPlayer = [aPlayer initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
+    // Initialize the audio player
+    NSError *audioError = nil; // will hold any error information that occurs during audio initialization
+    aPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
     
     if (audioError) {
         NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
     }
     
-    [aPlayer setVolume:volumeSlider.value];
-    
-    // Initialize audio player to default sound file
-    /*AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
-    [audioSession setActive:YES error: nil];
-    
-    NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:musicPath];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    audioPlayer.numberOfLoops = -1;
-    [audioPlayer setVolume:1.0];*/
+    if (aPlayer == nil) {
+        NSLog(@"AUDIO PLAYER NOT INITIALIZING~~~~~~~~~~~~~~~~~~~");
+    }
 }
 
 // Actions to take place when the window closes
@@ -149,9 +153,14 @@
         defaultButton.enabled = FALSE;
         [defaultButton setBackgroundColor:[UIColor redColor]];
         
-        NSError *audioError; // will hold any error information that occurs during audio initialization
+        NSError *audioError = nil; // will hold any error information that occurs during audio initialization
         
-        aPlayer = [aPlayer initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
+        aPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
+        [aPlayer setVolume:volumeSlider.value];
+        
+        if (aPlayer == nil) {
+            NSLog(@"No audio player~~~~~~~~~~~~~~~~~~~");
+        }
         
         if (audioError) {
             NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
@@ -163,8 +172,8 @@
 }
 
 - (IBAction)defaultSound {
-    NSArray* documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"default-audio-alert.caf"];
+    NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"];
+    fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
 }
 

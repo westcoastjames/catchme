@@ -37,8 +37,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *defaultButton;
 @property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
 
-@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
-@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AVAudioRecorder *aRecorder;
+@property (strong, nonatomic) AVAudioPlayer *aPlayer;
+
+@property (strong, nonatomic) NSURL *URltoHoldFile;
 
 - (IBAction)recordSound;
 - (IBAction)stopSound;

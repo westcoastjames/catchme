@@ -610,7 +610,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playSound" destination="gnr-17-nXI" eventType="touchUpInside" id="Y1e-Nx-x9J"/>
+                                    <action selector="playSound" destination="gnr-17-nXI" eventType="touchUpInside" id="2Y4-I2-a0I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="For optimum results, speak slowly and clearly into the microphone. Press play to review the recording before saving." lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="none" minimumFontSize="10" adjustsFontSizeToFit="NO" id="rB3-ir-Qc4">

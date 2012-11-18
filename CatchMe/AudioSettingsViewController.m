@@ -34,6 +34,19 @@
     defaultButton.enabled = TRUE;
     [defaultButton setBackgroundColor:[UIColor greenColor]];
     
+    // Load any setting values previously saved
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    bool audioMessageOn = [defaults objectForKey:@"audioMessageOn"];
+    CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
+    
+    if (audioMessageOn) {
+        [audioMessageStatus setOn:YES];
+    }
+    
+    if (messageVolume != 0) {
+        volumeSlider.value = messageVolume;
+    }
+    
     // Initialize audio session
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
@@ -42,9 +55,6 @@
     // Initialize audio recorder
     
     // Specify recorder file path
-    
-   // NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
-   // fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
@@ -71,9 +81,8 @@
     
     // Set the filepath to be the last saved audio clip so that when play is pressed the current saved message plays
 
-    fullFilePath = [[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"];
-    fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    URLtoHoldFile = [NSURL URLWithString:fullFilePath];
+    fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
+    URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
     // Initialize the audio player
     NSError *audioError = nil; // will hold any error information that occurs during audio initialization
@@ -82,10 +91,8 @@
     if (audioError) {
         NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
     }
-    
-    if (aPlayer == nil) {
-        NSLog(@"AUDIO PLAYER NOT INITIALIZING~~~~~~~~~~~~~~~~~~~");
-    }
+
+    aPlayer.volume = volumeSlider.value;
 }
 
 // Actions to take place when the window closes
@@ -156,16 +163,13 @@
         NSError *audioError = nil; // will hold any error information that occurs during audio initialization
         
         aPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
-        [aPlayer setVolume:volumeSlider.value];
-        
-        if (aPlayer == nil) {
-            NSLog(@"No audio player~~~~~~~~~~~~~~~~~~~");
-        }
+        aPlayer.volume = volumeSlider.value;
         
         if (audioError) {
             NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
         }
         else {
+            [aPlayer prepareToPlay];
             [aPlayer play];
         }
     }
@@ -173,19 +177,28 @@
 
 - (IBAction)defaultSound {
     NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"];
-    fullFilePath = [fullFilePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
 }
 
 // Saves the audio message
 - (IBAction)saveSound {
-    //TODO
+    //need to save recorder audio
+    
+    NSURL *soundURL = URLtoHoldFile;
+    bool audioMessageOn = [audioMessageStatus isOn];
+    CGFloat messageVolume = volumeSlider.value;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //[defaults setObject:soundURL forKey:@"soundURL"];
+    [defaults setBool:audioMessageOn forKey:@"audioMessageOn"];
+    [defaults setFloat:messageVolume forKey:@"messageVolume"];
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
 // Changes playback volume in Audio Settings
 - (IBAction)changeVolume {
-    [aPlayer setVolume:volumeSlider.value];
+    aPlayer.volume = volumeSlider.value;
 }
 
 

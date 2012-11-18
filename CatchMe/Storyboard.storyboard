@@ -624,18 +624,21 @@
                                 <rect key="frame" x="219" y="69" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Play audio message when alert activates" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="l6p-TF-WZu">
-                                <rect key="frame" x="24" y="56" width="206" height="53"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Play audio message when alerts activate" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="l6p-TF-WZu">
+                                <rect key="frame" x="23" y="56" width="196" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="Cqb-T8-DoY">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="9.9999999999999995e-07" maxValue="1" id="Cqb-T8-DoY">
                                 <rect key="frame" x="18" y="357" width="284" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeVolume" destination="gnr-17-nXI" eventType="valueChanged" id="VTA-S9-baF"/>
+                                </connections>
                             </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Playback Volume Control" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="anC-AR-Bik">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Audio Message Volume Control" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="anC-AR-Bik">
                                 <rect key="frame" x="21" y="325" width="283" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -683,11 +686,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="audioMessageStatus" destination="wdu-nz-rWC" id="ANS-Kf-syV"/>
                         <outlet property="defaultButton" destination="TdH-8Q-ScH" id="5pF-0j-7Pg"/>
                         <outlet property="playButton" destination="Zfh-Mx-AP4" id="AvW-oa-fvg"/>
                         <outlet property="recordButton" destination="kfM-Qr-nrZ" id="0Du-S7-W27"/>
                         <outlet property="stopButton" destination="kl2-rg-2ew" id="gEK-EZ-PGA"/>
-                        <outlet property="volumeSlider" destination="Cqb-T8-DoY" id="Y5D-Q3-jqj"/>
+                        <outlet property="volumeSlider" destination="Cqb-T8-DoY" id="3ZJ-T9-YjV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvv-My-3HZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -914,6 +918,7 @@
                 <relationship kind="action" name="recordSound"/>
                 <relationship kind="action" name="saveSound"/>
                 <relationship kind="action" name="stopSound"/>
+                <relationship kind="outlet" name="audioMessageStatus" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>

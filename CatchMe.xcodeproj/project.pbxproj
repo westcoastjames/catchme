@@ -25,6 +25,7 @@
 		1FCE51C8165830DA001DCF63 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCE51C7165830DA001DCF63 /* AudioToolbox.framework */; };
 		1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */; };
 		1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */; };
+		1FFB314C16597F2F002D22A1 /* recorded-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */; };
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
 		2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
@@ -92,6 +93,7 @@
 		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoViewController.m; sourceTree = "<group>"; };
 		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "recorded-audio-alert.caf"; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		2D27A3301634DBEC0098F6C9 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -117,7 +119,7 @@
 		2D757A77162F6FC300104D8A /* CatchMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchMeTests.m; sourceTree = "<group>"; };
 		2D8609F31658678B0040A9DA /* FallDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallDetector.h; sourceTree = "<group>"; };
 		2D8609F41658678B0040A9DA /* FallDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallDetector.m; sourceTree = "<group>"; };
-		2D8E43541634A5B300D008B2 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = ../ContactsViewController.xib; sourceTree = "<group>"; };
+		2D8E43541634A5B300D008B2 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		2D8E43571634A61A00D008B2 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		2D8E43581634A61A00D008B2 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		2DFD4B3416337E9700396892 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		1A67CF6B16505F920031B6E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */,
 				1F4E138A1658842A0086A470 /* bell-ringing.caf */,
 				1F4E138B1658842A0086A470 /* default-audio-alert.caf */,
 				1F4E138C1658842A0086A470 /* saved-audio-alert.caf */,
@@ -398,6 +401,7 @@
 				1F4E138D1658842A0086A470 /* bell-ringing.caf in Resources */,
 				1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */,
 				1F4E138F1658842A0086A470 /* saved-audio-alert.caf in Resources */,
+				1FFB314C16597F2F002D22A1 /* recorded-audio-alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

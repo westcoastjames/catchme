@@ -39,11 +39,11 @@
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+        fallDetector = [[FallDetector alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
              
-             struct timeval tv;
-             gettimeofday(&tv,nil);
+             UIAlertView *alert;
              
              // ALGORITHM USED TO DETECT A BASIC FALLING MOTION
              
@@ -52,27 +52,9 @@
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
              
-             //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
+             [fallDetector receiveDataX:x_accel Y:y_accel Z:z_accel];
              
-             // Compute vector sum of data
-             double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-             //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
-             
-             NSLog(@"Vector Sum: %0.6f", vector_sum);
-             
-             // Thresholds for different types of motions in comparison to the vector sum
-             float freeFallThreshold = 0.3; // The user is falling
-             float landedThreshold = 2.0; // The user hits the ground
-             
-             UIAlertView *alert;
-             
-             NSLog(@"Point1 Reached~~~~~~~~~");
-             // Basic free fall test
-             if(vector_sum < freeFallThreshold) {
-                 NSLog(@"Point2 Reached~~~~~~~~~~~~");
-                 startsecs = tv.tv_sec;
-             }
-             else if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
+             if([fallDetector hasFallen]) {
                  alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
                                                    message:@"Press ok to dismiss this alert."
                                                   delegate:nil
@@ -100,7 +82,6 @@
                  }
                  
                  // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
-                 
              }
              
              // TEST LABELS ON MAIN WINDOW

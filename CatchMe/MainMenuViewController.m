@@ -40,11 +40,10 @@
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+        fallDetector = [[FallDetector alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
              
-             struct timeval tv;
-             gettimeofday(&tv,nil);
              
              // ALGORITHM USED TO DETECT A BASIC FALLING MOTION
              
@@ -52,30 +51,12 @@
              x_accel = accelerometerData.acceleration.x;
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
+             [fallDetector receiveDataX:x_accel Y:y_accel Z:z_accel];
              
-             //NSLog(@"X = %.06f, Y = %.06f, Z = %.06f", x_accel, y_accel, z_accel);
-             
-             // Compute vector sum of data
-             double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
-             //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
-             NSLog(@"Vector Sum: %0.6f", vector_sum);
-             
-             // Thresholds for different types of motions in comparison to the vector sum
-             float freeFallThreshold = 0.5; // The user is falling
-             float landedThreshold = 2.0; // The user hits the ground
-             
-             
-             
-             //NSLog(@"Point1 Reached~~~~~~~~~");
-             // Basic free fall test
-             if(vector_sum < freeFallThreshold) {
-                 NSLog(@"Point2 Reached~~~~~~~~~~~~");
-                 startsecs = tv.tv_sec;
-             }
-             if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
+             if([fallDetector hasFallen]) {
                  
-                 // Stop updaing accelerometer so that notification will show up only once
-                 [motionManager stopAccelerometerUpdates];
+                 // Reset fall detector so alerts will show oonly once
+                 [fallDetector reset];
                  
                  NSLog(@"**** FALL DETECTED ****");
                  
@@ -84,7 +65,6 @@
                  bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
                  
                  // Run the alert in the main thread to prevent app from crashing
-                 // Multiple alerts are being displayed when fall is detected
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
@@ -97,8 +77,9 @@
                      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                  }
                  
-                 // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
                  
+                 
+                 // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
              }
              
              // TEST LABELS ON MAIN WINDOW

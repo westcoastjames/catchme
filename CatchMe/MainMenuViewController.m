@@ -60,9 +60,6 @@
                  
                  NSLog(@"**** FALL DETECTED ****");
                  
-                 // Stop updaing accelerometer so that notification will show up only once
-                 //[motionManager stopAccelerometerUpdates];
-                 
                  NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
                  bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];

@@ -38,6 +38,7 @@
     motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz  Frequency affects the sensitivity of the fall detection
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
+        
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
@@ -57,28 +58,24 @@
              // Compute vector sum of data
              double vector_sum = sqrt(x_accel * x_accel + y_accel * y_accel + z_accel * z_accel);
              //NSLog(@"X = %@, Y = %.@, Z = %@", x_str, y_str, z_str);
-             
              NSLog(@"Vector Sum: %0.6f", vector_sum);
              
              // Thresholds for different types of motions in comparison to the vector sum
-             float freeFallThreshold = 0.3; // The user is falling
+             float freeFallThreshold = 0.5; // The user is falling
              float landedThreshold = 2.0; // The user hits the ground
              
-             UIAlertView *alert;
              
-             NSLog(@"Point1 Reached~~~~~~~~~");
+             
+             //NSLog(@"Point1 Reached~~~~~~~~~");
              // Basic free fall test
              if(vector_sum < freeFallThreshold) {
                  NSLog(@"Point2 Reached~~~~~~~~~~~~");
                  startsecs = tv.tv_sec;
              }
-             else if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
-                 alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
-                                                   message:@"Press ok to dismiss this alert."
-                                                  delegate:nil
-                                         cancelButtonTitle:@"OK"
-                                         otherButtonTitles:nil];
+             if(vector_sum > landedThreshold && ((tv.tv_sec - startsecs) < 2)) {
                  
+                 // Stop updaing accelerometer so that notification will show up only once
+                 [motionManager stopAccelerometerUpdates];
                  
                  NSLog(@"**** FALL DETECTED ****");
                  
@@ -91,6 +88,7 @@
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
+                 
                  
                  if (audioNotificationOn) {
                      [audioPlayer play];
@@ -159,13 +157,17 @@
     [audioPlayer setVolume:1.0];
     
     // Create alert notification
-    
+    alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
+                                      message:@"Press ok to dismiss this alert."
+                                     delegate:nil
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.    
+    // Release any retained subviews of the main view.
     [db closeDB];
 }
 

@@ -11,7 +11,6 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "Timer.h"
 
 #include "sys/time.h"
 
@@ -21,8 +20,9 @@
     DBConnection* db;
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
-    AVAudioPlayer *audioPlayer;
     
+    AVAudioPlayer *audioPlayer;
+    UIAlertView *alert;
     // For testing purposes
     IBOutlet UILabel *x_coord;
     IBOutlet UILabel *y_coord;

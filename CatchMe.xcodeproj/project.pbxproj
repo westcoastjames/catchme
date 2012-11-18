@@ -49,7 +49,6 @@
 		32E96564164F6745005921FF /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96563164F6745005921FF /* second.png */; };
 		32E9656A164F6DCD005921FF /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96569164F6DCD005921FF /* first.png */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
-		EA2994EE1650922300E4C8CC /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2994ED1650922300E4C8CC /* Timer.m */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
 /* End PBXBuildFile section */
@@ -124,8 +123,6 @@
 		32E96563164F6745005921FF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = CatchMe/second.png; sourceTree = "<group>"; };
 		32E96569164F6DCD005921FF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = CatchMe/first.png; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EA2994EC1650922300E4C8CC /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		EA2994ED1650922300E4C8CC /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -250,8 +247,6 @@
 				2D8E43581634A61A00D008B2 /* ContactsViewController.m */,
 				2D27A32F1634DBEC0098F6C9 /* DBConnection.h */,
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
-				EA2994EC1650922300E4C8CC /* Timer.h */,
-				EA2994ED1650922300E4C8CC /* Timer.m */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */,
@@ -438,7 +433,6 @@
 				1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */,
 				1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */,
 				1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */,
-				EA2994EE1650922300E4C8CC /* Timer.m in Sources */,
 				2D8609F51658678B0040A9DA /* FallDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

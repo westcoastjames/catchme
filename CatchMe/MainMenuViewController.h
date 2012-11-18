@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DBConnection.h"
+#import "FallDetector.h"
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
@@ -22,6 +23,9 @@
     CLLocationManager *locationManager;
     
     AVAudioPlayer *audioPlayer;
+    
+    FallDetector* fallDetector;
+    
     UIAlertView *alert;
     // For testing purposes
     IBOutlet UILabel *x_coord;

@@ -246,7 +246,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings for how to notify the emergency contacts." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" id="FYE-zh-Ghh">
-                                <rect key="frame" x="81" y="232" width="174" height="104"/>
+                                <rect key="frame" x="82" y="232" width="174" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -568,8 +568,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kfM-Qr-nrZ">
-                                <rect key="frame" x="24" y="117" width="280" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="kfM-Qr-nrZ">
+                                <rect key="frame" x="17" y="124" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Recording">
@@ -583,8 +583,8 @@
                                     <action selector="recordSound" destination="gnr-17-nXI" eventType="touchUpInside" id="ciY-yS-uWn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kl2-rg-2ew">
-                                <rect key="frame" x="24" y="167" width="280" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="kl2-rg-2ew">
+                                <rect key="frame" x="115" y="124" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop Recording">
@@ -598,8 +598,8 @@
                                     <action selector="stopSound" destination="gnr-17-nXI" eventType="touchUpInside" id="jbz-Ud-KwE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zfh-Mx-AP4">
-                                <rect key="frame" x="23" y="217" width="280" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="Zfh-Mx-AP4">
+                                <rect key="frame" x="213" y="124" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Play Recording">
@@ -632,27 +632,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.75" minValue="0.0" maxValue="1" id="Cqb-T8-DoY">
-                                <rect key="frame" x="18" y="360" width="284" height="23"/>
+                                <rect key="frame" x="18" y="357" width="284" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Playback Volume Control" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="anC-AR-Bik">
-                                <rect key="frame" x="21" y="333" width="283" height="24"/>
+                                <rect key="frame" x="21" y="325" width="283" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TdH-8Q-ScH">
-                                <rect key="frame" x="24" y="277" width="280" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="TdH-8Q-ScH">
+                                <rect key="frame" x="21" y="222" width="283" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Use Default Recording">
+                                <state key="normal" title="Use Default Audio Message">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="defaultSound" destination="gnr-17-nXI" eventType="touchUpInside" id="0gQ-SK-Gkm"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="R55-Uo-MrN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -680,6 +683,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="defaultButton" destination="TdH-8Q-ScH" id="5pF-0j-7Pg"/>
                         <outlet property="playButton" destination="Zfh-Mx-AP4" id="AvW-oa-fvg"/>
                         <outlet property="recordButton" destination="kfM-Qr-nrZ" id="0Du-S7-W27"/>
                         <outlet property="stopButton" destination="kl2-rg-2ew" id="gEK-EZ-PGA"/>
@@ -887,6 +891,100 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AlertSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlertSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="dismissKeyboard"/>
+                <relationship kind="action" name="saveInfo"/>
+                <relationship kind="outlet" name="audioNotification" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="invalidTimeDelay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeDelayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="vibrationNotification" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="AudioSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudioSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="changeVolume"/>
+                <relationship kind="action" name="defaultSound"/>
+                <relationship kind="action" name="playSound"/>
+                <relationship kind="action" name="recordSound"/>
+                <relationship kind="action" name="saveSound"/>
+                <relationship kind="action" name="stopSound"/>
+                <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="volumeSlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="ContactsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goMainMenu"/>
+                <relationship kind="outlet" name="txtNumber" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="activateAccelerometer"/>
+                <relationship kind="outlet" name="latitude" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitude" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStatusSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="x_coord" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="y_coord" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="z_coord" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MedicalConditionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalConditionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBackToMenu"/>
+                <relationship kind="outlet" name="medicalConditions" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MedicalInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="saveChanges"/>
+                <relationship kind="outlet" name="medicalTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MessageSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+            </relationships>
+        </class>
+        <class className="PersonalInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="saveInfo"/>
+                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="careCardTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="invalidCardNum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="invalidDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="monthTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yearTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

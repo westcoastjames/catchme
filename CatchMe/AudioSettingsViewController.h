@@ -26,6 +26,8 @@
     IBOutlet UISlider *volumeSlider;
     AVAudioRecorder *aRecorder;
     AVAudioPlayer *aPlayer;
+    
+    NSURL *URLtoHoldFile;
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *recordButton;

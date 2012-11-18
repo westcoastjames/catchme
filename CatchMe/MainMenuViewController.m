@@ -55,6 +55,7 @@
              
              if([fallDetector hasFallen]) {
                  
+                 // Reset fall detector so alerts will show oonly once
                  [fallDetector reset];
                  
                  NSLog(@"**** FALL DETECTED ****");

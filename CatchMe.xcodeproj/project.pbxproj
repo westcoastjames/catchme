@@ -37,6 +37,7 @@
 		2D757A6D162F6FC300104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
 		2D757A75162F6FC300104D8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A73162F6FC300104D8A /* InfoPlist.strings */; };
 		2D757A78162F6FC300104D8A /* CatchMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A77162F6FC300104D8A /* CatchMeTests.m */; };
+		2D8609F51658678B0040A9DA /* FallDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8609F41658678B0040A9DA /* FallDetector.m */; };
 		2D8E43551634A5B300D008B2 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8E43541634A5B300D008B2 /* ContactsViewController.xib */; };
 		2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E43581634A61A00D008B2 /* ContactsViewController.m */; };
 		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
@@ -107,6 +108,8 @@
 		2D757A74162F6FC300104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D757A76162F6FC300104D8A /* CatchMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchMeTests.h; sourceTree = "<group>"; };
 		2D757A77162F6FC300104D8A /* CatchMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchMeTests.m; sourceTree = "<group>"; };
+		2D8609F31658678B0040A9DA /* FallDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallDetector.h; sourceTree = "<group>"; };
+		2D8609F41658678B0040A9DA /* FallDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallDetector.m; sourceTree = "<group>"; };
 		2D8E43541634A5B300D008B2 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController.xib; path = ../ContactsViewController.xib; sourceTree = "<group>"; };
 		2D8E43571634A61A00D008B2 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		2D8E43581634A61A00D008B2 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		2D757A44162F6FC200104D8A /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				2D8609F31658678B0040A9DA /* FallDetector.h */,
+				2D8609F41658678B0040A9DA /* FallDetector.m */,
 				2D757A4D162F6FC200104D8A /* AppDelegate.h */,
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */,
@@ -430,6 +435,7 @@
 				1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */,
 				1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */,
 				EA2994EE1650922300E4C8CC /* Timer.m in Sources */,
+				2D8609F51658678B0040A9DA /* FallDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

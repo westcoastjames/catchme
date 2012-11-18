@@ -9,6 +9,7 @@
 #import "AudioSettingsViewController.h"
 #import "AVFoundation/AVAudioRecorder.h"
 #import "AVFoundation/AVAudioPlayer.h"
+#import <CoreAudio/CoreAudioTypes.h>
 
 // Audio recording and playback can be done through the use of the AVAudioRecorder and AVAudioPlayer API
 
@@ -22,29 +23,48 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    playButton.enabled = TRUE;
+    [playButton setBackgroundColor:[UIColor greenColor]];
+    recordButton.enabled = TRUE;
+    [recordButton setBackgroundColor:[UIColor greenColor]];
+    stopButton.enabled = FALSE;
+    [stopButton setBackgroundColor:[UIColor redColor]];
+    defaultButton.enabled = TRUE;
+    [defaultButton setBackgroundColor:[UIColor greenColor]];
+    
     // Initialize audio recorder
     
     // Specify recorder file path
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"mp3"];
-
-    NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
+    NSArray* documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
+    URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
-    NSError *recordError = nil;
+    NSError *recordError = nil; // will hold any error information that occurs during the recorder initialization
     
     // Recorder settings
-    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey, [NSNumber numberWithInt:16], AVEncoderBitRateKey, [NSNumber numberWithInt: 2], AVNumberOfChannelsKey, [NSNumber numberWithFloat:44100.0], AVSampleRateKey, nil];
+    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
+                                      [NSNumber numberWithInt:kAudioFormatAppleIMA4], AVFormatIDKey,
+                                      [NSNumber numberWithInt:16], AVEncoderBitRateKey,
+                                      [NSNumber numberWithInt:1], AVNumberOfChannelsKey,
+                                      [NSNumber numberWithFloat:44100.0], AVSampleRateKey,
+                                      nil];
     
     // Create recorder
     aRecorder = [[AVAudioRecorder alloc] initWithURL:URLtoHoldFile settings:recorderSettings error:&recordError];
     
     if (recordError) {
         NSLog(@"There was an error creating the recorder: %@", [recordError localizedDescription]);
-    } else {
-        [aRecorder prepareToRecord];
     }
     
+    [aRecorder prepareToRecord];
+    
+    // Initialize audio player
+    fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.mp3"];
+    URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
+    
     NSError *audioError; // will hold any error information that occurs during audio initialization
-    aPlayer = [aPlayer initWithContentsOfURL:aRecorder.url error:&audioError]; // sets up audio player
+    aPlayer = [aPlayer initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
     
     if (audioError) {
         NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
@@ -82,10 +102,16 @@
     
     if (!aRecorder.recording) {
         playButton.enabled = FALSE;
+        [playButton setBackgroundColor:[UIColor redColor]];
         recordButton.enabled = FALSE;
+        [recordButton setBackgroundColor:[UIColor redColor]];
         stopButton.enabled = TRUE;
+        [stopButton setBackgroundColor:[UIColor greenColor]];
+        defaultButton.enabled = FALSE;
+        [defaultButton setBackgroundColor:[UIColor redColor]];
         
         [aRecorder record];
+        URLtoHoldFile = aRecorder.url;
     }
      
 }
@@ -94,14 +120,19 @@
 - (IBAction)stopSound {
     
     playButton.enabled = TRUE;
+    [playButton setBackgroundColor:[UIColor greenColor]];
     recordButton.enabled = TRUE;
+    [recordButton setBackgroundColor:[UIColor greenColor]];
     stopButton.enabled = FALSE;
+    [stopButton setBackgroundColor:[UIColor redColor]];
+    defaultButton.enabled = TRUE;
+    [defaultButton setBackgroundColor:[UIColor greenColor]];
     
     if (aRecorder.recording) {
         [aRecorder stop];
     }
     else if (aPlayer.playing) {
-        [aRecorder stop];
+        [aPlayer stop];
     }
 }
 
@@ -109,12 +140,18 @@
 - (IBAction)playSound {
     
     if (!aRecorder.recording) {
-        //recordButton.enabled = FALSE;
+        playButton.enabled = FALSE;
+        [playButton setBackgroundColor:[UIColor redColor]];
+        recordButton.enabled = FALSE;
+        [recordButton setBackgroundColor:[UIColor redColor]];
         stopButton.enabled = TRUE;
+        [stopButton setBackgroundColor:[UIColor greenColor]];
+        defaultButton.enabled = FALSE;
+        [defaultButton setBackgroundColor:[UIColor redColor]];
         
         NSError *audioError; // will hold any error information that occurs during audio initialization
         
-        aPlayer = [aPlayer initWithContentsOfURL:aRecorder.url error:&audioError]; // sets up audio player
+        aPlayer = [aPlayer initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
         
         if (audioError) {
             NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
@@ -126,13 +163,15 @@
 }
 
 - (IBAction)defaultSound {
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"mp3"];
-    NSURL *URLtoHoldFile = [NSURL fileURLWithPath:soundFilePath];
+    NSArray* documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"default-audio-alert.caf"];
+    URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
 }
 
 // Saves the audio message
 - (IBAction)saveSound {
     //TODO
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 // Changes playback volume in Audio Settings

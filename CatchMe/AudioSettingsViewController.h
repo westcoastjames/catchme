@@ -15,8 +15,6 @@
 
 @interface AudioSettingsViewController : UIViewController {
     
-    UIWindow *window;
-    
     UIButton *recordButton;
     UIButton *stopButton;
     UIButton *playButton;
@@ -24,6 +22,8 @@
     UIButton *defaultButton;
 
     IBOutlet UISlider *volumeSlider;
+    IBOutlet UISwitch *audioMessageStatus;
+    
     AVAudioRecorder *aRecorder;
     AVAudioPlayer *aPlayer;
     
@@ -35,11 +35,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UIButton *defaultButton;
-@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
-
 @property (strong, nonatomic) AVAudioRecorder *aRecorder;
 @property (strong, nonatomic) AVAudioPlayer *aPlayer;
-
 @property (strong, nonatomic) NSURL *URltoHoldFile;
 
 - (IBAction)recordSound;

@@ -21,7 +21,6 @@
     DBConnection* db;
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
-    AVAudioPlayer *audioPlayer;
     
     FallDetector* fallDetector;
     

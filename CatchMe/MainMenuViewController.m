@@ -38,6 +38,7 @@
     motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz  Frequency affects the sensitivity of the fall detection
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
+        
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         fallDetector = [[FallDetector alloc]init];
         [motionManager
@@ -61,6 +62,8 @@
                                          cancelButtonTitle:@"OK"
                                          otherButtonTitles:nil];
                  
+                 // Stop updaing accelerometer so that notification will show up only once
+                 [motionManager stopAccelerometerUpdates];
                  
                  NSLog(@"**** FALL DETECTED ****");
                  
@@ -73,6 +76,7 @@
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
+                 
                  
                  if (audioNotificationOn) {
                      [audioPlayer play];
@@ -142,13 +146,17 @@
     [audioPlayer setVolume:1.0];
     
     // Create alert notification
-    
+    alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
+                                      message:@"Press ok to dismiss this alert."
+                                     delegate:nil
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.    
+    // Release any retained subviews of the main view.
     [db closeDB];
 }
 

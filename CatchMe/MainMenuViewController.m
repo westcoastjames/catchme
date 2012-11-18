@@ -44,7 +44,6 @@
         [motionManager
          startAccelerometerUpdatesToQueue:queue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
              
-             UIAlertView *alert;
              
              // ALGORITHM USED TO DETECT A BASIC FALLING MOTION
              
@@ -52,24 +51,22 @@
              x_accel = accelerometerData.acceleration.x;
              y_accel = accelerometerData.acceleration.y;
              z_accel = accelerometerData.acceleration.z;
-             
              [fallDetector receiveDataX:x_accel Y:y_accel Z:z_accel];
              
              if([fallDetector hasFallen]) {
-                 alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
-                                                   message:@"Press ok to dismiss this alert."
-                                                  delegate:nil
-                                         cancelButtonTitle:@"OK"
-                                         otherButtonTitles:nil];
+                 
+                 [fallDetector reset];
                  
                  NSLog(@"**** FALL DETECTED ****");
+                 
+                 // Stop updaing accelerometer so that notification will show up only once
+                 //[motionManager stopAccelerometerUpdates];
                  
                  NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
                  bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
                  
                  // Run the alert in the main thread to prevent app from crashing
-                 // Multiple alerts are being displayed when fall is detected
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
@@ -82,8 +79,7 @@
                      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                  }
                  
-                 // Stop updaing accelerometer so that notification will show up only once
-                 [motionManager stopAccelerometerUpdates];
+                 
                  
                  // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
              }

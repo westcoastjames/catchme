@@ -62,9 +62,6 @@
                                          cancelButtonTitle:@"OK"
                                          otherButtonTitles:nil];
                  
-                 // Stop updaing accelerometer so that notification will show up only once
-                 [motionManager stopAccelerometerUpdates];
-                 
                  NSLog(@"**** FALL DETECTED ****");
                  
                  NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
@@ -85,6 +82,7 @@
                      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                  }
                  
+                 // Stop updaing accelerometer so that notification will show up only once
                  [motionManager stopAccelerometerUpdates];
                  
                  // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out

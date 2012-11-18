@@ -22,8 +22,11 @@
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
     
+    AVAudioPlayer *audioPlayer;
+    
     FallDetector* fallDetector;
     
+    UIAlertView *alert;
     // For testing purposes
     IBOutlet UILabel *x_coord;
     IBOutlet UILabel *y_coord;

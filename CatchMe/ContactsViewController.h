@@ -10,13 +10,19 @@
 #import "DBConnection.h"
 #import <UIKit/UIKit.h>
 
+@class Contact;
+
 @interface ContactsViewController : UIViewController {
     DBConnection *db;
     IBOutlet UITextField *txtNumber;
+    IBOutlet UITextField *name;
+    IBOutlet UITextField *email;
     UITapGestureRecognizer *tap;
 }
 
+@property (nonatomic, strong) IBOutlet UITextField *name;
 @property (nonatomic, strong) IBOutlet UITextField *txtNumber;
+@property (nonatomic, strong) IBOutlet UITextField *email;
 
 @property UITapGestureRecognizer *tap;
 

@@ -12,11 +12,8 @@
 		1F4E1383165863EB0086A470 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E1382165863EB0086A470 /* CoreAudio.framework */; };
 		1F4E138D1658842A0086A470 /* bell-ringing.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138A1658842A0086A470 /* bell-ringing.caf */; };
 		1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138B1658842A0086A470 /* default-audio-alert.caf */; };
-		1F4E138F1658842A0086A470 /* saved-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138C1658842A0086A470 /* saved-audio-alert.caf */; };
 		1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */; };
 		1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA81650519900099AEC /* MessageSettingsViewController.m */; };
-		1F61BDB01650A79900099AEC /* default-audio-alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F61BDAF1650A79900099AEC /* default-audio-alert.mp3 */; };
-		1F61BDB21650A83A00099AEC /* saved-audio-alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F61BDB11650A83A00099AEC /* saved-audio-alert.mp3 */; };
 		1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */; };
 		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
 		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
@@ -25,7 +22,6 @@
 		1FCE51C8165830DA001DCF63 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCE51C7165830DA001DCF63 /* AudioToolbox.framework */; };
 		1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */; };
 		1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */; };
-		1FFB314C16597F2F002D22A1 /* recorded-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */; };
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
 		2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
@@ -73,13 +69,10 @@
 		1F4E1382165863EB0086A470 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1F4E138A1658842A0086A470 /* bell-ringing.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bell-ringing.caf"; sourceTree = "<group>"; };
 		1F4E138B1658842A0086A470 /* default-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-audio-alert.caf"; sourceTree = "<group>"; };
-		1F4E138C1658842A0086A470 /* saved-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "saved-audio-alert.caf"; sourceTree = "<group>"; };
 		1F61BDA41650515A00099AEC /* AlertSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettingsViewController.h; sourceTree = "<group>"; };
 		1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettingsViewController.m; sourceTree = "<group>"; };
 		1F61BDA71650519900099AEC /* MessageSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSettingsViewController.h; sourceTree = "<group>"; };
 		1F61BDA81650519900099AEC /* MessageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingsViewController.m; sourceTree = "<group>"; };
-		1F61BDAF1650A79900099AEC /* default-audio-alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "default-audio-alert.mp3"; sourceTree = "<group>"; };
-		1F61BDB11650A83A00099AEC /* saved-audio-alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "saved-audio-alert.mp3"; sourceTree = "<group>"; };
 		1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalConditionsViewController.h; sourceTree = "<group>"; };
 		1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalConditionsViewController.m; sourceTree = "<group>"; };
 		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -93,7 +86,6 @@
 		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoViewController.m; sourceTree = "<group>"; };
 		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "recorded-audio-alert.caf"; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		2D27A3301634DBEC0098F6C9 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -169,12 +161,8 @@
 		1A67CF6B16505F920031B6E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1FFB314B16597F2F002D22A1 /* recorded-audio-alert.caf */,
 				1F4E138A1658842A0086A470 /* bell-ringing.caf */,
 				1F4E138B1658842A0086A470 /* default-audio-alert.caf */,
-				1F4E138C1658842A0086A470 /* saved-audio-alert.caf */,
-				1F61BDB11650A83A00099AEC /* saved-audio-alert.mp3 */,
-				1F61BDAF1650A79900099AEC /* default-audio-alert.mp3 */,
 				1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */,
 			);
 			name = Sounds;
@@ -396,12 +384,8 @@
 				32E96564164F6745005921FF /* second.png in Resources */,
 				32E9656A164F6DCD005921FF /* first.png in Resources */,
 				1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */,
-				1F61BDB01650A79900099AEC /* default-audio-alert.mp3 in Resources */,
-				1F61BDB21650A83A00099AEC /* saved-audio-alert.mp3 in Resources */,
 				1F4E138D1658842A0086A470 /* bell-ringing.caf in Resources */,
 				1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */,
-				1F4E138F1658842A0086A470 /* saved-audio-alert.caf in Resources */,
-				1FFB314C16597F2F002D22A1 /* recorded-audio-alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

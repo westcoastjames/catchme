@@ -163,14 +163,14 @@
     int minutes = decimal * 60;
     double seconds = decimal *3600 - minutes *60;
     NSString *lat_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
-    NSLog(@"Latitude: %@\"",lat_str);
+    //NSLog(@"Latitude: %@\"",lat_str);
     
     degrees = newLocation.coordinate.longitude;
     decimal = fabs(newLocation.coordinate.longitude - degrees);
     minutes = decimal *60;
     seconds = decimal *3600 - minutes *60;
     NSString *long_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
-    NSLog(@"Longitude: %@\"",long_str);
+    //NSLog(@"Longitude: %@\"",long_str);
     
     // Testing purposes
     [longitude setText:long_str];

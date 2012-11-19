@@ -478,8 +478,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="email" destination="hiR-Mt-edT" id="Zt1-gi-y0t"/>
+                        <outlet property="emailInput" destination="hiR-Mt-edT" id="2Ad-A1-7RE"/>
                         <outlet property="name" destination="brT-fF-V1n" id="rcs-7T-ZoG"/>
+                        <outlet property="nameInput" destination="brT-fF-V1n" id="9u9-B5-DkJ"/>
                         <outlet property="txtNumber" destination="STi-PI-C6G" id="1jk-a2-LGJ"/>
+                        <outlet property="txtNumberInput" destination="STi-PI-C6G" id="ZYH-fK-9Ia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhO-ni-0Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1022,8 +1025,11 @@
                 <relationship kind="action" name="cancelChanges"/>
                 <relationship kind="action" name="goMainMenu"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtNumberInput" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MainMenuViewController" superclassName="UIViewController">

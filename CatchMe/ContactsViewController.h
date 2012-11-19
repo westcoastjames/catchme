@@ -21,11 +21,11 @@
     IBOutlet UITextField *email;
     UITapGestureRecognizer *tap;
 }
-/*
-@property (nonatomic, strong) IBOutlet UITextField *name;
-@property (nonatomic, strong) IBOutlet UITextField *txtNumber;
-@property (nonatomic, strong) IBOutlet UITextField *email;
-*/
+
+@property (nonatomic, strong) IBOutlet UITextField *nameInput;
+@property (nonatomic, strong) IBOutlet UITextField *txtNumberInput;
+@property (nonatomic, strong) IBOutlet UITextField *emailInput;
+
 @property UITapGestureRecognizer *tap;
 @property (strong, nonatomic) Contact *contact;
 

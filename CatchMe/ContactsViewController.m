@@ -12,12 +12,20 @@
 #import "ContactsViewController.h"
 #import "contact.h"
 
+
+
 @interface ContactsViewController()
 
 @end
 
 @implementation ContactsViewController
-//@synthesize txtNumber;
+
+
+
+// Goes back to the Settings Menu without saving any of the text field changes
+- (IBAction)cancelChanges {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 // Constructor
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

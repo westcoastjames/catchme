@@ -24,9 +24,9 @@
 - (void)initializeDefaultDataList {
     NSMutableArray *contactList = [[NSMutableArray alloc]init];
     self.masterContactList = contactList;
-    Contact *contact;
-    contact = [[Contact alloc] initWithName:@"Name" number:@"000-0000" email:@"example@test.com"];
-    [self addContact:contact];
+    Contact *cont;
+    cont = [[Contact alloc] initWithName:@"Name" number:@"000-0000" email:@"example@test.com"];
+    [self addContact:cont];
 }
 
 
@@ -56,8 +56,8 @@
     return [self.masterContactList objectAtIndex:theIndex];
 }
 
-- (void)addContact:(Contact *)contact {
-    [self.masterContactList addObject:contact];
+- (void)addContact:(Contact *)cont {
+    [self.masterContactList addObject:cont];
 }
 
 @end

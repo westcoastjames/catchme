@@ -69,14 +69,15 @@
                      [alert show];
                  });
                  
-                 
-                 if (audioNotificationOn) {
-                     [audioPlayer play];
-                 }
                  if (vibrationNotificationOn) {
                      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
                  }
-                 
+                 if (audioNotificationOn) {
+                     // Delay playback to 4 seconds
+                     //startAudioTime = 4.0;
+                     //[audioPlayer playAtTime:audioPlayer.deviceCurrentTime + startAudioTime];
+                     [audioPlayer play];
+                 }
                  
                  
                  // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
@@ -136,6 +137,7 @@
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer setVolume:1.0];
+    
     
     // Create alert notification
     alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"

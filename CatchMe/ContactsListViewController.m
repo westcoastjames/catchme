@@ -9,6 +9,7 @@
 #import "ContactsListViewController.h"
 #import "ContactsDataController.h"
 #import "Contact.h"
+#import "ContactsViewController.h"
 
 
 @interface ContactsListViewController ()

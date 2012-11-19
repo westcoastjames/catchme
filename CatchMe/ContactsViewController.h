@@ -12,6 +12,8 @@
 
 @class Contact;
 
+
+
 @interface ContactsViewController : UIViewController {
     DBConnection *db;
     IBOutlet UITextField *txtNumber;
@@ -19,13 +21,16 @@
     IBOutlet UITextField *email;
     UITapGestureRecognizer *tap;
 }
-
+/*
 @property (nonatomic, strong) IBOutlet UITextField *name;
 @property (nonatomic, strong) IBOutlet UITextField *txtNumber;
 @property (nonatomic, strong) IBOutlet UITextField *email;
-
+*/
 @property UITapGestureRecognizer *tap;
+@property (strong, nonatomic) Contact *contact;
 
+
+- (IBAction)cancelChanges;
 - (IBAction)goMainMenu;
 - (void)dismissKeyboard;
 

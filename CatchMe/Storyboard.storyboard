@@ -354,6 +354,7 @@
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="NUh-IM-q7l">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <items>
                                 <navigationItem title="Contacts List" id="uOP-rF-TaY">
                                     <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cXA-3a-4bW">
@@ -418,7 +419,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Contact Info" id="Ajv-Wf-1gp">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pFz-tI-jLj"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pFz-tI-jLj">
+                                            <connections>
+                                                <action selector="cancelChanges" destination="pEu-Do-eZW" id="gD6-C0-LKm"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="9J7-Mu-1BF">
                                             <connections>
                                                 <action selector="goMainMenu" destination="jhO-ni-0Sf" id="JUe-1i-s9x"/>
@@ -1008,13 +1013,13 @@
         <class className="ContactsListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsListViewController.h"/>
             <relationships>
-                <relationship kind="action" name="add:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="cancelChanges"/>
             </relationships>
         </class>
-        <class className="ContactsViewController" superclassName="UITableViewController">
+        <class className="ContactsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelChanges"/>
                 <relationship kind="action" name="goMainMenu"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="name" candidateClass="UITextField"/>
@@ -1075,9 +1080,6 @@
         </class>
         <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

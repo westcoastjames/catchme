@@ -18,6 +18,6 @@
 
 - (NSUInteger)countOfList;
 - (Contact *)objectInListAtIndex:(NSUInteger)theIndex;
-- (void)addContact:(Contact *)contact;
+- (void)addContact:(Contact *)cont;
 
 @end

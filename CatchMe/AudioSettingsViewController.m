@@ -221,11 +221,11 @@
     else if ([[URLtoHoldFile absoluteURL] isEqual:[recordedURL absoluteURL]]) {
         NSLog(@"A file error R--------------------");
         
-        //[filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
+        [filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
         
         NSLog(@"A file error R2--------------------%@, ERROR2: %@", [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"], [[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]);
         
-        [filemanager  moveItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
+        [filemanager moveItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
                          toPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
         
         soundFileName = @"saved-audio-alert";

@@ -10,6 +10,7 @@
 //             in the header may be part of the cause of this
 
 #import "ContactsViewController.h"
+#import "contact.h"
 
 @interface ContactsViewController()
 
@@ -72,7 +73,9 @@
 
 // Hides the keyboard when the users taps outside a text field
 - (void)dismissKeyboard {
+    [name resignFirstResponder];
     [txtNumber resignFirstResponder];
+    [email resignFirstResponder];
 }
 
 // Code has been replaced

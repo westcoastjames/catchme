@@ -18,6 +18,17 @@
 
 @implementation ContactsListViewController
 
+//done button to save a new contact
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
+        ContactsViewController *addController = [segue sourceViewController];
+        if (addController.contact) {
+            [self.dataController addContact:addController.contact];
+            [[self tableView] reloadData];
+        }
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
 
 // Cancels any changes and goes back to the settings menu
 - (IBAction)cancelChanges {

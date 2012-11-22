@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "SettingsViewController.h"
-#import "ContactsViewController.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -57,6 +54,15 @@
         NSLog(@"Accelerometer: %@", [data description]);
     }];
      */
+    
+    // Check to see if a unique user ID (from the server) has been saved already
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    int uuid = [defaults integerForKey:@"userid"];
+    
+    if(uuid == 0) { // if it hasn't been set already
+        UserIDDownloader* downloader = [[UserIDDownloader alloc] init];
+    }
     
    
     //Jonathons implementation of the background notification

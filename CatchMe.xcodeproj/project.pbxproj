@@ -41,6 +41,7 @@
 		2D8609F51658678B0040A9DA /* FallDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8609F41658678B0040A9DA /* FallDetector.m */; };
 		2D8E43551634A5B300D008B2 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8E43541634A5B300D008B2 /* ContactsViewController.xib */; };
 		2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E43581634A61A00D008B2 /* ContactsViewController.m */; };
+		2DD5ADE4165DA212002FB400 /* UserIDDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5ADE3165DA212002FB400 /* UserIDDownloader.m */; };
 		2DFD4B3716337EA100396892 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4B3616337EA100396892 /* SettingsViewController.m */; };
 		322775BC1633771B0021833A /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 322775BB1633771B0021833A /* CoreMotion.framework */; };
 		3288663A165983520029696D /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32886639165983520029696D /* ContactsListViewController.m */; };
@@ -117,6 +118,8 @@
 		2D8E43541634A5B300D008B2 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		2D8E43571634A61A00D008B2 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		2D8E43581634A61A00D008B2 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		2DD5ADE2165DA212002FB400 /* UserIDDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIDDownloader.h; sourceTree = "<group>"; };
+		2DD5ADE3165DA212002FB400 /* UserIDDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIDDownloader.m; sourceTree = "<group>"; };
 		2DFD4B3416337E9700396892 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2DFD4B3616337EA100396892 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		322775BB1633771B0021833A /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -280,6 +283,8 @@
 				1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */,
 				1F1E2E571645C07800DE81BA /* GUI Files */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
+				2DD5ADE2165DA212002FB400 /* UserIDDownloader.h */,
+				2DD5ADE3165DA212002FB400 /* UserIDDownloader.m */,
 			);
 			path = CatchMe;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				3288663A165983520029696D /* ContactsListViewController.m in Sources */,
 				3288663E165984440029696D /* Contact.m in Sources */,
 				32886641165985D20029696D /* ContactsDataController.m in Sources */,
+				2DD5ADE4165DA212002FB400 /* UserIDDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

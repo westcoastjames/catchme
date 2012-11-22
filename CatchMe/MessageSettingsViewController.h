@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessageSettingsViewController : UIViewController
+@interface MessageSettingsViewController : UIViewController {
+    UITapGestureRecognizer *tap;
+    IBOutlet UITextView *messageTextView;
+    
+    IBOutlet UISwitch *emailStatus;
+    IBOutlet UISwitch *textMessageStatus;
+}
 
 - (IBAction)cancelChanges;
+- (IBAction)saveChanges;
+- (void)dismissKeyboard;
+- (IBAction)defaultMessage;
 
 @end

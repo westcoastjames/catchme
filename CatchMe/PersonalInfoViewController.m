@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 // Known Bugs/Issues:
-// The address and care card fields have clear buttons that do not clear the text
+// The address and care card fields have clear buttons that do not clear the text. This is due to a conflict with the keyboard covering them when it is shown.
 
 #import "PersonalInfoViewController.h"
 

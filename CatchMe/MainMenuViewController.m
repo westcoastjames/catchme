@@ -78,9 +78,7 @@
                      //[audioPlayer playAtTime:audioPlayer.deviceCurrentTime + startAudioTime];
                      [audioPlayer play];
                  }
-                 
-                 
-                 // NEED TO ADD TIMING, notification should stay up for timeDelay seconds, stopping all notifications once timeDelay is reached, then alerts shouldbe sent out
+                 // TODO: Need to add multiple vibrations/play an audio sound until a time set (timeDelay) has passed. then the pop up window should close and alerts should be sent out (audio, email, txt message)
              }
              
              // TEST LABELS ON MAIN WINDOW
@@ -154,6 +152,7 @@
     [db closeDB];
 }
 
+// Makes sure interface is correctly oriented
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }

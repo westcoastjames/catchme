@@ -15,6 +15,6 @@
 @property (strong, nonatomic) ContactsDataController *dataController;
 
 - (IBAction)cancelChanges;
-
+- (IBAction)done:(UIStoryboardSegue *)segue;
 
 @end

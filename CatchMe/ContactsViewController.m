@@ -102,6 +102,17 @@
 }
 */
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier]isEqualToString:@"ReturnInput"]) {
+        if ([self.nameInput.text length] || [self.txtNumberInput.text length] || [self.emailInput.text length] ) {
+            Contact *contact;
+            contact = [[Contact alloc]initWithName:self.nameInput.text number:self.txtNumberInput.text email:self.emailInput.text];
+            self.contact = contact;
+        }
+    }
+}
+
 // Actions to take place when the window closes
 - (void)viewDidUnload {    
     [db closeDB];

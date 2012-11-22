@@ -10,6 +10,7 @@
 
 @interface MedicalConditionsViewController : UIViewController {
     IBOutlet UITextView *medicalConditions;
+    IBOutlet UITextView *personalInfo;
 }
 
 - (IBAction)goBackToMenu;

@@ -10,6 +10,11 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "SettingsViewController.h"
+#import "ContactsViewController.h"
+
+#import "UserIDDownloader.h"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     @public
     CMMotionManager* motionManager;

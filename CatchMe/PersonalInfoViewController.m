@@ -128,7 +128,7 @@
             error = TRUE;
         }
     }
-    if (month > 12 || month < 1 || day > 31 || day < 1 || year < 1000 || year > 9999) {
+    if ((month > 12 || month < 1 || day > 31 || day < 1 || year < 1000 || year > 9999) && (month != 0 || day != 0 || year != 0)) {
         invalidDate.hidden = FALSE;
         error = TRUE;
     }

@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface MainMenuViewController ()
-// In branch tracktime
+
 @end
 
 @implementation MainMenuViewController
@@ -56,7 +56,7 @@
              gettimeofday(&tv,nil);
              startsecs = tv.tv_sec * 1000 + tv.tv_usec / 1000;
              
-             NSLog(@"& %ld,%0.6f,%0.6f,%0.6f",startsecs,x_accel,y_accel,z_accel);
+             NSLog(@"&,%ld,%0.6f,%0.6f,%0.6f",startsecs,x_accel,y_accel,z_accel);
              
              if([fallDetector hasFallen]) {
                  

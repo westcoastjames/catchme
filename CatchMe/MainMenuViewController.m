@@ -99,14 +99,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
     NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
-    
+    NSLog(@"Notify user reached");
     currentTimeDelay = currentTimeDelay +1;
     
     if((currentTimeDelay <= timeDelay) && vibrationNotificationOn && alert.visible) {
+        NSLog(@"Vibration method reached");
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     else {
-        
+        NSLog(@"Kill everything reached");
         // Kill timer, hide alert, stop sound
         [notificationTimer invalidate];
         
@@ -121,7 +122,7 @@
 
 // Actions that should take place after the the user has been notified of a detected fall
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    NSLog(@"This alert sending out method was reached");
     // If alert was dismissed, reset the fall detection algorithm
     if (buttonIndex == 1) {
         [fallDetector reset];

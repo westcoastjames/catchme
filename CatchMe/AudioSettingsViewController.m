@@ -44,6 +44,8 @@
         soundFileName = @"default-audio-alert";
     }
     
+    NSLog(soundFileName);
+    
     if (audioMessageOn) {
         [audioMessageStatus setOn:YES];
     }
@@ -225,6 +227,8 @@
     else {
         NSLog(@"There was an error in saving the correct file.");
     }
+    
+    NSLog(soundFileName);
     
     // Store data in user default settings
     bool audioMessageOn = [audioMessageStatus isOn];

@@ -12,6 +12,7 @@
 #import "ContactsViewController.h"
 #import "ContactEdit.h"
 #import "ContactAddViewController.h"
+#import "ContactEditViewController.h"
 
 
 @interface ContactsListViewController ()
@@ -68,11 +69,6 @@
     
     self.contacts = [[NSMutableArray alloc] init];
     
-    ContactEdit *contact = [[ContactEdit alloc]initWithName:@"Jules Winnfield" number:@"000-000-0000" email:@"JW@email.com"];
-    
-    [self.contacts addObject:contact];
-     
-    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -94,6 +90,10 @@
         
         ContactAddViewController *addContactViewController = [navCon.viewControllers objectAtIndex:0];
         addContactViewController.contactListView = self;
+    }
+    else if ([segue.identifier isEqualToString:@"EditContactSegue"]) {
+        ContactEditViewController *editContactViewController = segue.destinationViewController;
+        editContactViewController.contact = [self.contacts objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     }
 }
 

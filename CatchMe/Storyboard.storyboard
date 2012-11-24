@@ -416,7 +416,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="XnN-Xq-WEL" kind="push" id="kfW-ww-Z2A"/>
+                                    <segue destination="XnN-Xq-WEL" kind="push" identifier="EditContactSegue" id="kfW-ww-Z2A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -437,11 +437,11 @@
             </objects>
             <point key="canvasLocation" x="898" y="1189"/>
         </scene>
-        <!--Table View Controller - Edit Contact-->
+        <!--Contact Edit View Controller - Edit Contact-->
         <scene sceneID="9l4-1l-NS2">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rN-Ka-0Ge" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="XnN-Xq-WEL" sceneMemberID="viewController">
+                <tableViewController id="XnN-Xq-WEL" customClass="ContactEditViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="GaH-7C-0li">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,6 +461,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="contactDataChange:" destination="XnN-Xq-WEL" eventType="editingChanged" id="fMr-Ef-fjp"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -482,6 +485,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="contactDataChange:" destination="XnN-Xq-WEL" eventType="editingChanged" id="zwk-TB-3k6"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -503,6 +509,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="contactDataChange:" destination="XnN-Xq-WEL" eventType="editingChanged" id="Rwt-ls-48Y"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -517,6 +526,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Contact" id="k7j-Ls-JIG"/>
+                    <connections>
+                        <outlet property="emailField" destination="tOw-zG-McK" id="nCe-fj-Gr0"/>
+                        <outlet property="nameField" destination="FTW-Dd-fIC" id="6lR-YD-N4c"/>
+                        <outlet property="numberField" destination="S0V-tg-nJs" id="lJC-D7-Mu8"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="898" y="1819"/>
@@ -657,8 +671,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailF" destination="pwz-IF-xfR" id="T1e-Kf-6Jv"/>
                         <outlet property="emailField" destination="pwz-IF-xfR" id="yd3-zt-YrK"/>
+                        <outlet property="nameF" destination="Mb1-Jo-kLl" id="ygc-HX-ZBP"/>
                         <outlet property="nameField" destination="Mb1-Jo-kLl" id="q0T-YJ-Uj2"/>
+                        <outlet property="numberF" destination="1Vb-mB-9Eb" id="yEl-1p-vFw"/>
                         <outlet property="numberField" destination="1Vb-mB-9Eb" id="VDr-cD-U2f"/>
                     </connections>
                 </tableViewController>

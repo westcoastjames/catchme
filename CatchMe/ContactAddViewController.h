@@ -10,10 +10,16 @@
 
 @class ContactsListViewController;
 
-@interface ContactAddViewController : UITableViewController
+@interface ContactAddViewController : UITableViewController {
+    IBOutlet UITextView *nameF;
+    IBOutlet UITextView *numberF;
+    IBOutlet UITextView *emailF;
+    UITapGestureRecognizer *tap;
+}
 
 - (IBAction)cancelButton:(id)sender;
 - (IBAction)doneButton:(id)sender;
+
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UITextField *numberField;
@@ -22,6 +28,10 @@
 @property (nonatomic, assign) BOOL emailOn;
 @property (nonatomic, assign) BOOL phoneOn;
 
+@property UITapGestureRecognizer *tap;
+
 @property (nonatomic, strong) ContactsListViewController *contactListView;
+
+- (void)dismissKeyboard;
 
 @end

@@ -43,6 +43,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Loads the keyboard dismissal on tap outside textField
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
 }
 
 - (void)viewDidUnload
@@ -71,5 +74,13 @@
     [self.contactListView.tableView reloadData];
     
 }
+
+// Hides the keyboard when the users taps outside a text field
+- (void)dismissKeyboard {
+    [nameF resignFirstResponder];
+    [numberF resignFirstResponder];
+    [emailF resignFirstResponder];
+}
+
 
 @end

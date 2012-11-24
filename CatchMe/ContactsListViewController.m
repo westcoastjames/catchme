@@ -10,6 +10,9 @@
 #import "ContactsDataController.h"
 #import "Contact.h"
 #import "ContactsViewController.h"
+#import "ContactEdit.h"
+#import "ContactAddViewController.h"
+#import "ContactEditViewController.h"
 
 
 @interface ContactsListViewController ()
@@ -17,6 +20,8 @@
 @end
 
 @implementation ContactsListViewController
+
+@synthesize contacts = _contacts;
 
 //done button to save a new contact
 - (IBAction)done:(UIStoryboardSegue *)segue {
@@ -61,6 +66,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.contacts = [[NSMutableArray alloc] init];
+    
 }
 
 - (void)viewDidUnload
@@ -74,6 +82,19 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AddContactSegue"]) {
+        UINavigationController *navCon = segue.destinationViewController;
+        
+        ContactAddViewController *addContactViewController = [navCon.viewControllers objectAtIndex:0];
+        addContactViewController.contactListView = self;
+    }
+    else if ([segue.identifier isEqualToString:@"EditContactSegue"]) {
+        ContactEditViewController *editContactViewController = segue.destinationViewController;
+        editContactViewController.contact = [self.contacts objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 #pragma mark - Table view data source
@@ -90,20 +111,27 @@
 
     // Return the number of rows in the section.
     
-    return [self.dataController countOfList];
+    return self.contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ContactCell";
     
+    ContactEdit *currentContact = [self.contacts objectAtIndex:indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
-    Contact *contactAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
-    [[cell textLabel]setText:contactAtIndex.name];
-    [[cell detailTextLabel]setText:[NSString stringWithFormat:@"%@, %@",contactAtIndex.number,contactAtIndex.email]];
+    // Configure the cell...
+    //set text of cell
+    
+    cell.textLabel.text = currentContact.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",currentContact.number,currentContact.email];
+    
     return cell;
 
 }

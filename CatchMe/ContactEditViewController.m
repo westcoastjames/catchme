@@ -20,6 +20,9 @@
 @synthesize emailField = _emailField;
 @synthesize contact = _contact;
 
+@synthesize emailOn = _emailOn;
+@synthesize phoneOn = _phoneOn;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -42,10 +45,19 @@
     self.nameField.text = self.contact.name;
     self.numberField.text = self.contact.number;
     self.emailField.text = self.contact.email;
+    
+    // Loads the keyboard dismissal on tap outside textField
+    tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    [tap setCancelsTouchesInView:NO]; // Allows other tap gestures to continue functioning while this one is in effect
 }
 
 - (void)viewDidUnload
 {
+    name = nil;
+    number = nil;
+    email = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -61,5 +73,13 @@
     self.contact.number = self.numberField.text;
     self.contact.email = self.emailField.text;
 }
+
+// Hides the keyboard when the users taps outside a text field
+- (void)dismissKeyboard {
+    [name resignFirstResponder];
+    [number resignFirstResponder];
+    [email resignFirstResponder];
+}
+
 
 @end

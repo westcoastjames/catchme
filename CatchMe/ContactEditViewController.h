@@ -10,7 +10,13 @@
 
 @class ContactEdit;
 
-@interface ContactEditViewController : UITableViewController
+@interface ContactEditViewController : UITableViewController {
+    UITapGestureRecognizer *tap;
+
+    __weak IBOutlet UITextField *name;
+    __weak IBOutlet UITextField *number;
+    __weak IBOutlet UITextField *email;
+}
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UITextField *numberField;
@@ -18,6 +24,13 @@
 
 @property (nonatomic, strong) ContactEdit *contact;
 
+@property (nonatomic, assign) BOOL emailOn;
+@property (nonatomic, assign) BOOL phoneOn;
+
 - (IBAction)contactDataChange:(id)sender;
+
+- (void)dismissKeyboard;
+
+@property UITapGestureRecognizer *tap;
 
 @end

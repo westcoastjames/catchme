@@ -427,7 +427,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="neG-tQ-Pqv">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="keG-Nm-vEI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="keG-Nm-vEI">
                             <connections>
                                 <action selector="cancelChanges" destination="XfC-DD-I7W" id="3Kn-ut-0db"/>
                             </connections>
@@ -479,7 +479,7 @@
                             <tableViewSection headerTitle="Phone Number" id="Mee-XI-JOe">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2RW-qs-Jqi">
-                                        <rect key="frame" x="0.0" y="138" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="138" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -498,12 +498,34 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JyW-iq-VhJ">
+                                        <rect key="frame" x="0.0" y="183" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contact via Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Yee-R7-au4">
+                                                    <rect key="frame" x="20" y="11" width="203" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="KMC-MA-OAd">
+                                                    <rect key="frame" x="201" y="8" width="79" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="E-Mail" id="gLf-Id-ZYb">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2ia-QZ-bwC">
-                                        <rect key="frame" x="0.0" y="230" width="320" height="46"/>
+                                        <rect key="frame" x="0.0" y="274" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -522,6 +544,28 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5Hb-3C-BV5">
+                                        <rect key="frame" x="0.0" y="319" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="jPg-s4-5g5">
+                                                    <rect key="frame" x="201" y="8" width="79" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Contact via E-Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="i6f-6F-oHZ">
+                                                    <rect key="frame" x="20" y="11" width="140" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -532,8 +576,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Contact" id="k7j-Ls-JIG"/>
                     <connections>
+                        <outlet property="email" destination="tOw-zG-McK" id="uQP-Sj-r7w"/>
                         <outlet property="emailField" destination="tOw-zG-McK" id="nCe-fj-Gr0"/>
+                        <outlet property="name" destination="FTW-Dd-fIC" id="cfv-mN-yZp"/>
                         <outlet property="nameField" destination="FTW-Dd-fIC" id="6lR-YD-N4c"/>
+                        <outlet property="number" destination="S0V-tg-nJs" id="DUM-bx-f1l"/>
                         <outlet property="numberField" destination="S0V-tg-nJs" id="lJC-D7-Mu8"/>
                     </connections>
                 </tableViewController>
@@ -1223,132 +1270,6 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AlertSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlertSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="dismissKeyboard"/>
-                <relationship kind="action" name="saveInfo"/>
-                <relationship kind="outlet" name="audioNotification" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="invalidTimeDelay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeDelayTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="vibrationNotification" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="AudioSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudioSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="changeVolume"/>
-                <relationship kind="action" name="defaultSound"/>
-                <relationship kind="action" name="playSound"/>
-                <relationship kind="action" name="recordSound"/>
-                <relationship kind="action" name="saveSound"/>
-                <relationship kind="action" name="stopSound"/>
-                <relationship kind="outlet" name="audioMessageStatus" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="volumeSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="ContactAddViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactAddViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButton:"/>
-                <relationship kind="action" name="doneButton:"/>
-                <relationship kind="outlet" name="emailF" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameF" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="numberF" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="numberField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ContactEditViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="contactDataChange:"/>
-                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="numberField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ContactsListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsListViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="MainMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="activateAccelerometer"/>
-                <relationship kind="outlet" name="latitude" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longitude" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="systemStatusSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="x_coord" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="y_coord" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="z_coord" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MedicalConditionsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalConditionsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goBackToMenu"/>
-                <relationship kind="outlet" name="medicalConditions" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="personalInfo" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MedicalInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="saveChanges"/>
-                <relationship kind="outlet" name="medicalTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MessageSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="defaultMessage"/>
-                <relationship kind="action" name="saveChanges"/>
-                <relationship kind="outlet" name="emailStatus" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="messageTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="textMessageStatus" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="PersonalInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelChanges"/>
-                <relationship kind="action" name="saveInfo"/>
-                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="careCardTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dayTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="invalidCardNum" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="invalidDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="monthTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="yearTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

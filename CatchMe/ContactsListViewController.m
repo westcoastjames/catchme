@@ -178,7 +178,13 @@
      */
 }
 
+- (void)doneButton:(id)sender {   
 
+    
+    [self dismissModalViewControllerAnimated:YES];
+
+    
+}
 
 
 

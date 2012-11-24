@@ -7,8 +7,6 @@
 //
 
 #import "ContactAddViewController.h"
-#import "ContactsListViewController.h"
-#import "ContactEdit.h"
 
 @interface ContactAddViewController ()
 
@@ -69,6 +67,8 @@
 
 - (void)doneButton:(id)sender {
     ContactEdit *newContact = [[ContactEdit alloc]initWithName:self.nameField.text number:self.numberField.text email:self.emailField.text];
+    
+    ContactUploader* uploader = [[ContactUploader alloc] initWithContact:newContact];
     
     [self.contactListView.contacts addObject:newContact];
     

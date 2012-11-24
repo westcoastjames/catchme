@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactsListViewController.h"
+#import "ContactEdit.h"
+#import "ContactUploader.h"
 
 @class ContactsListViewController;
 

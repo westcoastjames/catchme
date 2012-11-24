@@ -13,7 +13,10 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *number;
 @property (nonatomic, strong) NSString *email;
-
+@property (nonatomic) int gid;
+@property (nonatomic) bool shouldsms;
+@property (nonatomic) bool shouldcall;
+@property (nonatomic) bool shouldemail;
 
 
 - (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email;

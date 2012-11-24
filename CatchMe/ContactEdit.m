@@ -13,6 +13,10 @@
 @synthesize name = _name;
 @synthesize number = _number;
 @synthesize email = _email;
+@synthesize gid = _gid;
+@synthesize shouldcall = _shouldcall;
+@synthesize shouldsms = _shouldsms;
+@synthesize shouldemail = _shouldemail;
 
 - (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email {
     self = [super init];
@@ -21,6 +25,10 @@
         self.name = name;
         self.number = number;
         self.email = email;
+        self.gid = 0;
+        self.shouldcall = false;
+        self.shouldsms = true;
+        self.shouldemail = false;
         
     }
     return self;

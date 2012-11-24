@@ -7,7 +7,6 @@
 //
 
 #import "ContactEditViewController.h"
-#import "ContactEdit.h"
 
 @interface ContactEditViewController ()
 
@@ -72,6 +71,10 @@
     self.contact.name = self.nameField.text;
     self.contact.number = self.numberField.text;
     self.contact.email = self.emailField.text;
+    
+    if(self.contact.gid != 0) {
+    ContactUploader* uploader = [[ContactUploader alloc] initWithContact:self.contact];
+    }
 }
 
 // Hides the keyboard when the users taps outside a text field

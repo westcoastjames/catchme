@@ -196,7 +196,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="cJR-N9-o87" kind="modal" id="PSs-H8-DAF"/>
+                                            <segue destination="cJR-N9-o87" kind="modal" modalTransitionStyle="flipHorizontal" id="PSs-H8-DAF"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -220,10 +220,60 @@
         <scene sceneID="833-jA-Hbo">
             <objects>
                 <viewController id="hJI-e7-C76" customClass="MessageSettingsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tAo-uR-bKa" customClass="TPKeyboardAvoidingScrollView">
+                    <view key="view" contentMode="scaleToFill" id="tAo-uR-bKa">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="E1a-MF-OLe" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="LKb-fS-qwd">
+                                        <rect key="frame" x="20" y="150" width="280" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send email on fall:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="W5T-eI-v4V">
+                                        <rect key="frame" x="76" y="20" width="244" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send text message on fall:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" id="FYE-zh-Ghh">
+                                        <rect key="frame" x="20" y="61" width="202" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Nl7-2z-UpW">
+                                        <rect key="frame" x="224" y="14" width="79" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="7GG-o7-3ol">
+                                        <rect key="frame" x="224" y="65" width="79" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hOC-fq-4Rr">
+                                        <rect key="frame" x="20" y="104" width="283" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Use Default Message">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="defaultMessage" destination="hJI-e7-C76" eventType="touchUpInside" id="P2w-VQ-Jbf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </scrollView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="cvt-mP-k4e">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -242,50 +292,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send email on fall:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="W5T-eI-v4V">
-                                <rect key="frame" x="76" y="66" width="244" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Send text message on fall:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" id="FYE-zh-Ghh">
-                                <rect key="frame" x="14" y="102" width="202" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Nl7-2z-UpW">
-                                <rect key="frame" x="224" y="60" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="7GG-o7-3ol">
-                                <rect key="frame" x="224" y="106" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="LKb-fS-qwd">
-                                <rect key="frame" x="20" y="193" width="283" height="247"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hOC-fq-4Rr">
-                                <rect key="frame" x="20" y="145" width="283" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Use Default Message">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="defaultMessage" destination="hJI-e7-C76" eventType="touchUpInside" id="P2w-VQ-Jbf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1270,6 +1276,135 @@
         <image name="first.png" width="30" height="30"/>
         <image name="second.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AlertSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlertSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="dismissKeyboard"/>
+                <relationship kind="action" name="saveInfo"/>
+                <relationship kind="outlet" name="audioNotification" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="invalidTimeDelay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeDelayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="vibrationNotification" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="AudioSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AudioSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="changeVolume"/>
+                <relationship kind="action" name="defaultSound"/>
+                <relationship kind="action" name="playSound"/>
+                <relationship kind="action" name="recordSound"/>
+                <relationship kind="action" name="saveSound"/>
+                <relationship kind="action" name="stopSound"/>
+                <relationship kind="outlet" name="audioMessageStatus" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="defaultButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="volumeSlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="ContactAddViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactAddViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButton:"/>
+                <relationship kind="action" name="doneButton:"/>
+                <relationship kind="outlet" name="emailF" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameF" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberF" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="numberField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ContactEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="contactDataChange:"/>
+                <relationship kind="outlet" name="email" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="number" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="numberField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ContactsListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactsListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneButton:"/>
+            </relationships>
+        </class>
+        <class className="MainMenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="activateAccelerometer"/>
+                <relationship kind="outlet" name="latitude" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitude" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="systemStatusSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="x_coord" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="y_coord" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="z_coord" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MedicalConditionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalConditionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBackToMenu"/>
+                <relationship kind="outlet" name="medicalConditions" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="personalInfo" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MedicalInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MedicalInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="saveChanges"/>
+                <relationship kind="outlet" name="medicalTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MessageSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="defaultMessage"/>
+                <relationship kind="action" name="saveChanges"/>
+                <relationship kind="outlet" name="emailStatus" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="messageTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textMessageStatus" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+        <class className="PersonalInfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonalInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelChanges"/>
+                <relationship kind="action" name="saveInfo"/>
+                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="careCardTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="dayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="invalidCardNum" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="invalidDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="monthTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="yearTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

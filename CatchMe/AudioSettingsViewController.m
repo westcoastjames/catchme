@@ -40,13 +40,9 @@
     CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
     NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
     
-    NSLog(@"The file name is: %@", soundFileName);
-    
     if (soundFileName == nil) {
         soundFileName = @"default-audio-alert";
     }
-    
-     NSLog(@"The file name is: %@", soundFileName);
     
     if (audioMessageOn) {
         [audioMessageStatus setOn:YES];
@@ -93,7 +89,6 @@
     // Set the filepath to be the last saved audio clip so that when play is pressed the current saved message plays
 
     fullFilePath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
-    NSLog(fullFilePath);
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
     // Initialize the audio player
@@ -101,7 +96,7 @@
     aPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
     
     if (audioError) {
-        NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
+        NSLog(@"An error occured setting up the audio player: %@", [audioError localizedDescription]);
     }
 
     aPlayer.volume = volumeSlider.value;
@@ -178,7 +173,7 @@
         aPlayer.volume = volumeSlider.value;
         
         if (audioError) {
-            NSLog(@"An error occured setting the audio player: %@", [audioError localizedDescription]);
+            NSLog(@"An error occured setting up the audio player: %@", [audioError localizedDescription]);
         }
         else {
             [aPlayer prepareToPlay];
@@ -201,51 +196,39 @@
     NSError *savingError;
     
     // Used for comparisons below
-    NSLog(@"START DEBUG--------------------");
     NSURL *defaultURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"]];
-    NSLog(@"default OK--------------------");
-    //NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
-    //NSURL *recordedURL = [NSURL fileURLWithPath:fullFilePath];
     NSURL *recordedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]];
-    NSLog(@"recorded OK ------------");
-    //NSLog(@"recorded OK--------------------, %@ ERROR@: %@", fullFilePath, [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]);
     NSURL *savedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]];
-    NSLog(@"saved OK--------------------");
     
     if ([[URLtoHoldFile absoluteURL] isEqual:[defaultURL absoluteURL]]) {
-         NSLog(@"A file error D--------------------");
-        //[filemanager removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"] error: NULL];
+        // Set the recorded audio to the default
         soundFileName = @"default-audio-alert";
-        NSLog(@"Not A file error D-------------------");
     }
     else if ([[URLtoHoldFile absoluteURL] isEqual:[recordedURL absoluteURL]]) {
-        NSLog(@"A file error R--------------------");
         
+        // Remove the previously saved file
         [filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
         
-        NSLog(@"A file error R2--------------------%@, ERROR2: %@", [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"], [[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]);
+        // Get new saved file path
+        NSString *newPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"saved-audio-alert.caf"];
         
-        [filemanager moveItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
-                         toPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
+        // Copy recorded-audio-alert over to the new saved-audio-alert path
+        [filemanager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
+                         toPath:newPath error:&savingError];
         
         soundFileName = @"saved-audio-alert";
-        NSLog(@"Not A file error R----------------------");
     }
     else if ([[URLtoHoldFile absoluteURL] isEqual:[savedURL absoluteURL]]) {
-        NSLog(@"A file error S---------------------");
-        //[filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"] error:&savingError];
+        // No changes to the recording were made
         soundFileName = @"saved-audio-alert";
-        NSLog(@"Not A file error S-------------------");
     }
     else {
-        NSLog(@"There was an error in saving.---------------------");
+        NSLog(@"There was an error in saving the correct file.");
     }
     
     // Store data in user default settings
     bool audioMessageOn = [audioMessageStatus isOn];
     CGFloat messageVolume = volumeSlider.value;
-    NSLog(soundFileName);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:audioMessageOn forKey:@"audioMessageOn"];

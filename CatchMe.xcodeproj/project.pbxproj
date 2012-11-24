@@ -272,7 +272,6 @@
 				2D27A3301634DBEC0098F6C9 /* DBConnection.m */,
 				2D8609F31658678B0040A9DA /* FallDetector.h */,
 				2D8609F41658678B0040A9DA /* FallDetector.m */,
-				1F1E2E571645C07800DE81BA /* GUI Files */,
 				2D757A50162F6FC200104D8A /* MainMenuViewController.h */,
 				2D757A51162F6FC200104D8A /* MainMenuViewController.m */,
 				1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */,
@@ -285,11 +284,12 @@
 				1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */,
 				2DFD4B3416337E9700396892 /* SettingsViewController.h */,
 				2DFD4B3616337EA100396892 /* SettingsViewController.m */,
-				2D757A45162F6FC200104D8A /* Supporting Files */,
 				1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */,
 				1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */,
 				2DD5ADE2165DA212002FB400 /* UserIDDownloader.h */,
 				2DD5ADE3165DA212002FB400 /* UserIDDownloader.m */,
+				1F1E2E571645C07800DE81BA /* GUI Files */,
+				2D757A45162F6FC200104D8A /* Supporting Files */,
 			);
 			path = CatchMe;
 			sourceTree = "<group>";

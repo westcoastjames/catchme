@@ -7,6 +7,7 @@
 //
 
 #import "MessageSettingsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MessageSettingsViewController ()
 

@@ -103,7 +103,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
     NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
-    NSLog(@"Notify user reached, timeDelay: %i currentTimeDelay: %i", timeDelay, currentTimeDelay);
+    NSLog(@"Notify user reached, timeDelay: %i currentTimeDelay: %i vibrationOn: %d alert visible: %d", timeDelay, currentTimeDelay, vibrationNotificationOn, alert.visible);
     
     currentTimeDelay = currentTimeDelay + 1;
     
@@ -196,6 +196,16 @@
                                      delegate:self
                             cancelButtonTitle:nil
                             otherButtonTitles:@"Yes, help me!", @"No, dismiss alert.", nil];
+    
+    // Run the alert in the main thread to prevent app from crashing
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [alert show];
+    });
+    
+    // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
+    notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidUnload

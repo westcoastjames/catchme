@@ -47,6 +47,9 @@
     NSTimer * notificationTimer;
 }
 
+@property NSInteger currentTimeDelay;
+@property (nonatomic, strong) NSTimer *notificationTimer;
+
 - (IBAction)activateAccelerometer;
 
 - (void)notifyUser;

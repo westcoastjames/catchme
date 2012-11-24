@@ -16,6 +16,8 @@
 
 @implementation MainMenuViewController
 
+@synthesize notificationTimer, currentTimeDelay;
+
 // Constructor
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -139,8 +141,9 @@
             NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
             NSURL *url = [NSURL fileURLWithPath:soundPath];
             audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-            audioPlayer.numberOfLoops = -1;
+            audioPlayer.numberOfLoops = 0;
             [audioPlayer setVolume:messageVolume];
+            [audioPlayer play];
         }
         
         // NEED TO ADD SENDING OUT MESSAGES TO CONTACTS

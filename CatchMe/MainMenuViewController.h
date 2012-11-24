@@ -52,6 +52,6 @@
 
 - (IBAction)activateAccelerometer;
 
-- (void)notifyUser;
+- (void)notifyUser:(NSTimer *)timer;
 
 @end

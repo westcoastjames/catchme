@@ -65,7 +65,7 @@
                  });
                  
                  // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-                 notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(notifyUser) userInfo:nil repeats:YES];
+                 notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
                  
                  // Used to access user settings data
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -97,7 +97,7 @@
 }
 
 // Timer method used to notify user when a fall has been detected, continues executing until set time has passed or alert has been dismissed
-- (void)notifyUser {
+- (void)notifyUser:(NSTimer *)timer {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
     NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];

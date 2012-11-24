@@ -65,7 +65,9 @@
                  });
                  
                  // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-                 notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+                 notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+                 
+                 [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
                  
                  // Used to access user settings data
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -101,8 +103,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
     NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
-    NSLog(@"Notify user reached");
-    currentTimeDelay = currentTimeDelay +1;
+    NSLog(@"Notify user reached, timeDelay: %i currentTimeDelay: %i", timeDelay, currentTimeDelay);
+    
+    currentTimeDelay = currentTimeDelay + 1;
     
     if((currentTimeDelay <= timeDelay) && vibrationNotificationOn && alert.visible) {
         NSLog(@"Vibration method reached");

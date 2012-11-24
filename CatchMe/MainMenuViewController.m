@@ -94,6 +94,7 @@
     }
 }
 
+// Timer method used to notify user when a fall has been detected, continues executing until set time has passed or alert has been dismissed
 - (void)notifyUser {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
@@ -101,7 +102,7 @@
     
     currentTimeDelay = currentTimeDelay +1;
     
-    if((currentTimeDelay <= timeDelay) && vibrationNotificationOn) {
+    if((currentTimeDelay <= timeDelay) && vibrationNotificationOn && alert.visible) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     else {
@@ -115,6 +116,33 @@
         
         [alert dismissWithClickedButtonIndex:0 animated:YES];
         // [alert release];
+    }
+}
+
+// Actions that should take place after the the user has been notified of a detected fall
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // If alert was dismissed, reset the fall detection algorithm
+    if (buttonIndex == 1) {
+        [fallDetector reset];
+    }
+    
+    // Else begin sending out audio and message alerts
+    else {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
+        CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
+        bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
+        
+        if (audioMessageOn) {
+            NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
+            NSURL *url = [NSURL fileURLWithPath:soundPath];
+            audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+            audioPlayer.numberOfLoops = -1;
+            [audioPlayer setVolume:messageVolume];
+        }
+        
+        // NEED TO ADD SENDING OUT MESSAGES TO CONTACTS
     }
 }
 
@@ -136,8 +164,8 @@
     // GPS location manager
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone; //updates whenever you move
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; //accuracy of the GPS
+    locationManager.distanceFilter = kCLDistanceFilterNone; // Updates whenever you move
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; // Accuracy of the GPS
     [locationManager startUpdatingLocation];
     
     // Code for Audio playback plays sound when fall is detected
@@ -148,8 +176,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
     
-    NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:musicPath];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:soundPath];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
     [audioPlayer setVolume:messageVolume];

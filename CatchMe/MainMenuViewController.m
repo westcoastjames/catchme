@@ -30,12 +30,9 @@
 // Activated through the switch on the main menu
 - (IBAction)activateAccelerometer {
     
-    // Used to access user settings data
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
     // Retrieve accelerometer data
     motionManager = [[CMMotionManager alloc]init];
-    motionManager.accelerometerUpdateInterval = (double)1/50;// 50 Hz  Frequency affects the sensitivity of the fall detection
+    motionManager.accelerometerUpdateInterval = (double)1/50; // 50 Hz  Frequency affects the sensitivity of the fall detection
     
     if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
         
@@ -55,30 +52,26 @@
              
              if([fallDetector hasFallen]) {
                  
-                 // Reset fall detector so alerts will show oonly once
+                 // Reset fall detector so alerts will show only once
                  [fallDetector reset];
                  
                  NSLog(@"**** FALL DETECTED ****");
-                 
-                 NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
-                 bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
-                 bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
                  
                  // Run the alert in the main thread to prevent app from crashing
                  dispatch_async(dispatch_get_main_queue(), ^{
                      [alert show];
                  });
                  
-                 if (vibrationNotificationOn) {
-                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-                 }
+                 // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
+                 notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(notifyUser) userInfo:nil repeats:YES];
+                 
+                 // Used to access user settings data
+                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                 bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
+                 
                  if (audioNotificationOn) {
-                     // Delay playback to 4 seconds
-                     //startAudioTime = 4.0;
-                     //[audioPlayer playAtTime:audioPlayer.deviceCurrentTime + startAudioTime];
                      [audioPlayer play];
                  }
-                 // TODO: Need to add multiple vibrations/play an audio sound until a time set (timeDelay) has passed. then the pop up window should close and alerts should be sent out (audio, email, txt message)
              }
              
              // TEST LABELS ON MAIN WINDOW
@@ -95,15 +88,34 @@
     // Switch accelerometer detection off
     else if(![systemStatusSwitch isOn]){
         NSLog(@"Accelerometer detection is off.");
-        [audioPlayer stop];
     }
     else {
         NSLog(@"Accelerometer did not work.");
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)notifyUser {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    bool vibrationNotificationOn = [defaults boolForKey:@"vibrationNotificationOn"];
+    NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
     
+    currentTimeDelay = currentTimeDelay +1;
+    
+    if((currentTimeDelay <= timeDelay) && vibrationNotificationOn) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    else {
+        
+        // Kill timer, hide alert, stop sound
+        [notificationTimer invalidate];
+        
+        if (audioPlayer.playing) {
+            [audioPlayer stop];
+        }
+        
+        [alert dismissWithClickedButtonIndex:0 animated:YES];
+        // [alert release];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -118,6 +130,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // For reseting alert notification
+    currentTimeDelay = 0;
+    
     // GPS location manager
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -130,19 +145,22 @@
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
     [audioSession setActive:YES error: nil];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
+    
     NSString *musicPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:musicPath];
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     audioPlayer.numberOfLoops = -1;
-    [audioPlayer setVolume:1.0];
+    [audioPlayer setVolume:messageVolume];
     
     
     // Create alert notification
     alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
-                                      message:@"Press ok to dismiss this alert."
-                                     delegate:nil
-                            cancelButtonTitle:@"OK"
-                            otherButtonTitles:nil];
+                                      message:@"Do you require assistence?"
+                                     delegate:self
+                            cancelButtonTitle:nil
+                            otherButtonTitles:@"Yes, help me!", @"No, dismiss alert.", nil];
 }
 
 - (void)viewDidUnload

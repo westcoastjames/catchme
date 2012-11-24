@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
-#include "sys/time.h"
+#include "sys/time.h" // NOT USED ANYMORE?
 
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
@@ -28,6 +28,8 @@
     FallDetector* fallDetector;
     
     UIAlertView *alert;
+    
+    
     // For testing purposes
     IBOutlet UILabel *x_coord;
     IBOutlet UILabel *y_coord;
@@ -41,9 +43,12 @@
     
     long startsecs;
     
-    
+    NSInteger currentTimeDelay;
+    NSTimer * notificationTimer;
 }
 
 - (IBAction)activateAccelerometer;
+
+- (void)notifyUser;
 
 @end

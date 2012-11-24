@@ -46,6 +46,9 @@
     
     // Loads the keyboard dismissal on tap outside textField
     tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+        
+    [self.view addGestureRecognizer:tap];
+    [tap setCancelsTouchesInView:NO]; // Allows other tap gestures to continue functioning while this one is in effect
 }
 
 - (void)viewDidUnload

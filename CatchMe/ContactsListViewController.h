@@ -16,8 +16,9 @@
 
 @property (nonatomic, strong) NSMutableArray *contacts;
 
-- (IBAction)cancelChanges;
-- (IBAction)done:(UIStoryboardSegue *)segue;
+//- (IBAction)cancelChanges;
+
+- (IBAction)doneButton:(id)sender;
 
 
 @end

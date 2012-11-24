@@ -48,8 +48,6 @@
 		32869B78166057320089F574 /* ContactAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32869B77166057320089F574 /* ContactAddViewController.m */; };
 		32869B7B1660661B0089F574 /* ContactEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32869B7A1660661B0089F574 /* ContactEditViewController.m */; };
 		3288663A165983520029696D /* ContactsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32886639165983520029696D /* ContactsListViewController.m */; };
-		3288663E165984440029696D /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3288663D165984440029696D /* Contact.m */; };
-		32886641165985D20029696D /* ContactsDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32886640165985D20029696D /* ContactsDataController.m */; };
 		32D842E5164F0AA400874021 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D842E4164F0AA400874021 /* CoreLocation.framework */; };
 		32E96555164F5C1C005921FF /* image copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96554164F5C1C005921FF /* image copy.png */; };
 		32E96557164F5C1F005921FF /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96556164F5C1F005921FF /* image.png */; };
@@ -134,10 +132,6 @@
 		32869B7A1660661B0089F574 /* ContactEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactEditViewController.m; sourceTree = "<group>"; };
 		32886638165983520029696D /* ContactsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsListViewController.h; sourceTree = "<group>"; };
 		32886639165983520029696D /* ContactsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsListViewController.m; sourceTree = "<group>"; };
-		3288663C165984440029696D /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
-		3288663D165984440029696D /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-		3288663F165985D20029696D /* ContactsDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsDataController.h; sourceTree = "<group>"; };
-		32886640165985D20029696D /* ContactsDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDataController.m; sourceTree = "<group>"; };
 		32D842E4164F0AA400874021 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		32E96554164F5C1C005921FF /* image copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image copy.png"; sourceTree = "<group>"; };
 		32E96556164F5C1F005921FF /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
@@ -264,16 +258,12 @@
 				2D757A4E162F6FC200104D8A /* AppDelegate.m */,
 				1FCE2C0D163366F100605D7F /* AudioSettingsViewController.h */,
 				1FCE2C0E163366F100605D7F /* AudioSettingsViewController.m */,
-				3288663C165984440029696D /* Contact.h */,
-				3288663D165984440029696D /* Contact.m */,
 				32869B76166057320089F574 /* ContactAddViewController.h */,
 				32869B77166057320089F574 /* ContactAddViewController.m */,
 				32869B7216604D6A0089F574 /* ContactEdit.h */,
 				32869B7316604D6A0089F574 /* ContactEdit.m */,
 				32869B791660661B0089F574 /* ContactEditViewController.h */,
 				32869B7A1660661B0089F574 /* ContactEditViewController.m */,
-				3288663F165985D20029696D /* ContactsDataController.h */,
-				32886640165985D20029696D /* ContactsDataController.m */,
 				32886638165983520029696D /* ContactsListViewController.h */,
 				32886639165983520029696D /* ContactsListViewController.m */,
 				2D8E43571634A61A00D008B2 /* ContactsViewController.h */,
@@ -470,8 +460,6 @@
 				1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */,
 				2D8609F51658678B0040A9DA /* FallDetector.m in Sources */,
 				3288663A165983520029696D /* ContactsListViewController.m in Sources */,
-				3288663E165984440029696D /* Contact.m in Sources */,
-				32886641165985D20029696D /* ContactsDataController.m in Sources */,
 				2DD5ADE4165DA212002FB400 /* UserIDDownloader.m in Sources */,
 				32869B7416604D6A0089F574 /* ContactEdit.m in Sources */,
 				32869B78166057320089F574 /* ContactAddViewController.m in Sources */,

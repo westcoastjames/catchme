@@ -7,8 +7,6 @@
 //
 
 #import "ContactsListViewController.h"
-#import "ContactsDataController.h"
-#import "Contact.h"
 #import "ContactsViewController.h"
 #import "ContactEdit.h"
 #import "ContactAddViewController.h"
@@ -23,17 +21,7 @@
 
 @synthesize contacts = _contacts;
 
-//done button to save a new contact
-- (IBAction)done:(UIStoryboardSegue *)segue {
-    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
-        ContactsViewController *addController = [segue sourceViewController];
-        if (addController.contact) {
-            [self.dataController addContact:addController.contact];
-            [[self tableView] reloadData];
-        }
-        [self dismissViewControllerAnimated:YES completion:NULL];
-    }
-}
+
 
 // Cancels any changes and goes back to the settings menu
 - (IBAction)cancelChanges {
@@ -45,11 +33,7 @@
     [self.tableView reloadData];
 }
 
-//associate new data controller object with dataController property
-- (void) awakeFromNib {
-    [super awakeFromNib];
-    self.dataController = [[ContactsDataController alloc]init];
-}
+
 
 
 
@@ -193,6 +177,8 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
 
 
 

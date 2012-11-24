@@ -427,6 +427,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Contacts" id="neG-tQ-Pqv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="keG-Nm-vEI">
+                            <connections>
+                                <action selector="cancelChanges" destination="XfC-DD-I7W" id="3Kn-ut-0db"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g7h-4W-G1m">
                             <connections>
                                 <segue destination="qyw-8g-xs5" kind="modal" identifier="AddContactSegue" id="zb5-iS-VJh"/>

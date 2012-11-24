@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) ContactsDataController *dataController;
 
+@property (nonatomic, strong) NSMutableArray *contacts;
+
 - (IBAction)cancelChanges;
 - (IBAction)done:(UIStoryboardSegue *)segue;
 

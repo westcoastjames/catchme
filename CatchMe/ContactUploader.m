@@ -17,6 +17,7 @@
     char* s;
     int uuid;
     int a, b, c;
+    char* buf;
     
     if (self) {
         responseData = [NSMutableData data];
@@ -36,6 +37,12 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         uuid = [defaults integerForKey:@"userid"];
+        
+        buf = calloc(20,1);
+        
+        sprintf(buf,"userid %d",uuid);
+        
+        NSLog([[NSString alloc] initWithUTF8String:buf]);
         
         s = calloc(2000,1);
         
@@ -78,12 +85,21 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    if(mContact.gid == 0) {
+    
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
     
     NSNumber* contactid = [json objectForKey:@"contactid"];
     int iContactID = [contactid intValue];
     
     mContact.gid = iContactID;
+    } else {
+        NSString* logs;
+        
+        logs = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+        
+        NSLog(logs);
+    }
 }
 
 @end

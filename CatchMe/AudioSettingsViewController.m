@@ -208,6 +208,7 @@
     //NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
     //NSURL *recordedURL = [NSURL fileURLWithPath:fullFilePath];
     NSURL *recordedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]];
+    NSLog(@"recorded OK ------------");
     //NSLog(@"recorded OK--------------------, %@ ERROR@: %@", fullFilePath, [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]);
     NSURL *savedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]];
     NSLog(@"saved OK--------------------");

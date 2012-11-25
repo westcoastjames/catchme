@@ -72,11 +72,12 @@
     
     // Recorder settings
     NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
+                                      //[NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
                                       [NSNumber numberWithInt:kAudioFormatAppleIMA4], AVFormatIDKey,
-                                      [NSNumber numberWithInt:16], AVEncoderBitRateKey,
+                                      //[NSNumber numberWithInt:16], AVEncoderBitRateKey,
                                       [NSNumber numberWithInt:1], AVNumberOfChannelsKey,
-                                      [NSNumber numberWithFloat:44100.0], AVSampleRateKey,
+                                      //[NSNumber numberWithFloat:44100.0], AVSampleRateKey,
+                                      [NSNumber numberWithFloat:16000.0], AVSampleRateKey,
                                       nil];
     
     // Create recorder
@@ -132,6 +133,7 @@
         
         [aRecorder record];
         URLtoHoldFile = aRecorder.url;
+        NSLog(@"URL USED: %@", [NSString stringWithFormat:@"%@",URLtoHoldFile]);
     }
      
 }

@@ -171,6 +171,8 @@
         
         NSError *audioError = nil; // will hold any error information that occurs during audio initialization
         
+        NSLog(@"URL USED: %@", [NSString stringWithFormat:@"%@",URLtoHoldFile]);
+        
         aPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:URLtoHoldFile error:&audioError]; // sets up audio player
         aPlayer.volume = volumeSlider.value;
         

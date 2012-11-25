@@ -21,6 +21,8 @@
     CLLocationManager *locationManager;
     
     AVAudioPlayer *audioPlayer;
+    AVAudioSession *audioSession;
+    
     NSTimeInterval startAudioTime;
     
     FallDetector* fallDetector;

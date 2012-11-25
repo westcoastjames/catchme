@@ -54,6 +54,8 @@
              [fallDetector receiveDataX:x_accel Y:y_accel Z:z_accel];
              struct timeval tv;
              gettimeofday(&tv,nil);
+             
+             // Time in milliseconds
              startsecs = tv.tv_sec * 1000 + tv.tv_usec / 1000;
              
              NSLog(@"&,%ld,%0.6f,%0.6f,%0.6f",startsecs,x_accel,y_accel,z_accel);

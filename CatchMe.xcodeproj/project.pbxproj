@@ -13,6 +13,8 @@
 		1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138B1658842A0086A470 /* default-audio-alert.caf */; };
 		1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */; };
 		1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA81650519900099AEC /* MessageSettingsViewController.m */; };
+		1F6E817B1661CE200045A91C /* recorded-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E817A1661CE200045A91C /* recorded-audio-alert.caf */; };
+		1F6E820D1661CEF50045A91C /* saved-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E820C1661CEF50045A91C /* saved-audio-alert.caf */; };
 		1F7DCE99164F3F5000441396 /* MedicalConditionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */; };
 		1F80160416338AE000D89B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F80160316338AE000D89B08 /* AVFoundation.framework */; };
 		1FB9AE3E164EE0FB0084D2E6 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB9AE3D164EE0FB0084D2E6 /* PersonalInfoViewController.m */; };
@@ -78,6 +80,8 @@
 		1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettingsViewController.m; sourceTree = "<group>"; };
 		1F61BDA71650519900099AEC /* MessageSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSettingsViewController.h; sourceTree = "<group>"; };
 		1F61BDA81650519900099AEC /* MessageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingsViewController.m; sourceTree = "<group>"; };
+		1F6E817A1661CE200045A91C /* recorded-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "recorded-audio-alert.caf"; sourceTree = "<group>"; };
+		1F6E820C1661CEF50045A91C /* saved-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "saved-audio-alert.caf"; sourceTree = "<group>"; };
 		1F7DCE97164F3F5000441396 /* MedicalConditionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalConditionsViewController.h; sourceTree = "<group>"; };
 		1F7DCE98164F3F5000441396 /* MedicalConditionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalConditionsViewController.m; sourceTree = "<group>"; };
 		1F80160316338AE000D89B08 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -180,6 +184,8 @@
 		1A67CF6B16505F920031B6E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1F6E820C1661CEF50045A91C /* saved-audio-alert.caf */,
+				1F6E817A1661CE200045A91C /* recorded-audio-alert.caf */,
 				1F4E138B1658842A0086A470 /* default-audio-alert.caf */,
 				1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */,
 			);
@@ -417,6 +423,8 @@
 				32E9656A164F6DCD005921FF /* first.png in Resources */,
 				1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */,
 				1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */,
+				1F6E817B1661CE200045A91C /* recorded-audio-alert.caf in Resources */,
+				1F6E820D1661CEF50045A91C /* saved-audio-alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

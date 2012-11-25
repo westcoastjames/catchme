@@ -65,7 +65,7 @@
     //NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     //NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
     NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
-
+    NSLog(@"Made it here %@", fullFilePath);
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
     NSError *recordError = nil; // will hold any error information that occurs during the recorder initialization

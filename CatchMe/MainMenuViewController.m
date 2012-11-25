@@ -62,18 +62,19 @@
                      [alert show];
                  });
                  
-                 [self setTimer];
-                 
                  // Used to access user settings data
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
-                 
                  if (audioNotificationOn) {
-                     
-                     dispatch_async(dispatch_get_main_queue(), ^{
-                         [audioPlayer play];
-                     });
+                     [audioPlayer play];
                  }
+                 
+                 
+                 [self setTimer];
+                 
+                
+                 
+                 
              }
              
          }];
@@ -109,8 +110,10 @@
     
     if((currentTimeDelay < timeDelay) && vibrationNotificationOn && alert.visible) {
         
-        
+        // setCategory playback so audio and vibrate will occur at same time
+        [audioSession setCategory :AVAudioSessionCategoryPlayback  error:nil];
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+        
         NSLog(@"Vibration method reached");
     }
     else if(currentTimeDelay >= timeDelay || !alert.visible) {
@@ -182,8 +185,8 @@
     [locationManager startUpdatingLocation];
     
     // Code for Audio playback plays sound when fall is detected
-    AVAudioSession * audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
+    audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
     [audioSession setActive:YES error: nil];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define highacc 2.4
+#define highacc 2.2
 #define lowacc 0.2
 
 

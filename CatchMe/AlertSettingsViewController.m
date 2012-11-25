@@ -103,6 +103,8 @@
     [defaults setBool:vibrationNotificationOn forKey:@"vibrationNotificationOn"];
     [defaults setInteger:timeDelay forKey:@"timeDelay"];
     
+    NSLog(@"Alert Settings saved.");
+    
     // Go back to the settings menu
     [self dismissModalViewControllerAnimated:YES];
 }

@@ -98,18 +98,11 @@
 // Execute the timer
 - (void) setTimer {
     // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-    notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
-    
-    while(alert.visible)
-    {
-        // allow the run loop to run for, arbitrarily, 2 seconds
-        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:timeDelay]];
+    notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+    if (notificationTimer == nil) {
+        NSLog(@"There was a problem with the timer");
     }
+    [[NSRunLoop mainRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
 }
 
 // Timer method used to notify user when a fall has been detected, continues executing until set time has passed or alert has been dismissed

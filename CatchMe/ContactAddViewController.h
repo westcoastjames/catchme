@@ -17,6 +17,10 @@
     IBOutlet UITextView *nameF;
     IBOutlet UITextView *numberF;
     IBOutlet UITextView *emailF;
+    
+    __weak IBOutlet UISwitch *shouldcall;
+    __weak IBOutlet UISwitch *shouldsms;
+    __weak IBOutlet UISwitch *shouldemail;
     UITapGestureRecognizer *tap;
 }
 
@@ -28,9 +32,11 @@
 @property (nonatomic, strong) IBOutlet UITextField *numberField;
 @property (nonatomic, strong) IBOutlet UITextField *emailField;
 
-@property (nonatomic, assign) BOOL emailOn;
-@property (nonatomic, assign) BOOL phoneOn;
 
+@property (weak, nonatomic) IBOutlet UISwitch *shouldcall;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldsms;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldemail;
+ 
 @property UITapGestureRecognizer *tap;
 
 @property (nonatomic, strong) ContactsListViewController *contactListView;

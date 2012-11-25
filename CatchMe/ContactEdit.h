@@ -19,7 +19,7 @@
 @property (nonatomic) bool shouldemail;
 
 
-- (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email;
+- (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email shouldcall:(BOOL *)shouldcall shouldsms:(BOOL *)shouldsms shouldemail:(BOOL *)shouldemail;
 
 
 @end

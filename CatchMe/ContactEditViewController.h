@@ -19,6 +19,8 @@
     __weak IBOutlet UITextField *name;
     __weak IBOutlet UITextField *number;
     __weak IBOutlet UITextField *email;
+
+
 }
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
@@ -27,8 +29,9 @@
 
 @property (nonatomic, strong) ContactEdit *contact;
 
-@property (nonatomic, assign) BOOL emailOn;
-@property (nonatomic, assign) BOOL phoneOn;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldcall;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldsms;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldemail;
 
 - (IBAction)contactDataChange:(id)sender;
 

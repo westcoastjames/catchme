@@ -17,10 +17,10 @@
 @synthesize nameField = _namefield;
 @synthesize numberField = _numberField;
 @synthesize emailField = _emailField;
+@synthesize shouldcall = _shouldcall;
+@synthesize shouldsms = _shouldsms;
+@synthesize shouldemail = _shouldemail;
 @synthesize contactListView = _contactListView;
-
-@synthesize emailOn = _emailOn;
-@synthesize phoneOn = _phoneOn;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,6 +51,14 @@
 
 - (void)viewDidUnload
 {
+    
+    [self setShouldcall:nil];
+    [self setShouldsms:nil];
+    [self setShouldemail:nil];
+     
+    shouldcall = nil;
+    shouldsms = nil;
+    shouldemail = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -66,7 +74,7 @@
 }
 
 - (void)doneButton:(id)sender {
-    ContactEdit *newContact = [[ContactEdit alloc]initWithName:self.nameField.text number:self.numberField.text email:self.emailField.text];
+    ContactEdit *newContact = [[ContactEdit alloc]initWithName:self.nameField.text number:self.numberField.text email:self.emailField.text shouldcall:self.shouldcall.isOn shouldsms:self.shouldsms.isOn shouldemail:self.shouldemail.isOn];
     
     ContactUploader* uploader = [[ContactUploader alloc] initWithContact:newContact];
     

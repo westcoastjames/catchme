@@ -18,7 +18,7 @@
 @synthesize shouldsms = _shouldsms;
 @synthesize shouldemail = _shouldemail;
 
-- (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email {
+- (id)initWithName:(NSString *)name number:(NSString *)number email:(NSString *)email shouldcall:(BOOL *)shouldcall shouldsms:(BOOL *)shouldsms shouldemail:(BOOL *)shouldemail{
     self = [super init];
     
     if(self) {
@@ -26,9 +26,9 @@
         self.number = number;
         self.email = email;
         self.gid = 0;
-        self.shouldcall = false;
-        self.shouldsms = true;
-        self.shouldemail = false;
+        self.shouldcall = shouldcall;
+        self.shouldsms = shouldsms;
+        self.shouldemail = shouldemail;
         
     }
     return self;

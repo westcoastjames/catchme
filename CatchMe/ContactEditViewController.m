@@ -7,6 +7,7 @@
 //
 
 #import "ContactEditViewController.h"
+#import "ContactEdit.h"
 
 @interface ContactEditViewController ()
 
@@ -19,8 +20,9 @@
 @synthesize emailField = _emailField;
 @synthesize contact = _contact;
 
-@synthesize emailOn = _emailOn;
-@synthesize phoneOn = _phoneOn;
+@synthesize shouldemail = _shouldemail;
+@synthesize shouldcall = _shouldcall;
+@synthesize shouldsms = _shouldsms;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,6 +46,9 @@
     self.nameField.text = self.contact.name;
     self.numberField.text = self.contact.number;
     self.emailField.text = self.contact.email;
+    [self.shouldcall setOn:self.contact.shouldcall];
+    [self.shouldemail setOn:self.contact.shouldemail];
+    [self.shouldsms setOn:self.contact.shouldsms];
     
     // Loads the keyboard dismissal on tap outside textField
     tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -57,6 +62,7 @@
     name = nil;
     number = nil;
     email = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -71,6 +77,10 @@
     self.contact.name = self.nameField.text;
     self.contact.number = self.numberField.text;
     self.contact.email = self.emailField.text;
+    
+    self.contact.shouldcall = self.shouldcall.isOn;
+    self.contact.shouldsms = self.shouldsms.isOn;
+    self.contact.shouldemail = self.shouldemail.isOn;
     
     if(self.contact.gid != 0) {
     ContactUploader* uploader = [[ContactUploader alloc] initWithContact:self.contact];

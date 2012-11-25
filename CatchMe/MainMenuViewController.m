@@ -34,7 +34,7 @@
     motionManager = [[CMMotionManager alloc]init];
     motionManager.accelerometerUpdateInterval = (double)1/50; // 50 Hz  Frequency affects the sensitivity of the fall detection
     
-    if ([motionManager isAccelerometerAvailable] && [systemStatusSwitch isOn]){
+    if ([motionManager isAccelerometerAvailable] && [alertStatusSwitch isOn]){
         
         NSOperationQueue *queue = [[NSOperationQueue alloc]init];
         fallDetector = [[FallDetector alloc]init];
@@ -90,8 +90,9 @@
         
     }
     // Switch accelerometer detection off
-    else if(![systemStatusSwitch isOn]){
+    else if(![alertStatusSwitch isOn]){
         NSLog(@"Accelerometer detection is off.");
+        [audioPlayer stop];
     }
     else {
         NSLog(@"Accelerometer did not work.");
@@ -181,7 +182,7 @@
 
 // ARE WE STILL USING THE DBCONNECTION STUFF?
 - (void)viewDidDisappear:(BOOL)animated {
-    if (systemStatusSwitch.on) {
+    if (alertStatusSwitch.on) {
         [db setSetting:@"on" value:@"yes"];
     } else {
         [db setSetting:@"on" value:@"no"];

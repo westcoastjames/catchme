@@ -186,7 +186,7 @@
     
     // Code for Audio playback plays sound when fall is detected
     audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error: nil];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
     [audioSession setActive:YES error: nil];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

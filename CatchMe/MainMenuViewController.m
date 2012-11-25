@@ -115,6 +115,9 @@
     currentTimeDelay = currentTimeDelay + 1;
     
     if((currentTimeDelay < timeDelay) && vibrationNotificationOn && alert.visible) {
+        
+        
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         NSLog(@"Vibration method reached");
     }
     else {

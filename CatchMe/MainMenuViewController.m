@@ -176,7 +176,7 @@
         }
         
         // send the fall message to the server
-        AlertUploader* uploader = [[AlertUploader alloc] ];
+        AlertUploader* uploader = [[AlertUploader alloc] initWithLatitude:lastlat andLongitude:lastlon];
         
     }
 }

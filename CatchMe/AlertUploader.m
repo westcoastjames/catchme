@@ -31,7 +31,7 @@
         
         s = calloc(2000,1);
         
-        sprintf(s,"lat=%f&lon=%f&id=%d",latitude,longitude,uuid);
+        sprintf(s,"lat=%f&lon=%f&userid=%d",latitude,longitude,uuid);
         
         postString = [[NSString alloc] initWithUTF8String:s];
         

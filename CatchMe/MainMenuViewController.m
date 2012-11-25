@@ -70,6 +70,19 @@
                      [audioPlayer play];
                  }
                  
+                 // Code for Audio playback plays sound when fall is detected
+                 audioSession = [AVAudioSession sharedInstance];
+                 [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
+                 [audioSession setActive:YES error: nil];
+                 
+                 CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
+                 
+                 NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+                 NSURL *url = [NSURL fileURLWithPath:soundPath];
+                 audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+                 audioPlayer.numberOfLoops = -1;
+                 [audioPlayer setVolume:messageVolume];
+                 
                  [self setTimer]; 
              }
              
@@ -188,21 +201,6 @@
     locationManager.distanceFilter = kCLDistanceFilterNone; // Updates whenever you move
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation; // Accuracy of the GPS
     [locationManager startUpdatingLocation];
-    
-    // Code for Audio playback plays sound when fall is detected
-    audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
-    [audioSession setActive:YES error: nil];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
-    
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
-    NSURL *url = [NSURL fileURLWithPath:soundPath];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    audioPlayer.numberOfLoops = -1;
-    [audioPlayer setVolume:messageVolume];
-    
     
     // Create alert notification
     alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"

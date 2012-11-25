@@ -56,6 +56,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    ContactDownloader* downloader = [[ContactDownloader alloc] init];
+    
     self.contacts = [[NSMutableArray alloc] init];
     
 }

@@ -131,8 +131,9 @@
         defaultButton.enabled = FALSE;
         [defaultButton setBackgroundColor:[UIColor redColor]];
         
-        [aRecorder record];
+        
         URLtoHoldFile = aRecorder.url;
+        [aRecorder record];
         NSLog(@"URL USED: %@", [NSString stringWithFormat:@"%@",URLtoHoldFile]);
     }
      
@@ -182,7 +183,7 @@
             NSLog(@"An error occured setting up the audio player: %@", [audioError localizedDescription]);
         }
         else {
-            [aPlayer prepareToPlay];
+            //[aPlayer prepareToPlay];
             [aPlayer play];
         }
     }

@@ -77,7 +77,7 @@
                  
                  CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
                  
-                 NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell-ringing" ofType:@"mp3"];
+                 NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bell_ring" ofType:@"mp3"];
                  NSURL *url = [NSURL fileURLWithPath:soundPath];
                  audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
                  audioPlayer.numberOfLoops = -1;

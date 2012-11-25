@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */; };
 		1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A69D069163399B600EF576B /* Storyboard.storyboard */; };
 		1F4E1383165863EB0086A470 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E1382165863EB0086A470 /* CoreAudio.framework */; };
 		1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138B1658842A0086A470 /* default-audio-alert.caf */; };
@@ -57,6 +56,7 @@
 		32E96564164F6745005921FF /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96563164F6745005921FF /* second.png */; };
 		32E9656A164F6DCD005921FF /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E96569164F6DCD005921FF /* first.png */; };
 		E110067D1635051D00FF6158 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E110067C1635051D00FF6158 /* Default-568h@2x.png */; };
+		EA68204E1662D4B900E6ABA7 /* bell_ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EA68204D1662D4B900E6ABA7 /* bell_ring.mp3 */; };
 		EAB060381634980100CFD930 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB060371634980100CFD930 /* SettingsViewController.xib */; };
 		EAB0603B1634981300CFD930 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAB0603A1634981300CFD930 /* MainMenuViewController.xib */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bell-ringing.mp3"; sourceTree = "<group>"; };
 		1A69D069163399B600EF576B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1F4E1382165863EB0086A470 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		1F4E138B1658842A0086A470 /* default-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-audio-alert.caf"; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		32E96563164F6745005921FF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = CatchMe/second.png; sourceTree = "<group>"; };
 		32E96569164F6DCD005921FF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = CatchMe/first.png; sourceTree = "<group>"; };
 		E110067C1635051D00FF6158 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EA68204D1662D4B900E6ABA7 /* bell_ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell_ring.mp3; sourceTree = "<group>"; };
 		EAB060371634980100CFD930 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EAB0603A1634981300CFD930 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		EACAFAEB164F5F0F0041F3CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -184,10 +184,10 @@
 		1A67CF6B16505F920031B6E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				EA68204D1662D4B900E6ABA7 /* bell_ring.mp3 */,
 				1F6E820C1661CEF50045A91C /* saved-audio-alert.caf */,
 				1F6E817A1661CE200045A91C /* recorded-audio-alert.caf */,
 				1F4E138B1658842A0086A470 /* default-audio-alert.caf */,
-				1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -421,10 +421,10 @@
 				32E96557164F5C1F005921FF /* image.png in Resources */,
 				32E96564164F6745005921FF /* second.png in Resources */,
 				32E9656A164F6DCD005921FF /* first.png in Resources */,
-				1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */,
 				1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */,
 				1F6E817B1661CE200045A91C /* recorded-audio-alert.caf in Resources */,
 				1F6E820D1661CEF50045A91C /* saved-audio-alert.caf in Resources */,
+				EA68204E1662D4B900E6ABA7 /* bell_ring.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

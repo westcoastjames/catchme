@@ -152,6 +152,7 @@
     [defaultButton setBackgroundColor:[UIColor greenColor]];
     
     if (aRecorder.recording) {
+        NSLog(@"STOP I SAY STOP!");
         [aRecorder stop];
     }
     else if (aPlayer.playing) {
@@ -256,5 +257,10 @@
 - (IBAction)cancelChanges {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+- (void)playerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+    NSLog(@"ERROR IN DECODE: %@\n", error);
+}
+
 
 @end

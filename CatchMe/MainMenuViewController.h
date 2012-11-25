@@ -36,6 +36,8 @@
     double y_accel;
     double z_accel;
     
+    double lastlat, lastlon;
+    
     NSInteger currentTimeDelay;
     NSTimer * notificationTimer;
 }

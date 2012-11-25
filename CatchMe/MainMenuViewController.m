@@ -174,13 +174,10 @@
             [audioPlayer setVolume:messageVolume];
             [audioPlayer play];
         }
-        // SHOULD THESE BE COMBINED INTO SEND ALERTS AND JUST LET THE SERVER HANDLE EVERYTHING?
-        if (emailMessageOn) {
-            // send emails
-        }
-        if (textMessageOn) {
-            // send textmessages
-        }
+        
+        // send the fall message to the server
+        AlertUploader* uploader = [[AlertUploader alloc] ];
+        
     }
 }
 
@@ -242,6 +239,9 @@
     seconds = decimal *3600 - minutes *60;
     NSString *long_str = [NSString stringWithFormat:@"%d° %d' %1.4f", degrees, minutes, seconds];
     //NSLog(@"Longitude: %@\"",long_str);
+    
+    lastlat = newLocation.coordinate.latitude;
+    lastlon = newLocation.coordinate.longitude;
     
     // Testing purposes
     [longitude setText:long_str];

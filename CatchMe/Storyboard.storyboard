@@ -1172,9 +1172,9 @@
                     <tabBarItem key="tabBarItem" title="Main" image="first.png" id="F7v-4K-BKe"/>
                     <navigationItem key="navigationItem" id="DHC-v4-I8O"/>
                     <connections>
+                        <outlet property="alertStatusSwitch" destination="yHr-Bb-yWy" id="GL7-ES-7Ap"/>
                         <outlet property="latitude" destination="cbg-sY-NVu" id="hNq-jl-oEm"/>
                         <outlet property="longitude" destination="j6o-6V-nBp" id="alO-vJ-jhE"/>
-                        <outlet property="systemStatusSwitch" destination="yHr-Bb-yWy" id="EjS-bo-RpA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maO-4C-Twl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1370,9 +1370,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuViewController.h"/>
             <relationships>
                 <relationship kind="action" name="activateAccelerometer"/>
+                <relationship kind="outlet" name="alertStatusSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="latitude" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="longitude" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="systemStatusSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>
         <class className="MedicalConditionsViewController" superclassName="UIViewController">

@@ -22,6 +22,7 @@
 		1FCE51C8165830DA001DCF63 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCE51C7165830DA001DCF63 /* AudioToolbox.framework */; };
 		1FF8F501164F0B6600C76124 /* MedicalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */; };
 		1FF8F505164F117300C76124 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */; };
+		2D1E5A3C1662DA67005FB815 /* AlertUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E5A3B1662DA67005FB815 /* AlertUploader.m */; };
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
 		2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */; };
 		2D50D34116617C8A005F85AF /* ContactUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50D34016617C8A005F85AF /* ContactUploader.m */; };
@@ -94,6 +95,8 @@
 		1FF8F500164F0B6600C76124 /* MedicalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalInfoViewController.m; sourceTree = "<group>"; };
 		1FF8F503164F117300C76124 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		1FF8F504164F117300C76124 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		2D1E5A3A1662DA67005FB815 /* AlertUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUploader.h; sourceTree = "<group>"; };
+		2D1E5A3B1662DA67005FB815 /* AlertUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUploader.m; sourceTree = "<group>"; };
 		2D27A32F1634DBEC0098F6C9 /* DBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConnection.h; sourceTree = "<group>"; };
 		2D27A3301634DBEC0098F6C9 /* DBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConnection.m; sourceTree = "<group>"; };
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -303,6 +306,8 @@
 				2D757A45162F6FC200104D8A /* Supporting Files */,
 				2D50D3431661930B005F85AF /* ContactDownloader.h */,
 				2D50D3441661930B005F85AF /* ContactDownloader.m */,
+				2D1E5A3A1662DA67005FB815 /* AlertUploader.h */,
+				2D1E5A3B1662DA67005FB815 /* AlertUploader.m */,
 			);
 			path = CatchMe;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				32869B7B1660661B0089F574 /* ContactEditViewController.m in Sources */,
 				2D50D34116617C8A005F85AF /* ContactUploader.m in Sources */,
 				2D50D3451661930B005F85AF /* ContactDownloader.m in Sources */,
+				2D1E5A3C1662DA67005FB815 /* AlertUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

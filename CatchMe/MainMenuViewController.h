@@ -13,8 +13,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
-#include "sys/time.h" // NOT USED ANYMORE?
-
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
     IBOutlet UISwitch* systemStatusSwitch;
@@ -31,9 +29,6 @@
     
     
     // For testing purposes
-    IBOutlet UILabel *x_coord;
-    IBOutlet UILabel *y_coord;
-    IBOutlet UILabel *z_coord;
     IBOutlet UILabel *longitude;
     IBOutlet UILabel *latitude;
     

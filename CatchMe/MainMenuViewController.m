@@ -4,8 +4,6 @@
 //
 //  Created by Jonathon Simister on 10/17/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
-//  
-//  BUG: Multiple alert notifications are shown when fall is detected in activateAccelerator method.
 
 #import "MainMenuViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
@@ -71,17 +69,12 @@
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
                  
                  if (audioNotificationOn) {
-                     [audioPlayer play];
+                     
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         [audioPlayer play];
+                     });
                  }
              }
-             
-             // TEST LABELS ON MAIN WINDOW
-             NSString *x_str = [NSString stringWithFormat:@"%0.6f", x_accel];
-             NSString *y_str = [NSString stringWithFormat:@"%0.6f", y_accel];
-             NSString *z_str = [NSString stringWithFormat:@"%0.6f", z_accel];
-             [x_coord setText: x_str];
-             [y_coord setText: y_str];
-             [z_coord setText: z_str];
              
          }];
         
@@ -120,7 +113,7 @@
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         NSLog(@"Vibration method reached");
     }
-    else {
+    else if(currentTimeDelay >= timeDelay || !alert.visible) {
         NSLog(@"Kill everything reached");
         // Kill timer, hide alert, stop sound
         [notificationTimer invalidate];

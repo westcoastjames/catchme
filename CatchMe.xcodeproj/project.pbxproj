@@ -10,7 +10,6 @@
 		1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */; };
 		1A69D06A163399B600EF576B /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A69D069163399B600EF576B /* Storyboard.storyboard */; };
 		1F4E1383165863EB0086A470 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4E1382165863EB0086A470 /* CoreAudio.framework */; };
-		1F4E138D1658842A0086A470 /* recorded-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138A1658842A0086A470 /* recorded-audio-alert.caf */; };
 		1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */ = {isa = PBXBuildFile; fileRef = 1F4E138B1658842A0086A470 /* default-audio-alert.caf */; };
 		1F61BDA61650515A00099AEC /* AlertSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */; };
 		1F61BDA91650519900099AEC /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F61BDA81650519900099AEC /* MessageSettingsViewController.m */; };
@@ -74,7 +73,6 @@
 		1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bell-ringing.mp3"; sourceTree = "<group>"; };
 		1A69D069163399B600EF576B /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1F4E1382165863EB0086A470 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		1F4E138A1658842A0086A470 /* recorded-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "recorded-audio-alert.caf"; sourceTree = "<group>"; };
 		1F4E138B1658842A0086A470 /* default-audio-alert.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "default-audio-alert.caf"; sourceTree = "<group>"; };
 		1F61BDA41650515A00099AEC /* AlertSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSettingsViewController.h; sourceTree = "<group>"; };
 		1F61BDA51650515A00099AEC /* AlertSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSettingsViewController.m; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		1A67CF6B16505F920031B6E2 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				1F4E138A1658842A0086A470 /* recorded-audio-alert.caf */,
 				1F4E138B1658842A0086A470 /* default-audio-alert.caf */,
 				1A67CF6916505BA50031B6E2 /* bell-ringing.mp3 */,
 			);
@@ -419,7 +416,6 @@
 				32E96564164F6745005921FF /* second.png in Resources */,
 				32E9656A164F6DCD005921FF /* first.png in Resources */,
 				1A67CF6A16505BA50031B6E2 /* bell-ringing.mp3 in Resources */,
-				1F4E138D1658842A0086A470 /* recorded-audio-alert.caf in Resources */,
 				1F4E138E1658842A0086A470 /* default-audio-alert.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

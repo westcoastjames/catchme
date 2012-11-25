@@ -98,7 +98,7 @@
 // Execute the timer
 - (void) setTimer {
     // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-    notificationTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+    notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
     if (notificationTimer == nil) {
         NSLog(@"There was a problem with the timer");
     }
@@ -116,7 +116,6 @@
     
     if((currentTimeDelay < timeDelay) && vibrationNotificationOn && alert.visible) {
         NSLog(@"Vibration method reached");
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     else {
         NSLog(@"Kill everything reached");
@@ -149,7 +148,7 @@
         CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
         bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
         currentTimeDelay = 0;
-        
+        NSLog(@"METHOD RESET REACHED");
         if (audioMessageOn) {
             NSLog(@"Audio message alert played");
             NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];

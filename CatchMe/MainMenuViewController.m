@@ -62,18 +62,13 @@
                      [alert show];
                  });
                  
-                 // Used to access user settings data
-                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                 bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
-                 // Notify user of fall through audio
-                 if (audioNotificationOn) {
-                     [audioPlayer play];
-                 }
-                 
                  // Code for Audio playback plays sound when fall is detected
                  audioSession = [AVAudioSession sharedInstance];
                  [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
                  [audioSession setActive:YES error: nil];
+                 
+                 // Used to access user settings data
+                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                  
                  CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
                  
@@ -82,6 +77,15 @@
                  audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
                  audioPlayer.numberOfLoops = -1;
                  [audioPlayer setVolume:messageVolume];
+                 
+                 
+                 bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
+                 // Notify user of fall through audio
+                 if (audioNotificationOn) {
+                     [audioPlayer play];
+                 }
+                 
+                 
                  
                  [self setTimer]; 
              }

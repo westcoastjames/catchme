@@ -65,16 +65,12 @@
                  // Used to access user settings data
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
+                 // Notify user of fall through audio
                  if (audioNotificationOn) {
                      [audioPlayer play];
                  }
                  
-                 
-                 [self setTimer];
-                 
-                
-                 
-                 
+                 [self setTimer]; 
              }
              
          }];
@@ -109,15 +105,13 @@
     currentTimeDelay = currentTimeDelay + 1;
     
     if((currentTimeDelay < timeDelay) && vibrationNotificationOn && alert.visible) {
-        
         // setCategory playback so audio and vibrate will occur at same time
         [audioSession setCategory :AVAudioSessionCategoryPlayback  error:nil];
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-        
         NSLog(@"Vibration method reached");
     }
     else if(currentTimeDelay >= timeDelay || !alert.visible) {
-        NSLog(@"Kill everything reached");
+        NSLog(@"Deactivate all notifications that a fall occured.");
         // Kill timer, hide alert, stop sound
         [notificationTimer invalidate];
         
@@ -130,8 +124,8 @@
     }
 }
 
-// Actions that should take place after the the user has been notified of a detected fall
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+// Actions that should take place after the the user has been notified of a detected fall, method called after alert dissapears
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     NSLog(@"This alert sending out method was reached");
     // If alert was dismissed, reset the fall detection algorithm
     if (buttonIndex == 1) {
@@ -139,29 +133,40 @@
         [fallDetector reset];
         currentTimeDelay = 0;
     }
-    
     // Else begin sending out audio and message alerts
     else {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
         CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
         bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
+        bool emailMessageOn = [defaults boolForKey:@"emailMessageOn"];
+        bool textMessageOn = [defaults boolForKey:@"textMessageOn"];
         currentTimeDelay = 0;
-        NSLog(@"METHOD RESET REACHED");
+
+        // Play audio alert message to nearby people if activated
         if (audioMessageOn) {
             NSLog(@"Audio message alert played");
-            NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
+            //NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
+            //NSURL *url = [NSURL fileURLWithPath:soundPath];
+            NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *soundPath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:soundFileName];
             NSURL *url = [NSURL fileURLWithPath:soundPath];
             audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
             audioPlayer.numberOfLoops = 0;
             [audioPlayer setVolume:messageVolume];
             [audioPlayer play];
         }
-        
-        // NEED TO ADD SENDING OUT MESSAGES TO CONTACTS
+        // SHOULD THESE BE COMBINED INTO SEND ALERTS AND JUST LET THE SERVER HANDLE EVERYTHING?
+        if (emailMessageOn) {
+            // send emails
+        }
+        if (textMessageOn) {
+            // send textmessages
+        }
     }
 }
 
+// ARE WE STILL USING THE DBCONNECTION STUFF?
 - (void)viewDidDisappear:(BOOL)animated {
     if (systemStatusSwitch.on) {
         [db setSetting:@"on" value:@"yes"];

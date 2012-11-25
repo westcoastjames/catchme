@@ -17,18 +17,16 @@
     
     IBOutlet UISwitch* systemStatusSwitch;
     DBConnection* db;
+    
     CMMotionManager* motionManager;
     CLLocationManager *locationManager;
     
     AVAudioPlayer *audioPlayer;
     AVAudioSession *audioSession;
     
-    NSTimeInterval startAudioTime;
-    
     FallDetector* fallDetector;
     
     UIAlertView *alert;
-    
     
     // For testing purposes
     IBOutlet UILabel *longitude;
@@ -38,8 +36,6 @@
     double y_accel;
     double z_accel;
     
-    long startsecs;
-    
     NSInteger currentTimeDelay;
     NSTimer * notificationTimer;
 }
@@ -48,8 +44,8 @@
 @property NSTimer *notificationTimer;
 
 - (IBAction)activateAccelerometer;
-
 - (void)notifyUser:(NSTimer *)timer;
 - (void)setTimer;
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex ;
 
 @end

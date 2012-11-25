@@ -4,9 +4,9 @@
 //
 //  Created by Nicholas Hoekstra on 10/20/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
-
-//MOVE FILES TO DOCUMENTS DIRECTORY FINISH CONVERTING OT OTHER FILE URL FINDER
 //
+
+// Known bugs: Audio is not saved after exiting and reopening the simulator. This is because the simulator creates a new document folder each time overwriting the previous one. This is not the case on actual iOS devices and therefore shouldn't be a problem.
 
 #import "AudioSettingsViewController.h"
 #import "AVFoundation/AVAudioRecorder.h"
@@ -41,9 +41,22 @@
     bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
     CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
     NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
-    
+     
+    // If the audio settings are being opened for the first time
     if (soundFileName == nil) {
-        soundFileName = @"default-audio-alert";
+        // Copy over system sounds to Documents folder
+        NSFileManager *filemanager = [NSFileManager defaultManager];
+        NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSString *newPath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"default-audio-alert.caf"];
+        [filemanager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"] toPath:newPath error:nil];
+        NSLog(@"oldPath: %@ newPath: %@", [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"],newPath);
+        newPath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.caf"];
+        [filemanager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] toPath:newPath error:nil];
+        NSLog(@"oldPath: %@ newPath: %@", [[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"],newPath);
+        
+        // Set audio to default alert
+        soundFileName = @"default-audio-alert.caf";
     }
     
     NSLog(soundFileName);
@@ -85,7 +98,7 @@
     aRecorder = [[AVAudioRecorder alloc] initWithURL:URLtoHoldFile settings:recorderSettings error:&recordError];
     
     if (recordError) {
-        NSLog(@"There was an error creating the recorder: %@", [recordError localizedDescription]);
+        //NSLog(@"There was an error creating the recorder: %@", [recordError localizedDescription]);
     }
     
     [aRecorder prepareToRecord];
@@ -95,6 +108,8 @@
     fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:soundFileName];
     //fullFilePath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
+    
+    NSLog(@"Audio URL: %@", [URLtoHoldFile path]);
     
     // Initialize the audio player
     NSError *audioError = nil; // will hold any error information that occurs during audio initialization
@@ -222,25 +237,29 @@
     
     if ([[URLtoHoldFile path] isEqual:[defaultURL path]]) {
         // Set the recorded audio to the default
-        soundFileName = @"default-audio-alert";
+        soundFileName = @"default-audio-alert.caf";
     }
     else if ([[URLtoHoldFile path] isEqual:[recordedURL path]]) {
         NSLog(@"We got here!!!");
         // Remove the previously saved file
-        [filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
-        
+        //[filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
+        [filemanager  removeItemAtPath:[[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.caf"] error:&savingError];
+//might not delete file
         // Get new saved file path
-        NSString *newPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"saved-audio-alert.caf"];
+        //NSString *newPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"saved-audio-alert.caf"];
+        NSString *newPath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.caf"];
         
         // Copy recorded-audio-alert over to the new saved-audio-alert path
-        [filemanager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
-                         toPath:newPath error:&savingError];
+        //[filemanager copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]
+        //                 toPath:newPath error:&savingError];
+        [filemanager copyItemAtPath:[[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"]
+                             toPath:newPath error:&savingError];
         
-        soundFileName = @"saved-audio-alert";
+        soundFileName = @"saved-audio-alert.caf";
     }
     else if ([[URLtoHoldFile path] isEqual:[savedURL path]]) {
         // No changes to the recording were made
-        soundFileName = @"saved-audio-alert";
+        soundFileName = @"saved-audio-alert.caf";
     }
     else {
         NSLog(@"There was an error in saving the correct file.");

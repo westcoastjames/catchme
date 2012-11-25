@@ -15,7 +15,7 @@
 
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
-    IBOutlet UISwitch* systemStatusSwitch;
+    IBOutlet UISwitch* alertStatusSwitch;
     DBConnection* db;
     
     CMMotionManager* motionManager;

@@ -62,9 +62,9 @@
     // Initialize audio recorder
     
     // Specify recorder file path
-    //NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
-    NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"];
+    //NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"];
     NSLog(@"Made it here %@", fullFilePath);
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
@@ -72,12 +72,11 @@
     
     // Recorder settings
     NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      //[NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
+                                      [NSNumber numberWithInt:AVAudioQualityHigh], AVEncoderAudioQualityKey,
                                       [NSNumber numberWithInt:kAudioFormatAppleIMA4], AVFormatIDKey,
-                                      //[NSNumber numberWithInt:16], AVEncoderBitRateKey,
+                                      [NSNumber numberWithInt:16], AVEncoderBitRateKey,
                                       [NSNumber numberWithInt:1], AVNumberOfChannelsKey,
-                                      //[NSNumber numberWithFloat:44100.0], AVSampleRateKey,
-                                      [NSNumber numberWithFloat:16000.0], AVSampleRateKey,
+                                      [NSNumber numberWithFloat:44100.0], AVSampleRateKey,
                                       nil];
     
     // Create recorder
@@ -259,7 +258,7 @@
 }
 
 - (void)playerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
-    NSLog(@"ERROR IN DECODE: %@\n", error);
+    NSLog(@"Error decoding the audio file: %@\n", error);
 }
 
 

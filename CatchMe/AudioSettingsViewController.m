@@ -90,7 +90,8 @@
     
     // Set the filepath to be the last saved audio clip so that when play is pressed the current saved message plays
 
-    fullFilePath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
+    fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:soundFileName];
+    //fullFilePath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
     
     // Initialize the audio player
@@ -151,7 +152,6 @@
     [defaultButton setBackgroundColor:[UIColor greenColor]];
     
     if (aRecorder.recording) {
-        NSLog(@"STOP I SAY STOP!");
         [aRecorder stop];
     }
     else if (aPlayer.playing) {
@@ -190,7 +190,9 @@
 }
 
 - (IBAction)defaultSound {
-    NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *fullFilePath = [[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"default-audio-alert.caf"];
+    //NSString *fullFilePath = [[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"];
     URLtoHoldFile = [NSURL fileURLWithPath:fullFilePath];
 }
 
@@ -203,16 +205,25 @@
     NSError *savingError;
     
     // Used for comparisons below
-    NSURL *defaultURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"]];
-    NSURL *recordedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]];
-    NSURL *savedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]];
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-    if ([[URLtoHoldFile absoluteURL] isEqual:[defaultURL absoluteURL]]) {
+    NSURL *defaultURL = [NSURL fileURLWithPath:[[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"default-audio-alert.caf"]];
+    NSURL *recordedURL = [NSURL fileURLWithPath:[[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"recorded-audio-alert.caf"]];
+    NSURL *savedURL = [NSURL fileURLWithPath:[[documentPaths objectAtIndex:0] stringByAppendingPathComponent:@"saved-audio-alert.caf"]];
+    //NSURL *defaultURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"default-audio-alert" ofType:@"caf"]];
+    //NSURL *recordedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"recorded-audio-alert" ofType:@"caf"]];
+    //NSURL *savedURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"]];
+    
+    //NSString *URLtoString = [URLtoHoldFile absoluteURL];
+   // NSString *fullFilePath = [@"file://localhost" stringByAppendingString: ];
+    //NSLog(@"url: %@ recorded: %@", [URLtoHoldFile path], [recordedURL path]);
+    
+    if ([[URLtoHoldFile path] isEqual:[defaultURL path]]) {
         // Set the recorded audio to the default
         soundFileName = @"default-audio-alert";
     }
-    else if ([[URLtoHoldFile absoluteURL] isEqual:[recordedURL absoluteURL]]) {
-        
+    else if ([[URLtoHoldFile path] isEqual:[recordedURL path]]) {
+        NSLog(@"We got here!!!");
         // Remove the previously saved file
         [filemanager  removeItemAtPath:[[NSBundle mainBundle] pathForResource:@"saved-audio-alert" ofType:@"caf"] error:&savingError];
         
@@ -225,7 +236,7 @@
         
         soundFileName = @"saved-audio-alert";
     }
-    else if ([[URLtoHoldFile absoluteURL] isEqual:[savedURL absoluteURL]]) {
+    else if ([[URLtoHoldFile path] isEqual:[savedURL path]]) {
         // No changes to the recording were made
         soundFileName = @"saved-audio-alert";
     }

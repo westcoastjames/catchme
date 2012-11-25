@@ -64,10 +64,7 @@
                      [alert show];
                  });
                  
-                 // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-                 notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
-                 
-                 [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
+                 [self setTimer];
                  
                  // Used to access user settings data
                  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -98,6 +95,23 @@
     }
 }
 
+// Execute the timer
+- (void) setTimer {
+    // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
+    notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
+    
+    [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger timeDelay = [defaults integerForKey:@"timeDelay"];
+    
+    while(alert.visible)
+    {
+        // allow the run loop to run for, arbitrarily, 2 seconds
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:timeDelay]];
+    }
+}
+
 // Timer method used to notify user when a fall has been detected, continues executing until set time has passed or alert has been dismissed
 - (void)notifyUser:(NSTimer *)timer {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -107,7 +121,7 @@
     
     currentTimeDelay = currentTimeDelay + 1;
     
-    if((currentTimeDelay <= timeDelay) && vibrationNotificationOn && alert.visible) {
+    if((currentTimeDelay < timeDelay) && vibrationNotificationOn && alert.visible) {
         NSLog(@"Vibration method reached");
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
@@ -130,7 +144,9 @@
     NSLog(@"This alert sending out method was reached");
     // If alert was dismissed, reset the fall detection algorithm
     if (buttonIndex == 1) {
+        NSLog(@"Fall dismissed");
         [fallDetector reset];
+        currentTimeDelay = 0;
     }
     
     // Else begin sending out audio and message alerts
@@ -139,8 +155,10 @@
         NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
         CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
         bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
+        currentTimeDelay = 0;
         
         if (audioMessageOn) {
+            NSLog(@"Audio message alert played");
             NSString *soundPath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"caf"];
             NSURL *url = [NSURL fileURLWithPath:soundPath];
             audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
@@ -196,16 +214,6 @@
                                      delegate:self
                             cancelButtonTitle:nil
                             otherButtonTitles:@"Yes, help me!", @"No, dismiss alert.", nil];
-    
-    // Run the alert in the main thread to prevent app from crashing
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [alert show];
-    });
-    
-    // Starts notifying a fall has been detected until the timeDelay has passed or the user dismisses
-    notificationTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(notifyUser:) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop currentRunLoop] addTimer:notificationTimer forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidUnload

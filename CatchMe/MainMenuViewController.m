@@ -153,6 +153,11 @@
     }
     // Else begin sending out audio and message alerts
     else {
+        NSLog(@"Fall not dismissed");
+        
+        // send the fall message to the server
+        AlertUploader* uploader = [[AlertUploader alloc] initWithLatitude:lastlat andLongitude:lastlon];
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
         CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
@@ -174,9 +179,6 @@
             [audioPlayer setVolume:messageVolume];
             [audioPlayer play];
         }
-        
-        // send the fall message to the server
-        AlertUploader* uploader = [[AlertUploader alloc] initWithLatitude:lastlat andLongitude:lastlon];
         
     }
 }

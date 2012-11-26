@@ -21,6 +21,8 @@
     if (self) {
         responseData = [NSMutableData data];
         
+        NSLog(@"initWithLatitudeandLongitude");
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         
         uuid = [defaults integerForKey:@"userid"];
@@ -38,6 +40,8 @@
         [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
         
         [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        NSLog(@"Request done");
         
         return self;
     }

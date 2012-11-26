@@ -17,7 +17,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     @public
-    CMMotionManager* motionManager;
+    
     CLLocationManager *locationManager;
 }
 

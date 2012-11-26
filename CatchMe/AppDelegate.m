@@ -12,49 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Detecting if the accelerometer is available on the device
-
-    // This piece of code is always unavailable and not active.
-    // But when I put it in SettingsViewController it does detect the accelerometer.
-    /*
-    if ([motionManager isAccelerometerAvailable]){
-        NSLog(@"Accelerometer is available.");
-    }   else{
-        NSLog(@"Accelerometer is unavailable.");
-    }
-    
-    if ([motionManager isAccelerometerActive]){
-        NSLog(@"Accelerometer is active.");
-    }   else{
-        NSLog(@"Accelerometer is not active.");
-    }
-    */
-    
-    
-     /* Commenting out to use the Storyboard interface builder
-      
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-  
-    //UIViewController *viewController1 = [[UIPageViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
-    UIViewController *viewControllerSettings = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
-    UIViewController *viewControllerContacts = [[ContactsViewController alloc] initWithNibName:@"ContactsViewController" bundle:nil];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewControllerSettings, viewControllerContacts];
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible]; 
-      
-      */
-    
-    /*
-    motionManager.accelerometerUpdateInterval = (double)0.5; //20Hz
-    motionQueue = [[NSOperationQueue alloc] init];
-    
-    [motionManager startAccelerometerUpdatesToQueue: motionQueue withHandler: ^( CMAccelerometerData* data, NSError* error) {
-        NSLog(@"Accelerometer: %@", [data description]);
-    }];
-     */
-    
     // Check to see if a unique user ID (from the server) has been saved already
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -101,20 +58,5 @@
 {
     NSLog(@"didReceiveLocalNotification: %@", notification.alertBody);
 }
-
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end

@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define highacc 2.2
-#define lowacc 0.2
+#define highacc 1.9
+#define lowacc 0.6
 
 
 @interface FallDetector : NSObject {

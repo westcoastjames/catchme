@@ -62,7 +62,7 @@
                      [alert show];
                  });
                  
-                 
+                 /*
                  // Background Notification
                  NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
                  UILocalNotification *notif = [[UILocalNotification alloc] init];
@@ -70,7 +70,7 @@
                  notif.timeZone = [NSTimeZone defaultTimeZone];
                  notif.alertBody = @"Notification message";
                  [[UIApplication sharedApplication] scheduleLocalNotification:notif];
-                 
+                 */
                  // Code for Audio playback plays sound when fall is detected
                  audioSession = [AVAudioSession sharedInstance];
                  [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
@@ -157,7 +157,7 @@
         [fallDetector reset];
         currentTimeDelay = 0;
         //background test
-        [[UIApplication sharedApplication]endBackgroundTask:fallTask];
+        //[[UIApplication sharedApplication]endBackgroundTask:fallTask];
     }
     // Else begin sending out audio and message alerts
     else {
@@ -217,7 +217,7 @@
     
     // Create alert notification
     alert = [[UIAlertView alloc]initWithTitle:@"A Fall Was Detected!"
-                                      message:@"Do you require assistence?"
+                                      message:@"Do you require assistance?"
                                      delegate:self
                             cancelButtonTitle:nil
                             otherButtonTitles:@"Yes, help me!", @"No, dismiss alert.", nil];

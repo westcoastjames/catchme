@@ -19,6 +19,10 @@
         
         NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         
+        NSLog(@"was called to do upload");
+        NSLog(url);
+        NSLog(postString);
+        
         [request setHTTPMethod:@"POST"];
         
         [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
@@ -48,6 +52,9 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    NSLog(responseString);
 }
 
 @end

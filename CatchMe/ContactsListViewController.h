@@ -10,7 +10,14 @@
 
 @class ContactsDataController;
 
-@interface ContactsListViewController : UITableViewController
+@interface ContactsListViewController : UITableViewController {
+    NSMutableData* responseData;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 
 @property (strong, nonatomic) ContactsDataController *dataController;
 

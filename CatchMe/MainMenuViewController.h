@@ -11,7 +11,6 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
-
 #import "AlertUploader.h"
 
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {

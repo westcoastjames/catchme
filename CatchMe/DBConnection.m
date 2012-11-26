@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
 // We are not using this class anymore
+
 #import "DBConnection.h"
 
 @implementation DBConnection

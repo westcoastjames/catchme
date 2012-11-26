@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "ContactEdit.h"
 #import "ContactUploader.h"
 

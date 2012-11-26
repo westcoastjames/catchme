@@ -98,6 +98,8 @@
 
 // Saves all the text field information into an NSUserDefaults object to be permanently stored
 - (IBAction)saveInfo {
+    char* s;
+    
     invalidCardNum.hidden = TRUE;
     invalidDate.hidden = TRUE;
     
@@ -146,6 +148,18 @@
     [defaults setObject:address forKey:@"address"];
     [defaults setObject:careCard forKey:@"careCard"];
     [defaults synchronize];
+    
+    s = calloc(2000,1);
+    
+    sprintf(s,"id=%d&firstname=%s&lastname=%s",[defaults integerForKey:@"userid"],[firstName UTF8String],[lastName UTF8String]);
+    
+    NSString* postString;
+    
+    postString = [[NSString alloc] initWithUTF8String:s];
+    
+    PostUploader* uploader = [[PostUploader alloc] initWithURL:@"http://www.jnsj.ca/catchme/postsettings.php" andVariables:postString];
+    
+    free(s);
     
     NSLog(@"Personal Data saved");
     

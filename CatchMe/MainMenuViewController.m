@@ -62,6 +62,7 @@
                      [alert show];
                  });
                  
+                 
                  // Background Notification
                  NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
                  UILocalNotification *notif = [[UILocalNotification alloc] init];

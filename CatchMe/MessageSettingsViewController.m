@@ -33,16 +33,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *alertMessage = [defaults objectForKey:@"alertMessage"];
     NSString *firstName = [defaults objectForKey:@"firstName"];
-    bool emailMessageOn = [defaults boolForKey:@"emailMessageOn"];
-    bool textMessageOn = [defaults boolForKey:@"textMessageOn"];
-    
-    if (emailMessageOn) {
-        [emailStatus setOn:YES];
-    }
-    
-    if (textMessageOn) {
-        [textMessageStatus setOn:YES];
-    }
     
     if ([firstName isEqualToString:@""] || firstName == nil) {
         firstName = @"<Unknown>";
@@ -85,15 +75,11 @@
     
     // Get data from text field
     NSString *alertMessage = [messageTextView text];
-    bool emailMessageOn = [emailStatus isOn];
-    bool textMessageOn = [textMessageStatus isOn];
     
     // Store the data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     [defaults setObject:alertMessage forKey:@"alertMessage"];
-    [defaults setBool:emailMessageOn forKey:@"emailMessageOn"];
-    [defaults setBool:textMessageOn forKey:@"textMessageOn"];
     [defaults synchronize];
     
     NSLog(@"Message data saved");

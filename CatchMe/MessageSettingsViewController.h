@@ -11,9 +11,6 @@
 @interface MessageSettingsViewController : UIViewController {
     UITapGestureRecognizer *tap;
     IBOutlet UITextView *messageTextView;
-    
-    IBOutlet UISwitch *emailStatus;
-    IBOutlet UISwitch *textMessageStatus;
 }
 
 - (IBAction)cancelChanges;

@@ -64,19 +64,6 @@
         UserIDDownloader* downloader = [[UserIDDownloader alloc] init];
     }
     
-   
-    //Jonathons implementation of the background notification
-    NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:5];
-    
-    UILocalNotification *notif = [[UILocalNotification alloc] init];
-    notif.fireDate = date;
-    notif.timeZone = [NSTimeZone defaultTimeZone];
-    notif.alertBody = @"Notification message";
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:notif];
-    
-    return YES;
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -21,6 +21,8 @@
     bool startedb;
     
     bool bFallen;
+    
+    
 }
 
 - (void)receiveDataX:(double)x Y:(double)y Z:(double)z;

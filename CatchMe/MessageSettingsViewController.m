@@ -84,15 +84,13 @@
     [defaults setObject:alertMessage forKey:@"alertMessage"];
     [defaults synchronize];
     
-    s= calloc(2000,1);
+    s= calloc(5000,1);
     
     uuid = [defaults integerForKey:@"userid"];
     
     sprintf(s,"id=%d&msg=%s",uuid,[[alertMessage stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] UTF8String]);
     
     [[PostUploader alloc]initWithURL:@"http://www.jnsj.ca/catchme/savemsg.php" andVariables:[[NSString alloc] initWithUTF8String:s]];
-    
-    free(s);
     
     NSLog(@"Message data saved");
     

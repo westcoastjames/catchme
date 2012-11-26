@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "ContactEdit.h"
 
 @interface ContactUploader : NSObject {

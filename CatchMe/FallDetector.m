@@ -74,7 +74,9 @@ bool fallen(double* frame) {
         frameac = 0;
     }
     if(framebc > 74) {
-        bFallen = fallen(frameb); // there's no conceivable way that both of these can go at the same time, so it doesn't matter that we overwrite
+        
+        // there's no conceivable way that both of these can go at the same time, so it doesn't matter that we overwrite
+        bFallen = fallen(frameb); 
         
         framebc = 0;
     }

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "DBConnection.h"
 #import <UIKit/UIKit.h>
-
 #import "PostUploader.h"
 #import "ContactEdit.h"
 

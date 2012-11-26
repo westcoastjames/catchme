@@ -69,10 +69,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+// Discard any changes and go back to Emergency Contacts page
 - (void)cancelButton:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
 
+// Save contact and go back to the Emergency Contacts page
 - (void)doneButton:(id)sender {
     ContactEdit *newContact = [[ContactEdit alloc]initWithName:self.nameField.text number:self.numberField.text email:self.emailField.text shouldcall:self.shouldcall.isOn shouldsms:self.shouldsms.isOn shouldemail:self.shouldemail.isOn];
     

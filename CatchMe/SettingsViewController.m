@@ -1,5 +1,5 @@
 //
-//  SecondViewController.m
+//  SettingsViewController.m
 //  CatchMe
 //
 //  Created by Jonathon Simister on 10/17/12.

@@ -83,7 +83,7 @@
     self.contact.shouldemail = self.shouldemail.isOn;
     
     if(self.contact.gid != 0) {
-    ContactUploader* uploader = [[ContactUploader alloc] initWithContact:self.contact];
+        ContactUploader* uploader = [[ContactUploader alloc] initWithContact:self.contact];
     }
 }
 

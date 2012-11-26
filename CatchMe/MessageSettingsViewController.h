@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import <QuartzCore/QuartzCore.h>
-
 #import "PostUploader.h"
 
 @interface MessageSettingsViewController : UIViewController {

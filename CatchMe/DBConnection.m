@@ -5,7 +5,7 @@
 //  Created by Jonathon Simister on 10/21/12.
 //  Copyright (c) 2012 Same Level Software. All rights reserved.
 //
-
+// We are not using this class anymore
 #import "DBConnection.h"
 
 @implementation DBConnection

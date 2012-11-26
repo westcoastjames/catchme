@@ -49,6 +49,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    char* buf;
+    int uuid;
+    NSString* url;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,9 +59,27 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    ContactDownloader* downloader = [[ContactDownloader alloc] init];
-    
     self.contacts = [[NSMutableArray alloc] init];
+    
+    responseData = [NSMutableData data];
+    
+    buf = calloc(2000,1);
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    uuid = [defaults integerForKey:@"userid"];
+    
+    sprintf(buf,"http://www.jnsj.ca/catchme/getcontacts.php?userid=%d",uuid);
+    
+    url = [[NSString alloc] initWithUTF8String:buf];
+    
+    free(buf);
+    
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    
     
 }
 
@@ -186,6 +207,55 @@
     [self dismissModalViewControllerAnimated:YES];
 
     
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [responseData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    // Show error
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    ContactEdit* loadedContact;
+    NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+    bool sSMS;
+    bool sCall;
+    bool sEmail;
+    int cgid;
+    
+    if (!jsonArray) {
+        NSLog(@"Error parsing JSON");
+    } else {
+        for(NSDictionary *item in jsonArray) {
+            NSNumber* cGID = [item objectForKey:@"id"];
+            cgid = [cGID intValue];
+            
+            NSNumber* cSMS = [item objectForKey:@"shouldsms"];
+            NSNumber* cCall = [item objectForKey:@"shouldcall"];
+            NSNumber* cEmail = [item objectForKey:@"shouldemail"];
+            
+            if([cSMS intValue] == 1) { sSMS = true; } else { sSMS = false; }
+            if([cCall intValue] == 1) { sCall = true; } else { sCall = false; }
+            if([cEmail intValue] == 1) { sEmail = true; } else { sEmail = false; }
+            
+            loadedContact = [[ContactEdit alloc] initWithName:[item objectForKey:@"name"] number:[item objectForKey:@"phone"] email:[item objectForKey:@"email"] shouldcall:sCall shouldsms:sSMS shouldemail:sEmail];
+            loadedContact.gid = cgid;
+            
+            [self.contacts addObject:loadedContact];
+        }
+    }
+    
+[self.tableView reloadData];
 }
 
 

@@ -26,7 +26,6 @@
 		2D27A3311634DBEC0098F6C9 /* DBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D27A3301634DBEC0098F6C9 /* DBConnection.m */; };
 		2D27A3381634EA4A0098F6C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */; };
 		2D50D34116617C8A005F85AF /* ContactUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50D34016617C8A005F85AF /* ContactUploader.m */; };
-		2D50D3451661930B005F85AF /* ContactDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D50D3441661930B005F85AF /* ContactDownloader.m */; };
 		2D757A3F162F6FC200104D8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A3E162F6FC200104D8A /* UIKit.framework */; };
 		2D757A41162F6FC200104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
 		2D757A43162F6FC200104D8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A42162F6FC200104D8A /* CoreGraphics.framework */; };
@@ -103,8 +102,6 @@
 		2D27A3371634EA4A0098F6C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2D50D33F16617C8A005F85AF /* ContactUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUploader.h; sourceTree = "<group>"; };
 		2D50D34016617C8A005F85AF /* ContactUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUploader.m; sourceTree = "<group>"; };
-		2D50D3431661930B005F85AF /* ContactDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDownloader.h; sourceTree = "<group>"; };
-		2D50D3441661930B005F85AF /* ContactDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDownloader.m; sourceTree = "<group>"; };
 		2D757A3A162F6FC200104D8A /* CatchMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D757A3E162F6FC200104D8A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D757A40162F6FC200104D8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -307,8 +304,6 @@
 				2D50D34016617C8A005F85AF /* ContactUploader.m */,
 				1F1E2E571645C07800DE81BA /* GUI Files */,
 				2D757A45162F6FC200104D8A /* Supporting Files */,
-				2D50D3431661930B005F85AF /* ContactDownloader.h */,
-				2D50D3441661930B005F85AF /* ContactDownloader.m */,
 				2D1E5A3A1662DA67005FB815 /* AlertUploader.h */,
 				2D1E5A3B1662DA67005FB815 /* AlertUploader.m */,
 				2D76E5C916630ED700B54DFA /* PostUploader.h */,
@@ -489,7 +484,6 @@
 				32869B78166057320089F574 /* ContactAddViewController.m in Sources */,
 				32869B7B1660661B0089F574 /* ContactEditViewController.m in Sources */,
 				2D50D34116617C8A005F85AF /* ContactUploader.m in Sources */,
-				2D50D3451661930B005F85AF /* ContactDownloader.m in Sources */,
 				2D1E5A3C1662DA67005FB815 /* AlertUploader.m in Sources */,
 				2D76E5CB16630ED700B54DFA /* PostUploader.m in Sources */,
 			);

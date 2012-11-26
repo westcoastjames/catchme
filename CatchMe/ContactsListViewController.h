@@ -23,8 +23,6 @@
 
 @property (nonatomic, strong) NSMutableArray *contacts;
 
-//- (IBAction)cancelChanges;
-
 - (IBAction)doneButton:(id)sender;
 
 

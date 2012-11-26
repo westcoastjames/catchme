@@ -10,6 +10,9 @@
 #import "DBConnection.h"
 #import <UIKit/UIKit.h>
 
+#import "PostUploader.h"
+#import "ContactEdit.h"
+
 @class Contact;
 
 

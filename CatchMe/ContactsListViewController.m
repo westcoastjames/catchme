@@ -161,9 +161,24 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    char* s;
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        ContactEdit* toDelete;
+        
+        toDelete = [self.contacts objectAtIndex:indexPath.row];
+        
+        s = calloc(2000,1);
+        
+        sprintf(s,"id=%d",toDelete.gid);
+        
+        [[PostUploader alloc] initWithURL:@"http://www.jnsj.ca/catchme/deletecontact.php" andVariables:[[NSString alloc] initWithUTF8String:s]];
+        
         // Delete the row from the data source
         [self.contacts removeObjectAtIndex:indexPath.row];
+        
+        free(s);
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {

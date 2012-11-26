@@ -13,6 +13,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AVFoundation/AVFoundation.h>
 
+#import "AlertUploader.h"
+
 @interface MainMenuViewController : UIViewController <CLLocationManagerDelegate> {
     
     IBOutlet UISwitch* alertStatusSwitch;
@@ -35,6 +37,8 @@
     double x_accel;
     double y_accel;
     double z_accel;
+    
+    double lastlat, lastlon;
     
     NSInteger currentTimeDelay;
     NSTimer * notificationTimer;

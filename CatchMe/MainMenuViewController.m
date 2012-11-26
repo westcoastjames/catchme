@@ -150,6 +150,8 @@
         NSLog(@"Fall dismissed");
         [fallDetector reset];
         currentTimeDelay = 0;
+        //background test
+        [[UIApplication sharedApplication]endBackgroundTask:fallTask];
     }
     // Else begin sending out audio and message alerts
     else {
@@ -195,6 +197,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    fallTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{}];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
     // For reseting alert notification
@@ -213,6 +218,8 @@
                                      delegate:self
                             cancelButtonTitle:nil
                             otherButtonTitles:@"Yes, help me!", @"No, dismiss alert.", nil];
+    
+    
 }
 
 - (void)viewDidUnload

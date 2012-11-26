@@ -38,6 +38,9 @@
     
     NSInteger currentTimeDelay;
     NSTimer * notificationTimer;
+    
+    //background test
+    UIBackgroundTaskIdentifier fallTask;
 }
 
 @property NSInteger currentTimeDelay;

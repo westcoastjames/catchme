@@ -62,6 +62,14 @@
                      [alert show];
                  });
                  
+                 // Background Notification
+                 NSDate* date = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
+                 UILocalNotification *notif = [[UILocalNotification alloc] init];
+                 notif.fireDate = date;
+                 notif.timeZone = [NSTimeZone defaultTimeZone];
+                 notif.alertBody = @"Notification message";
+                 [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+                 
                  // Code for Audio playback plays sound when fall is detected
                  audioSession = [AVAudioSession sharedInstance];
                  [audioSession setCategory:AVAudioSessionCategoryPlayback error: nil];
@@ -78,14 +86,11 @@
                  audioPlayer.numberOfLoops = -1;
                  [audioPlayer setVolume:messageVolume];
                  
-                 
                  bool audioNotificationOn = [defaults boolForKey:@"audioNotificationOn"];
                  // Notify user of fall through audio
                  if (audioNotificationOn) {
                      [audioPlayer play];
                  }
-                 
-                 
                  
                  [self setTimer]; 
              }
@@ -164,8 +169,6 @@
         NSString *soundFileName = [defaults objectForKey:@"soundFileName"];
         CGFloat messageVolume = [defaults floatForKey:@"messageVolume"];
         bool audioMessageOn = [defaults boolForKey:@"audioMessageOn"];
-        bool emailMessageOn = [defaults boolForKey:@"emailMessageOn"];
-        bool textMessageOn = [defaults boolForKey:@"textMessageOn"];
         currentTimeDelay = 0;
 
         // Play audio alert message to nearby people if activated

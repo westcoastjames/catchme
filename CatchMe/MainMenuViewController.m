@@ -189,13 +189,8 @@
     }
 }
 
-// ARE WE STILL USING THE DBCONNECTION STUFF?
 - (void)viewDidDisappear:(BOOL)animated {
-    if (alertStatusSwitch.on) {
-        [db setSetting:@"on" value:@"yes"];
-    } else {
-        [db setSetting:@"on" value:@"no"];
-    }
+    
 }
 
 - (void)viewDidLoad {
@@ -229,7 +224,6 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    [db closeDB];
 }
 
 // Makes sure interface is correctly oriented

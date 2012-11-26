@@ -41,6 +41,7 @@
 		2D757A6D162F6FC300104D8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D757A40162F6FC200104D8A /* Foundation.framework */; };
 		2D757A75162F6FC300104D8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D757A73162F6FC300104D8A /* InfoPlist.strings */; };
 		2D757A78162F6FC300104D8A /* CatchMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D757A77162F6FC300104D8A /* CatchMeTests.m */; };
+		2D76E5CB16630ED700B54DFA /* PostUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D76E5CA16630ED700B54DFA /* PostUploader.m */; };
 		2D8609F51658678B0040A9DA /* FallDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8609F41658678B0040A9DA /* FallDetector.m */; };
 		2D8E43551634A5B300D008B2 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D8E43541634A5B300D008B2 /* ContactsViewController.xib */; };
 		2D8E43591634A61A00D008B2 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E43581634A61A00D008B2 /* ContactsViewController.m */; };
@@ -124,6 +125,8 @@
 		2D757A74162F6FC300104D8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D757A76162F6FC300104D8A /* CatchMeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatchMeTests.h; sourceTree = "<group>"; };
 		2D757A77162F6FC300104D8A /* CatchMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatchMeTests.m; sourceTree = "<group>"; };
+		2D76E5C916630ED700B54DFA /* PostUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostUploader.h; sourceTree = "<group>"; };
+		2D76E5CA16630ED700B54DFA /* PostUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostUploader.m; sourceTree = "<group>"; };
 		2D8609F31658678B0040A9DA /* FallDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallDetector.h; sourceTree = "<group>"; };
 		2D8609F41658678B0040A9DA /* FallDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallDetector.m; sourceTree = "<group>"; };
 		2D8E43541634A5B300D008B2 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				2D50D3441661930B005F85AF /* ContactDownloader.m */,
 				2D1E5A3A1662DA67005FB815 /* AlertUploader.h */,
 				2D1E5A3B1662DA67005FB815 /* AlertUploader.m */,
+				2D76E5C916630ED700B54DFA /* PostUploader.h */,
+				2D76E5CA16630ED700B54DFA /* PostUploader.m */,
 			);
 			path = CatchMe;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				2D50D34116617C8A005F85AF /* ContactUploader.m in Sources */,
 				2D50D3451661930B005F85AF /* ContactDownloader.m in Sources */,
 				2D1E5A3C1662DA67005FB815 /* AlertUploader.m in Sources */,
+				2D76E5CB16630ED700B54DFA /* PostUploader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PostUploader.h"
+
 @interface PersonalInfoViewController : UIViewController {
     IBOutlet UITextField *firstNameTextField;
     IBOutlet UITextField *lastNameTextField;

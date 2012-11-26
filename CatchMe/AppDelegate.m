@@ -64,6 +64,7 @@
         UserIDDownloader* downloader = [[UserIDDownloader alloc] init];
     }
     
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
